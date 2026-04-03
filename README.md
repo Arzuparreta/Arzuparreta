@@ -2,11 +2,7 @@
 
 # Rubén Peña Rubio
 
-*I like taking things apart and wiring reliable systems that improve every day.*
-
 </div>
-
----
 
 I've been hooked on computers and hardware for about as long as I can remember. These days, that mostly means maintaining a homelab I actually use every day, in which I generally deploy containerized small tools that solve my inmediate problems. I was trained as a classical trombonist, so my head lives happily between scores and shell prompts.
 
