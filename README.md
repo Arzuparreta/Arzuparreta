@@ -8,7 +8,7 @@
 
 ---
 
-I've been hooked on computers and hardware for about as long as I can remember. These days that mostly means a homelab I actually use every day, containers, and small tools that scratch real itches. I trained as a classical trombonist, so my head lives happily between scores and shell prompts.
+I've been hooked on computers and hardware for about as long as I can remember. These days that mostly means maintaining a homelab I actually use every day, containers, and small tools that solve my inmediate problems. I was trained as a classical trombonist, so my head lives happily between scores and shell prompts.
 
 This page is just me. For projects, stack, and the tidier story, tap through below.
 
