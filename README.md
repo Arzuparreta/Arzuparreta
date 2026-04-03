@@ -2,7 +2,7 @@
 
 # Rubén Peña Rubio
 
-**[@Arzuparreta](https://github.com/Arzuparreta)** · *I like taking things apart, wiring reliable systems, and making sound mean something.*
+**[@Arzuparreta](https://github.com/Arzuparreta)** · *I like taking things apart and wiring reliable systems that improve every day.*
 
 </div>
 
