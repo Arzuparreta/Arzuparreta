@@ -1,16 +1,20 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**Arzuparreta/Arzuparreta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# Rubén Peña Rubio
 
-Here are some ideas to get you started:
+**[@Arzuparreta](https://github.com/Arzuparreta)** · *I like taking things apart, wiring reliable systems, and making sound mean something.*
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+</div>
+
+---
+
+I've been hooked on computers and hardware for about as long as I can remember. These days that mostly means a homelab I actually use every day, containers, and small tools that scratch real itches. I trained as a classical trombonist, so my head lives happily between scores and shell prompts.
+
+This page is just me. For projects, stack, and the tidier story, tap through below.
+
+<p align="center">
+  <a href="https://arzuparreta.github.io/">Website</a> ·
+  <a href="https://arzuparreta.github.io/resume/CV.md">CV</a> ·
+  <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">LinkedIn</a> ·
+  <a href="mailto:rubenpenarubio02@gmail.com">Email</a>
+</p>
