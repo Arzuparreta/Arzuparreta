@@ -7,9 +7,10 @@
   },
   "scripts": {
     "ensure-cv": "node scripts/ensure-cv.mjs",
+    "ensure-projects": "node scripts/ensure-projects.mjs",
     "fetch-cv": "node scripts/fetch-cv.mjs",
-    "dev": "npm run ensure-cv && astro dev",
-    "build": "npm run ensure-cv && astro build",
+    "dev": "npm run ensure-cv && npm run ensure-projects && astro dev",
+    "build": "npm run ensure-cv && npm run ensure-projects && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -103,7 +103,7 @@ function applyPrimaryCase(
 
 	if (titleLink && project.repoUrl) {
 		titleLink.textContent = project.title;
-		titleLink.href = project.repoUrl;
+		titleLink.href = project.projectSiteUrl ?? project.repoUrl;
 	}
 	if (titleText) titleText.textContent = project.title;
 	if (tech) tech.textContent = project.tech;
@@ -135,6 +135,12 @@ function applyPrimaryCase(
 	if (img && project.imageSrc) {
 		img.src = project.imageSrc;
 		img.alt = `${project.title}${projectImageAltSuffix}`;
+	}
+
+	if (project.projectSiteUrl) {
+		article.dataset.projectSiteUrl = project.projectSiteUrl;
+	} else {
+		delete article.dataset.projectSiteUrl;
 	}
 }
 

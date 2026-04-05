@@ -1,15 +1,18 @@
 /**
- * Technical projects — plain narrative, no template labels in the UI.
+ * Technical projects — narratives loaded from monorepo `projects/projects.json` (copied to `public/data/` by `ensure-projects` for download).
  * https://github.com/Arzuparreta
  */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import type { Locale } from '../i18n/config';
 
-/** Public URL from site root (served from `public/`). */
-const IMG_SOUNDSIBLE_MOBILE = '/images/projects/soundsible-mobile.png';
-const IMG_DOCKER_READER_LIGHT = '/images/projects/docker-reader-light.png';
-
-const SYNESTHETIC_DEMO_YOUTUBE =
-	'https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2';
+/**
+ * Canonical file lives next to `web/` at `projects/projects.json`.
+ * Use cwd (always `web/` for `npm run dev` / `build` here), not `import.meta.url` — bundled prerender chunks would resolve the wrong directory.
+ */
+function projectsJsonPath(): string {
+	return join(process.cwd(), '..', 'projects', 'projects.json');
+}
 
 export type ProjectTier = 'primary' | 'secondary';
 
@@ -45,158 +48,107 @@ export type SecondaryProject = {
 
 export type Project = PrimaryProject | SecondaryProject;
 
-const projectsEn: Project[] = [
-	{
-		slug: 'homelab',
-		title: 'Remote administration & homelab',
-		tech: 'Debian, Tailscale, Pi-hole, SSH, Mosh',
-		why:
-			'A headless home server in Seville I use every day for reliable remote access, DNS filtering, and network-wide ad blocking—without exposing SSH to the public internet.',
-		how: [
-			'I reach it from a ThinkPad over Tailscale with Mosh for resilient sessions; Pi-hole runs on the mesh for whole-network filtering.',
-			'Tailscale is the only way in—no open SSH port on the router.',
-		],
-		tier: 'primary',
-	},
-	{
-		slug: 'soundsible',
-		title: 'soundsible',
-		tech: 'JavaScript, Node, SQLite, Docker, Python',
-		why:
-			'Self-hosted music environment aimed at a full streaming-style experience: search and manage your library, play from any device, and keep queues and settings in sync—your files, your infrastructure.',
-		how: [
-			'Python launcher and browser-based Station on a headless Linux host; SQLite backs the catalog and metadata.',
-			'I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/soundsible',
-		projectSiteUrl: 'https://arzuparreta.github.io/soundsible.github.io/',
-		imageSrc: IMG_SOUNDSIBLE_MOBILE,
-	},
-	{
-		slug: 'synesthetic-visualizer',
-		title: 'synesthetic-visualizer',
-		tech: 'Rust, real-time audio, GPU-oriented graphics',
-		why:
-			'Desktop visualizer that shows harmony and musical form in 3D—consonance and movement read as geometry on a Tonnetz-style spiral, not a plain volume or spectrum bar.',
-		how: [
-			'Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/synesthetic-visualizer',
-		demoUrl: SYNESTHETIC_DEMO_YOUTUBE,
-	},
-	{
-		slug: 'docker-reader',
-		title: 'docker-reader',
-		tech: 'Docker, Docker Compose, JavaScript',
-		why:
-			'PDF library in Docker: upload books, read in the browser, and resume on any device—multi-user so each account keeps its own progress.',
-		how: [
-			'Docker Compose plus a small config file set users, port, and volumes—the same deploy on every host.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/docker-reader',
-		imageSrc: IMG_DOCKER_READER_LIGHT,
-	},
-	{
-		slug: 'brain',
-		title: 'brain',
-		tech: 'Python',
-		summary:
-			'Minimal terminal tool to add, edit, and list Markdown notes in one folder—plain Python, no install beyond the interpreter.',
-		repoUrl: 'https://github.com/Arzuparreta/brain',
-		tier: 'secondary',
-	},
-	{
-		slug: 'remove-multi-titles-yt',
-		title: 'remove-multi-titles-yt',
-		tech: 'JavaScript, WebExtensions',
-		summary:
-			'Chrome/Firefox extension that remembers the first title you saw for each video and keeps it when YouTube A/B-tests different titles for the same clip.',
-		repoUrl: 'https://github.com/Arzuparreta/remove-multi-titles-yt',
-		tier: 'secondary',
-	},
-];
+function isNonEmptyString(v: unknown): v is string {
+	return typeof v === 'string' && v.length > 0;
+}
 
-const projectsEs: Project[] = [
-	{
-		slug: 'homelab',
-		title: 'Administración remota y homelab',
-		tech: 'Debian, Tailscale, Pi-hole, SSH, Mosh',
-		why:
-			'Servidor casero sin monitor en Sevilla que uso a diario: acceso remoto fiable, filtrado DNS y bloqueo de anuncios en toda la red, sin abrir SSH a internet.',
-		how: [
-			'Acceso desde un ThinkPad por Tailscale y Mosh; Pi-hole en la malla para filtrar a nivel de red.',
-			'Solo entro por Tailscale—no hay SSH expuesto al router.',
-		],
-		tier: 'primary',
-	},
-	{
-		slug: 'soundsible',
-		title: 'Soundsible',
-		tech: 'JavaScript, Node, SQLite, Docker, Python',
-		why:
-			'Entorno musical autoalojado pensado como un servicio de streaming completo: buscar y gestionar tu biblioteca, escuchar desde cualquier dispositivo y mantener cola y ajustes sincronizados—tus archivos, tu servidor.',
-		how: [
-			'Lanzador en Python e interfaz web “Station” en un Linux sin monitor; SQLite guarda catálogo y metadatos.',
-			'Lo uso como infraestructura diaria en casa; con Tailscale el acceso remoto fuera de la LAN es directo.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/soundsible',
-		projectSiteUrl: 'https://arzuparreta.github.io/soundsible.github.io/',
-		imageSrc: IMG_SOUNDSIBLE_MOBILE,
-	},
-	{
-		slug: 'synesthetic-visualizer',
-		title: 'Synesthetic-visualizer',
-		tech: 'Rust, Audio en tiempo real, Renderizado GPU',
-		why:
-			'Visualizador de escritorio que muestra armonía y forma musical en 3D: la consonancia y el movimiento se leen como geometría en una espiral tipo Tonnetz, no como una barra de volumen o un espectro genérico.',
-		how: [
-			'Rust de punta a punta en captura y renderizado GPU para que la imagen vaya al ritmo del audio con poco retraso.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/synesthetic-visualizer',
-		demoUrl: SYNESTHETIC_DEMO_YOUTUBE,
-	},
-	{
-		slug: 'docker-reader',
-		title: 'Docker-reader',
-		tech: 'Docker, Docker Compose, JavaScript',
-		why:
-			'Biblioteca de PDFs en Docker: subes libros, lees en el navegador y retomas en cualquier dispositivo; varios usuarios, cada uno con su progreso.',
-		how: [
-			'Docker Compose y un `config.json` pequeño definen usuarios, puerto y volúmenes—el mismo despliegue en cualquier máquina.',
-		],
-		tier: 'primary',
-		repoUrl: 'https://github.com/Arzuparreta/docker-reader',
-		imageSrc: IMG_DOCKER_READER_LIGHT,
-	},
-	{
-		slug: 'brain',
-		title: 'Brain',
-		tech: 'Python',
-		summary:
-			'Herramienta de terminal mínima en Python para crear, editar y listar notas Markdown en una carpeta—sin dependencias externas.',
-		repoUrl: 'https://github.com/Arzuparreta/brain',
-		tier: 'secondary',
-	},
-	{
-		slug: 'remove-multi-titles-yt',
-		title: 'Remove-multi-titles-yt',
-		tech: 'JavaScript, WebExtensions',
-		summary:
-			'Extensión para Chrome/Firefox que guarda el primer título que ves de cada vídeo y lo mantiene aunque YouTube pruebe variantes distintas en el mismo contenido.',
-		repoUrl: 'https://github.com/Arzuparreta/remove-multi-titles-yt',
-		tier: 'secondary',
-	},
-];
+function parseHow(raw: unknown, ctx: string): [string] | [string, string] {
+	if (!Array.isArray(raw) || raw.length < 1 || raw.length > 2) {
+		throw new Error(`${ctx}: "how" must be an array of 1 or 2 strings`);
+	}
+	const lines = raw.map((line, i) => {
+		if (!isNonEmptyString(line)) throw new Error(`${ctx}: how[${i}] must be a non-empty string`);
+		return line;
+	});
+	return lines.length === 1 ? [lines[0]!] : [lines[0]!, lines[1]!];
+}
 
-const byLocale: Record<Locale, Project[]> = {
-	en: projectsEn,
-	es: projectsEs,
-};
+function parsePrimary(o: Record<string, unknown>, ctx: string): PrimaryProject {
+	const slug = o.slug;
+	const title = o.title;
+	const tech = o.tech;
+	const why = o.why;
+	if (!isNonEmptyString(slug)) throw new Error(`${ctx}: missing or invalid "slug"`);
+	if (!isNonEmptyString(title)) throw new Error(`${ctx}: missing or invalid "title"`);
+	if (!isNonEmptyString(tech)) throw new Error(`${ctx}: missing or invalid "tech"`);
+	if (!isNonEmptyString(why)) throw new Error(`${ctx}: missing or invalid "why"`);
+	if (o.tier !== 'primary') throw new Error(`${ctx}: expected tier "primary"`);
+
+	const out: PrimaryProject = {
+		slug,
+		title,
+		tech,
+		why,
+		how: parseHow(o.how, ctx),
+		tier: 'primary',
+	};
+	if (o.repoUrl !== undefined) {
+		if (!isNonEmptyString(o.repoUrl)) throw new Error(`${ctx}: "repoUrl" must be a non-empty string when set`);
+		out.repoUrl = o.repoUrl;
+	}
+	if (o.projectSiteUrl !== undefined) {
+		if (!isNonEmptyString(o.projectSiteUrl)) throw new Error(`${ctx}: "projectSiteUrl" must be a non-empty string when set`);
+		out.projectSiteUrl = o.projectSiteUrl;
+	}
+	if (o.imageSrc !== undefined) {
+		if (!isNonEmptyString(o.imageSrc)) throw new Error(`${ctx}: "imageSrc" must be a non-empty string when set`);
+		out.imageSrc = o.imageSrc;
+	}
+	if (o.demoUrl !== undefined) {
+		if (!isNonEmptyString(o.demoUrl)) throw new Error(`${ctx}: "demoUrl" must be a non-empty string when set`);
+		out.demoUrl = o.demoUrl;
+	}
+	return out;
+}
+
+function parseSecondary(o: Record<string, unknown>, ctx: string): SecondaryProject {
+	const slug = o.slug;
+	const title = o.title;
+	const tech = o.tech;
+	const summary = o.summary;
+	const repoUrl = o.repoUrl;
+	if (!isNonEmptyString(slug)) throw new Error(`${ctx}: missing or invalid "slug"`);
+	if (!isNonEmptyString(title)) throw new Error(`${ctx}: missing or invalid "title"`);
+	if (!isNonEmptyString(tech)) throw new Error(`${ctx}: missing or invalid "tech"`);
+	if (!isNonEmptyString(summary)) throw new Error(`${ctx}: missing or invalid "summary"`);
+	if (!isNonEmptyString(repoUrl)) throw new Error(`${ctx}: missing or invalid "repoUrl"`);
+	if (o.tier !== 'secondary') throw new Error(`${ctx}: expected tier "secondary"`);
+	return { slug, title, tech, summary, repoUrl, tier: 'secondary' };
+}
+
+function parseProject(raw: unknown, locale: Locale, index: number): Project {
+	const ctx = `projects.json [${locale}][${index}]`;
+	if (raw === null || typeof raw !== 'object') throw new Error(`${ctx}: entry must be an object`);
+	const o = raw as Record<string, unknown>;
+	const tier = o.tier;
+	if (tier === 'primary') return parsePrimary(o, ctx);
+	if (tier === 'secondary') return parseSecondary(o, ctx);
+	throw new Error(`${ctx}: "tier" must be "primary" or "secondary"`);
+}
+
+function loadLocaleArray(raw: unknown, locale: Locale): Project[] {
+	if (!Array.isArray(raw)) throw new Error(`projects.json: "${locale}" must be an array`);
+	return raw.map((item, i) => parseProject(item, locale, i));
+}
+
+function loadProjectsFile(): Record<Locale, Project[]> {
+	const path = projectsJsonPath();
+	let parsed: unknown;
+	try {
+		parsed = JSON.parse(readFileSync(path, 'utf8'));
+	} catch (e) {
+		const msg = e instanceof Error ? e.message : String(e);
+		throw new Error(`projects.json: failed to read or parse ${path}: ${msg}`);
+	}
+	if (parsed === null || typeof parsed !== 'object') throw new Error('projects.json: root must be an object');
+	const root = parsed as Record<string, unknown>;
+	return {
+		en: loadLocaleArray(root.en, 'en'),
+		es: loadLocaleArray(root.es, 'es'),
+	};
+}
+
+const byLocale: Record<Locale, Project[]> = loadProjectsFile();
 
 export function getProjects(locale: Locale): Project[] {
 	return byLocale[locale];

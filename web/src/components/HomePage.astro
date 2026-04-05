@@ -95,6 +95,25 @@ const localeBundleJson = JSON.stringify({
 					<p class="section__intro" data-i18n="sections.projects.intro">
 						{t.sections.projects.intro}
 					</p>
+					<div class="section__actions">
+						<a
+							class="btn btn--ghost btn--compact"
+							href={`${base}data/projects.json`}
+							download
+							data-i18n="sections.projects.downloadProjectData"
+						>
+							{t.sections.projects.downloadProjectData}
+						</a>
+						<a
+							class="btn btn--ghost btn--compact"
+							href={site.projectsDataRepo}
+							target="_blank"
+							rel="noopener noreferrer"
+							data-i18n="sections.projects.projectDataSource"
+						>
+							{t.sections.projects.projectDataSource}
+						</a>
+					</div>
 					{primaryProjects.map((project) => (
 						<ProjectCase
 							project={project}

@@ -7,6 +7,7 @@ on:
     paths:
       - 'web/**'
       - 'cv/**'
+      - 'projects/**'
       - '.github/workflows/deploy-github-pages.yml'
   workflow_dispatch:
 

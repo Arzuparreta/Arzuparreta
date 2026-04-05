@@ -42,6 +42,10 @@ export type Messages = {
 			demoYoutubeCta: string;
 			/** Appended to project title in screenshot `alt` (localized). */
 			projectImageAltSuffix: string;
+			/** Static download of the same JSON the site builds from (`public/data/projects.json`). */
+			downloadProjectData: string;
+			/** Link to canonical `projects/projects.json` on GitHub. */
+			projectDataSource: string;
 		};
 		cv: { cvRepo: string };
 	};

@@ -46,6 +46,8 @@ export const en: Messages = {
 			githubCtaSmall: 'View repository on GitHub',
 			demoYoutubeCta: 'Watch on YouTube',
 			projectImageAltSuffix: ' — interface preview',
+			downloadProjectData: 'Download project data (.json)',
+			projectDataSource: 'Source on GitHub',
 		},
 		cv: {
 			cvRepo: 'Source on GitHub',
