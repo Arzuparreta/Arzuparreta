@@ -1,3 +1,6 @@
 web/node_modules/
 web/dist/
 web/.astro/
+
+# Local tooling (GitHub CLI binary, venv for secret encryption — see scripts/github-bootstrap-pages.sh)
+.tools/
