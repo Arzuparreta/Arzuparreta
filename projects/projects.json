@@ -51,6 +51,18 @@
 			"imageSrc": "/images/projects/docker-reader-light.png"
 		},
 		{
+			"slug": "logpilot",
+			"title": "logpilot",
+			"tech": "Python, Postgres, pgvector, Ollama",
+			"why": "Self-hosted log search and natural-language Q&A over your own data—Postgres for storage, pgvector for similarity search, and a local Ollama model so answers stay on your machine.",
+			"how": [
+				"Ingest and index logs into Postgres with vector embeddings for semantic retrieval, not just keyword matches.",
+				"The LLM runs via Ollama locally so you can ask questions about log lines without sending prompts to a third-party API."
+			],
+			"tier": "primary",
+			"repoUrl": "https://github.com/Arzuparreta/logpilot"
+		},
+		{
 			"slug": "brain",
 			"title": "brain",
 			"tech": "Python",
@@ -64,6 +76,14 @@
 			"tech": "JavaScript, WebExtensions",
 			"summary": "Chrome/Firefox extension that remembers the first title you saw for each video and keeps it when YouTube A/B-tests different titles for the same clip.",
 			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+			"tier": "secondary"
+		},
+		{
+			"slug": "fish-echo-alias",
+			"title": "fish-echo-alias",
+			"tech": "Fish shell, Fisher",
+			"summary": "Fish function that echoes an alias definition as a string; installable with Fisher.",
+			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
 			"tier": "secondary"
 		}
 	],
@@ -118,6 +138,18 @@
 			"imageSrc": "/images/projects/docker-reader-light.png"
 		},
 		{
+			"slug": "logpilot",
+			"title": "Logpilot",
+			"tech": "Python, Postgres, pgvector, Ollama",
+			"why": "Búsqueda de logs autoalojada y preguntas en lenguaje natural sobre tus propios datos: Postgres para almacenamiento, pgvector para búsqueda por similitud y un modelo Ollama local para que las respuestas no salgan de tu máquina.",
+			"how": [
+				"Los logs se indexan en Postgres con embeddings vectoriales para recuperación semántica, no solo por palabras clave.",
+				"El LLM corre con Ollama en local para preguntar por líneas de log sin mandar prompts a APIs de terceros."
+			],
+			"tier": "primary",
+			"repoUrl": "https://github.com/Arzuparreta/logpilot"
+		},
+		{
 			"slug": "brain",
 			"title": "Brain",
 			"tech": "Python",
@@ -131,6 +163,14 @@
 			"tech": "JavaScript, WebExtensions",
 			"summary": "Extensión para Chrome/Firefox que guarda el primer título que ves de cada vídeo y lo mantiene aunque YouTube pruebe variantes distintas en el mismo contenido.",
 			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+			"tier": "secondary"
+		},
+		{
+			"slug": "fish-echo-alias",
+			"title": "Fish-echo-alias",
+			"tech": "Fish shell, Fisher",
+			"summary": "Función de Fish que imprime la definición de un alias como cadena; se instala con Fisher.",
+			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
 			"tier": "secondary"
 		}
 	]
