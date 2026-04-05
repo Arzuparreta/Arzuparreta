@@ -1,12 +1,4 @@
-# Builds the Astro site from web/ and pushes static output to Arzuparreta.github.io (gh-pages).
-# User site https://arzuparreta.github.io/ must be served from that repo; this monorepo holds source.
-#
-# One-time setup:
-# 1. Create a fine-grained PAT (or classic repo PAT) with Contents: Read and write on Arzuparreta.github.io.
-#    Add repository secret GH_PAGES_DEPLOY_TOKEN on Arzuparreta/Arzuparreta.
-# 2. In https://github.com/Arzuparreta/Arzuparreta.github.io → Settings → Pages:
-#    Build and deployment → Source: Deploy from a branch → Branch: gh-pages / (root).
-#    (Replace the previous "GitHub Actions" artifact source once gh-pages has a successful deploy.)
+# Build from web/ + cv/, deploy static site to Arzuparreta.github.io branch gh-pages (needs GH_PAGES_DEPLOY_TOKEN).
 name: Deploy GitHub Pages
 
 on:

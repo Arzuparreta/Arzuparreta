@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 /**
- * Optionally downloads CV.md from github.com/Arzuparreta/CV before build.
- * Default build uses SKIP_FETCH_CV=1 and the committed public/resume/CV.md.
- * @see https://github.com/Arzuparreta/CV
+ * Optionally downloads CV.md before build (monorepo uses ensure-cv.mjs instead).
+ * Default raw source: Arzuparreta/Arzuparreta main cv/CV.md.
  */
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -13,7 +12,7 @@ const ROOT = join(__dirname, '..');
 const OUT = join(ROOT, 'public', 'resume', 'CV.md');
 const CV_RAW_URL =
 	process.env.CV_RAW_URL ??
-	'https://raw.githubusercontent.com/Arzuparreta/CV/main/CV.md';
+	'https://raw.githubusercontent.com/Arzuparreta/Arzuparreta/main/cv/CV.md';
 
 const MAX_ATTEMPTS = 3;
 const RETRY_MS = 1500;
