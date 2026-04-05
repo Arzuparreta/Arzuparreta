@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Copies canonical project data from monorepo root (../projects/projects.json) into public/data/projects.json for Astro and static download.
+ * Copies canonical project data from monorepo root (../projects/projects.json) into public/data/projects.json for static hosting alongside the site.
  */
 import { copyFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';

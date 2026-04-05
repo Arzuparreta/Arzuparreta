@@ -1,5 +1,5 @@
 /**
- * Technical projects — narratives loaded from monorepo `projects/projects.json` (copied to `public/data/` by `ensure-projects` for download).
+ * Technical projects — narratives loaded from monorepo `projects/projects.json` (also copied to `public/data/` by `ensure-projects` for deploy).
  * https://github.com/Arzuparreta
  */
 import { readFileSync } from 'node:fs';
