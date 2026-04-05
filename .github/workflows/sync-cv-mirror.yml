@@ -1,0 +1,40 @@
+# Optional: push cv/CV.md to github.com/Arzuparreta/CV so raw URLs and old links stay current.
+# Enable by setting repository variable ENABLE_CV_MIRROR = true and secret CV_REPO_PUSH_TOKEN
+# (PAT with contents:write on Arzuparreta/CV).
+name: Sync CV mirror repo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/CV.md'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    if: vars.ENABLE_CV_MIRROR == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+
+      - name: Checkout CV repo
+        uses: actions/checkout@v4
+        with:
+          repository: Arzuparreta/CV
+          path: cv-repo
+          token: ${{ secrets.CV_REPO_PUSH_TOKEN }}
+
+      - name: Commit and push if changed
+        run: |
+          cp cv/CV.md cv-repo/CV.md
+          cd cv-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CV.md
+          if git diff --staged --quiet; then
+            echo "No changes to CV.md"
+            exit 0
+          fi
+          git commit -m "Sync CV from Arzuparreta monorepo"
+          git push

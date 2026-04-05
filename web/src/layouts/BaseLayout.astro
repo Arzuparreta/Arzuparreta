@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+import type { Locale } from '../i18n/config';
+
+type HreflangAlternate = { hreflang: string; href: string };
+
+interface Props {
+	title: string;
+	description: string;
+	canonicalPath?: string;
+	/** BCP 47 language tag for `<html lang>` and `og:locale`. */
+	lang?: Locale;
+	skipToContent: string;
+	/** Optional `hreflang` alternates (e.g. en/es + x-default). */
+	alternates?: HreflangAlternate[];
+	/** Serialized locale bundle for client-side switching (scripts must live in this layout file to be bundled). */
+	localeBundleJson?: string;
+}
+
+const {
+	title,
+	description,
+	canonicalPath = '/',
+	lang = 'en',
+	skipToContent,
+	alternates,
+	localeBundleJson,
+} = Astro.props;
+const canonical = new URL(canonicalPath, site.url).href;
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_GB';
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="author" content={site.name} />
+		<meta name="color-scheme" content="light dark" />
+		<meta id="theme-color-meta" name="theme-color" content="#eceef4" />
+		<script is:inline>
+			(function () {
+				try {
+					var t = localStorage.getItem('theme');
+					if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+					var m = document.getElementById('theme-color-meta');
+					if (m) {
+						var dark =
+							t === 'dark' ||
+							(!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+						m.setAttribute('content', dark ? '#0a0a0f' : '#eceef4');
+					}
+				} catch (e) {}
+			})();
+		</script>
+		<link rel="canonical" href={canonical} />
+		{alternates?.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content={ogLocale} />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<a class="skip" href="#main" data-i18n="a11y.skipToContent">{skipToContent}</a>
+		<slot />
+		{
+			localeBundleJson ? (
+				<>
+					<script type="application/json" id="locale-bundle" set:html={localeBundleJson} />
+					<script>
+						import { initHomePageLocale } from '../scripts/page-init.ts';
+						initHomePageLocale();
+					</script>
+				</>
+			) : null
+		}
+	</body>
+</html>

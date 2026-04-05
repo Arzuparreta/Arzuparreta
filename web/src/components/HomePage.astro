@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GitHubIcon from './GitHubIcon.astro';
+import LinkedInIcon from './LinkedInIcon.astro';
+import ProjectCase from './ProjectCase.astro';
+import SmallTool from './SmallTool.astro';
+import { getPrimaryProjects, getSecondaryProjects } from '../data/projects';
+import { site } from '../data/site';
+import type { Locale } from '../i18n/config';
+import { getMessages } from '../i18n';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getMessages(locale);
+const canonicalPath = locale === 'es' ? '/es/' : '/';
+const base = import.meta.env.BASE_URL;
+const hrefEn = base.endsWith('/') ? base : `${base}/`;
+const hrefEs = `${hrefEn}es/`;
+
+const primaryProjects = getPrimaryProjects(locale);
+const secondaryProjects = getSecondaryProjects(locale);
+
+const alternates = [
+	{ hreflang: 'en', href: new URL('/', site.url).href },
+	{ hreflang: 'es', href: new URL('/es/', site.url).href },
+	{ hreflang: 'x-default', href: new URL('/', site.url).href },
+];
+
+const localeBundleJson = JSON.stringify({
+	baseUrl: import.meta.env.BASE_URL,
+	siteUrl: site.url,
+	messages: { en: getMessages('en'), es: getMessages('es') },
+	projects: {
+		en: {
+			primary: getPrimaryProjects('en'),
+			secondary: getSecondaryProjects('en'),
+		},
+		es: {
+			primary: getPrimaryProjects('es'),
+			secondary: getSecondaryProjects('es'),
+		},
+	},
+}).replace(/</g, '\\u003c');
+---
+
+<BaseLayout
+	title={t.meta.title}
+	description={t.meta.description}
+	canonicalPath={canonicalPath}
+	lang={locale}
+	skipToContent={t.a11y.skipToContent}
+	alternates={alternates}
+	localeBundleJson={localeBundleJson}
+>
+	<div class="page">
+		<main id="main" class="site-main">
+			<div class="site-main__inner site-main__inner--reading">
+				<section id="intro" class="section" aria-labelledby="intro-heading">
+					<h1 id="intro-heading" class="intro__title">{site.name}</h1>
+					<p class="identity__meta intro__subtitle">
+						<span class="identity__role" data-i18n="identity.headline">{t.identity.headline}</span>
+						<span class="identity__location">
+							<span data-i18n="identity.location">{t.identity.location}</span>
+							{site.openToRelocation ? (
+								<>
+									<span class="identity__sep" aria-hidden="true">
+										{'\u00a0·\u00a0'}
+									</span>
+									<span data-i18n="identity.openToRelocation">{t.identity.openToRelocation}</span>
+								</>
+							) : null}
+						</span>
+					</p>
+					<p class="intro__lead" data-i18n="profileLead">{t.profileLead}</p>
+				</section>
+
+				<section id="skills" class="section" aria-labelledby="skills-heading">
+					<h2 id="skills-heading" data-i18n="sections.skills.title">{t.sections.skills.title}</h2>
+					<p class="section__intro" data-i18n="sections.skills.intro">{t.sections.skills.intro}</p>
+					<ul class="skills skills--chips" role="list">
+						{t.technicalSkills.map((line) => (
+							<li class="skill-chip">{line}</li>
+						))}
+					</ul>
+				</section>
+			</div>
+			<div class="site-main__inner site-main__inner--projects">
+				<section id="projects" class="section" aria-labelledby="projects-heading">
+					<h2 id="projects-heading" data-i18n="sections.projects.title">
+						{t.sections.projects.title}
+					</h2>
+					<p class="section__intro" data-i18n="sections.projects.intro">
+						{t.sections.projects.intro}
+					</p>
+					{primaryProjects.map((project) => (
+						<ProjectCase
+							project={project}
+							githubCta={t.sections.projects.githubCta}
+							demoYoutubeCta={t.sections.projects.demoYoutubeCta}
+							projectImageAltSuffix={t.sections.projects.projectImageAltSuffix}
+						/>
+					))}
+					<h3 id="smaller-tools-heading" class="section__subheading" data-i18n="sections.projects.smallerTools">
+						{t.sections.projects.smallerTools}
+					</h3>
+					<div class="small-tools">
+						{secondaryProjects.map((tool) => (
+							<SmallTool tool={tool} githubCta={t.sections.projects.githubCtaSmall} />
+						))}
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer class="site-bottom-bar" aria-label={t.a11y.siteAside}>
+			<div class="site-bottom-bar__left">
+				<div class="site-bottom-bar__start">
+					<button
+						type="button"
+						class="theme-toggle site-bottom-bar__theme-slot"
+						id="theme-toggle"
+						aria-pressed="false"
+						aria-label={t.theme.switchToDark}
+					>
+						<svg
+							class="theme-toggle__icon theme-toggle__icon--sun"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<circle cx="12" cy="12" r="4"></circle>
+							<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+						</svg>
+						<svg
+							class="theme-toggle__icon theme-toggle__icon--moon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+						</svg>
+					</button>
+					<a
+						class="site-bottom-bar__social site-bottom-bar__cv"
+						href={`${import.meta.env.BASE_URL}resume/`}
+						aria-label={t.footer.openCvAria}
+						data-i18n-aria="footer.openCvAria"
+					>
+						<span data-i18n="footer.cvLabel">{t.footer.cvLabel}</span>
+					</a>
+					<a
+						class="site-bottom-bar__social site-bottom-bar__mail--placement-start"
+						href={`mailto:${site.email}`}
+						aria-label={t.footer.emailAria}
+						data-i18n-aria="footer.emailAria"
+					>
+						<span data-i18n="footer.mailLabel">{t.footer.mailLabel}</span>
+					</a>
+				</div>
+			</div>
+			<div class="site-bottom-bar__center">
+				<a
+					class="site-bottom-bar__social"
+					href={site.github}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<GitHubIcon class="site-bottom-bar__social-icon" />
+					<span data-i18n="nav.github">{t.nav.github}</span>
+				</a>
+				<a
+					class="site-bottom-bar__social"
+					href={site.linkedin}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<LinkedInIcon class="site-bottom-bar__social-icon" />
+					<span data-i18n="nav.linkedin">{t.nav.linkedin}</span>
+				</a>
+			</div>
+			<div class="site-bottom-bar__right">
+				<nav class="lang-switcher lang-switcher--desktop" aria-label={t.language.ariaLabel}>
+					<a
+						class="lang-switcher__link"
+						href={hrefEn}
+						hreflang="en"
+						lang="en"
+						data-i18n="language.english"
+						data-locale-target="en"
+						aria-current={locale === 'en' ? 'page' : undefined}
+					>
+						{t.language.english}
+					</a>
+					<span class="lang-switcher__sep" aria-hidden="true">·</span>
+					<a
+						class="lang-switcher__link"
+						href={hrefEs}
+						hreflang="es"
+						lang="es"
+						data-i18n="language.spanish"
+						data-locale-target="es"
+						aria-current={locale === 'es' ? 'page' : undefined}
+					>
+						{t.language.spanish}
+					</a>
+				</nav>
+				<button
+					type="button"
+					class="lang-toggle"
+					id="lang-toggle"
+					aria-label={locale === 'en' ? t.language.toggleToSpanish : t.language.toggleToEnglish}
+				>
+					<svg
+						class="lang-toggle__icon"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path
+							d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"
+						></path>
+					</svg>
+				</button>
+				<a
+					class="site-bottom-bar__social site-bottom-bar__mail--placement-end"
+					href={`mailto:${site.email}`}
+					aria-label={t.footer.emailAria}
+					data-i18n-aria="footer.emailAria"
+				>
+					<span data-i18n="footer.mailLabel">{t.footer.mailLabel}</span>
+				</a>
+			</div>
+		</footer>
+	</div>
+</BaseLayout>

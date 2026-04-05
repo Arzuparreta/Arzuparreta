@@ -1,0 +1,299 @@
+---
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { marked } from 'marked';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArrowLeftIcon from '../../components/ArrowLeftIcon.astro';
+import GitHubIcon from '../../components/GitHubIcon.astro';
+import LinkedInIcon from '../../components/LinkedInIcon.astro';
+import { site } from '../../data/site';
+import { getMessages } from '../../i18n';
+import type { LocaleBundle } from '../../scripts/locale-client';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const cvPath = join(__dirname, '../../../public/resume/CV.md');
+const md = readFileSync(cvPath, 'utf8');
+const contentHtml = marked(md, { async: false });
+
+const canonicalPath = '/resume/';
+const title = `CV — ${site.name}`;
+const description = `Curriculum vitae: technical skills, projects, and education.`;
+
+const localeBundleJson = JSON.stringify({
+	baseUrl: import.meta.env.BASE_URL,
+	siteUrl: site.url,
+	messages: { en: getMessages('en'), es: getMessages('es') },
+	projects: {
+		en: { primary: [], secondary: [] },
+		es: { primary: [], secondary: [] },
+	},
+} satisfies LocaleBundle).replace(/</g, '\\u003c');
+
+const t = getMessages('en');
+const base = import.meta.env.BASE_URL;
+const homeHref = base.endsWith('/') ? base : `${base}/`;
+---
+
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} lang="en" skipToContent={t.a11y.skipToContent}>
+	<div class="page cv-page">
+		<a
+			class="cv-page__back"
+			href={homeHref}
+			aria-label="Back to home"
+			title="Back to home"
+		>
+			<ArrowLeftIcon class="cv-page__back-icon" />
+		</a>
+		<header class="cv-page__header">
+			<div class="cv-page__actions">
+				<a class="btn btn--ghost btn--compact" href={`${base}resume/CV.md`} download>Download .md</a>
+				<a
+					class="btn btn--ghost btn--compact"
+					href={site.cvRepo}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{t.sections.cv.cvRepo}
+				</a>
+			</div>
+		</header>
+		<main id="main" class="cv-page__main">
+			<article class="cv-prose" set:html={contentHtml} />
+		</main>
+		<footer class="site-bottom-bar" aria-label={t.a11y.siteAside}>
+			<div class="site-bottom-bar__left">
+				<div class="site-bottom-bar__start">
+					<button
+						type="button"
+						class="theme-toggle site-bottom-bar__theme-slot"
+						id="theme-toggle"
+						aria-pressed="false"
+						aria-label={t.theme.switchToDark}
+					>
+						<svg
+							class="theme-toggle__icon theme-toggle__icon--sun"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<circle cx="12" cy="12" r="4"></circle>
+							<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+						</svg>
+						<svg
+							class="theme-toggle__icon theme-toggle__icon--moon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+						</svg>
+					</button>
+					<a
+						class="site-bottom-bar__social site-bottom-bar__mail--placement-start"
+						href={`mailto:${site.email}`}
+						aria-label={t.footer.emailAria}
+					>
+						<span>{t.footer.mailLabel}</span>
+					</a>
+				</div>
+			</div>
+			<div class="site-bottom-bar__center">
+				<a class="site-bottom-bar__social" href={site.github} target="_blank" rel="noopener noreferrer">
+					<GitHubIcon class="site-bottom-bar__social-icon" />
+					<span>{t.nav.github}</span>
+				</a>
+				<a class="site-bottom-bar__social" href={site.linkedin} target="_blank" rel="noopener noreferrer">
+					<LinkedInIcon class="site-bottom-bar__social-icon" />
+					<span>{t.nav.linkedin}</span>
+				</a>
+			</div>
+			<div class="site-bottom-bar__right">
+				<a
+					class="site-bottom-bar__social site-bottom-bar__mail--placement-end"
+					href={`mailto:${site.email}`}
+					aria-label={t.footer.emailAria}
+				>
+					<span>{t.footer.mailLabel}</span>
+				</a>
+			</div>
+		</footer>
+	</div>
+	<script type="application/json" id="locale-bundle" set:html={localeBundleJson} />
+	<script>
+		import { initCvPageTheme } from '../../scripts/cv-page-init.ts';
+		const el = document.getElementById('locale-bundle');
+		if (el?.textContent) {
+			initCvPageTheme(JSON.parse(el.textContent));
+		}
+	</script>
+</BaseLayout>
+
+<style>
+	.cv-page {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		padding-bottom: var(--site-bottom-bar-clearance);
+		background: transparent;
+	}
+
+	.cv-page__header {
+		max-width: var(--content-max-wide);
+		margin: 0 auto;
+		padding: var(--s-4) var(--page-pad-x) var(--s-2);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: var(--s-2);
+		border-bottom: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+	}
+
+	.cv-page__back {
+		position: fixed;
+		top: max(var(--s-2), env(safe-area-inset-top, 0px));
+		left: max(var(--page-pad-x), env(safe-area-inset-left, 0px));
+		z-index: 100;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.2rem;
+		min-height: 2.2rem;
+		padding: 0.4rem;
+		color: var(--accent);
+		text-decoration: none;
+		border-radius: 0.4rem;
+	}
+
+	.cv-page__back:hover {
+		color: var(--accent-hover);
+		background: color-mix(in srgb, var(--accent) 12%, transparent);
+	}
+
+	.cv-page__back:focus-visible {
+		outline: 2px solid var(--focus-ring);
+		outline-offset: 2px;
+	}
+
+	.cv-page__back-icon {
+		width: 1.1rem;
+		height: 1.1rem;
+		flex-shrink: 0;
+	}
+
+	.cv-page__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s-2);
+	}
+
+	.cv-page__actions .btn {
+		text-decoration: none;
+	}
+
+	.cv-page__actions .btn:hover,
+	.cv-page__actions .btn:focus,
+	.cv-page__actions .btn:focus-visible {
+		text-decoration: none;
+	}
+
+	.cv-page__main {
+		flex: 1;
+		max-width: var(--content-max-wide);
+		width: 100%;
+		margin: 0 auto;
+		padding: var(--s-5) var(--page-pad-x) var(--s-6);
+	}
+
+	.cv-prose {
+		max-width: var(--content-max);
+		margin: 0 auto;
+	}
+
+	.cv-prose :global(h1) {
+		font-size: var(--text-3xl);
+		font-weight: 750;
+		letter-spacing: -0.035em;
+		line-height: 1.15;
+		margin: 0 0 var(--s-2);
+		color: var(--text);
+		font-family: var(--font);
+	}
+
+	@supports (-webkit-background-clip: text) or (background-clip: text) {
+		.cv-prose :global(h1) {
+			background-image: var(--accent-gradient);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+
+	.cv-prose :global(h2) {
+		font-size: var(--text-section);
+		font-weight: 650;
+		margin: var(--s-5) 0 var(--s-2);
+		color: var(--text);
+		scroll-margin-top: var(--s-4);
+		font-family: var(--font);
+		letter-spacing: -0.03em;
+	}
+
+	.cv-prose :global(h3) {
+		font-size: var(--text-xl);
+		font-weight: 650;
+		margin: 0 0 var(--s-3);
+		color: var(--text-muted);
+		font-family: var(--font);
+	}
+
+	.cv-prose :global(p) {
+		margin: 0 0 var(--prose-gap);
+		color: var(--text);
+	}
+
+	.cv-prose :global(ul) {
+		margin: 0 0 var(--s-3);
+		padding-left: 1.25rem;
+	}
+
+	.cv-prose :global(li) {
+		margin-bottom: var(--s-1);
+	}
+
+	.cv-prose :global(li)::marker {
+		color: var(--text-muted);
+	}
+
+	.cv-prose :global(a) {
+		color: var(--accent);
+		text-decoration: underline;
+		text-underline-offset: 0.12em;
+	}
+
+	.cv-prose :global(a:hover) {
+		color: var(--accent-hover);
+	}
+
+	.cv-prose :global(strong) {
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.cv-prose :global(em) {
+		color: var(--text-muted);
+		font-style: italic;
+	}
+</style>

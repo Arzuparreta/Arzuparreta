@@ -1,0 +1,87 @@
+---
+import GitHubIcon from './GitHubIcon.astro';
+import type { PrimaryProject } from '../data/projects';
+
+interface Props {
+	project: PrimaryProject;
+	githubCta: string;
+	demoYoutubeCta: string;
+	projectImageAltSuffix: string;
+}
+
+const { project, githubCta, demoYoutubeCta, projectImageAltSuffix } = Astro.props;
+const imgAlt = `${project.title}${projectImageAltSuffix}`;
+const repoUrl = project.repoUrl;
+const titleHref = project.projectSiteUrl ?? repoUrl;
+---
+
+<article
+	class:list={['case', project.imageSrc && 'case--with-media']}
+	id={project.slug}
+	data-project-slug={project.slug}
+	data-project-site-url={project.projectSiteUrl}
+>
+	<div class="case__main">
+		<header class="case__top">
+			<h3 class="case__title">
+				<span class="case__title-start">
+					{
+						repoUrl ? (
+							<>
+								<a class="case__title-link" href={titleHref} target="_blank" rel="noopener noreferrer">
+									{project.title}
+								</a>
+								<a
+									class="case__github-btn"
+									href={repoUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={githubCta}
+								>
+									<GitHubIcon class="case__github-icon" />
+								</a>
+							</>
+						) : (
+							<span class="case__title-text">{project.title}</span>
+						)
+					}
+				</span>
+				<span class="case__title-sep" aria-hidden="true"> | </span>
+				<span class="case__tech">{project.tech}</span>
+			</h3>
+		</header>
+		<p class="case__why">{project.why}</p>
+		<ul class="case__how">
+			{project.how.map((line) => (
+				<li>{line}</li>
+			))}
+		</ul>
+		{
+			project.demoUrl && (
+				<p class="case__cta case__cta-row">
+					<a
+						class="btn btn--ghost case__cta-demo"
+						href={project.demoUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{demoYoutubeCta}
+					</a>
+				</p>
+			)
+		}
+	</div>
+	{
+		project.imageSrc && (
+			<figure class="case__media">
+				<img
+					class="case__img"
+					src={project.imageSrc}
+					alt={imgAlt}
+					loading="lazy"
+					decoding="async"
+				/>
+			</figure>
+		)
+	}
+</article>
