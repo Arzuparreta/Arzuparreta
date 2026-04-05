@@ -1,5 +1,6 @@
 ---
 import GitHubIcon from './GitHubIcon.astro';
+import { primaryCaseNavUrl } from '../data/primary-case-nav';
 import type { PrimaryProject } from '../data/projects';
 
 interface Props {
@@ -12,14 +13,16 @@ interface Props {
 const { project, githubCta, demoYoutubeCta, projectImageAltSuffix } = Astro.props;
 const imgAlt = `${project.title}${projectImageAltSuffix}`;
 const repoUrl = project.repoUrl;
-const titleHref = project.projectSiteUrl ?? repoUrl;
+const caseNavUrl = primaryCaseNavUrl(project);
+const titleHref = caseNavUrl;
+const caseNavAttrs = caseNavUrl ? { 'data-case-nav-url': caseNavUrl } : {};
 ---
 
 <article
 	class:list={['case', project.imageSrc && 'case--with-media']}
 	id={project.slug}
 	data-project-slug={project.slug}
-	data-project-site-url={project.projectSiteUrl}
+	{...caseNavAttrs}
 >
 	<div class="case__main">
 		<header class="case__top">

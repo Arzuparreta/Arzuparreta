@@ -2,7 +2,7 @@
  * Entry for bundled client script (must live in a top-level layout file so Astro/Vite bundles it).
  */
 import { initLocaleClient } from './locale-client';
-import { initProjectCaseSiteNav } from './project-case-site';
+import { initProjectCaseNav } from './project-case-nav';
 import { initTheme } from './theme';
 
 export function initHomePageLocale(): void {
@@ -12,5 +12,5 @@ export function initHomePageLocale(): void {
 		initLocaleClient(bundle);
 		initTheme(bundle);
 	}
-	initProjectCaseSiteNav();
+	initProjectCaseNav();
 }

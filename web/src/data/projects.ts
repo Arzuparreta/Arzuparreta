@@ -25,9 +25,9 @@ export type PrimaryProject = {
 	why: string;
 	/** One or two concrete technical or operational details. */
 	how: [string] | [string, string];
-	/** Public repo URL; omit when the entry is not tied to a GitHub project (no title link or repo button). */
+	/** Public GitHub URL (repo icon; default title/card background target when projectSiteUrl is omitted). Omit when there is no public repo. */
 	repoUrl?: string;
-	/** Optional landing page (e.g. GitHub Pages): title link and card background clicks use this when set. */
+	/** Optional product/docs site (e.g. GitHub Pages). When set, title link and card background use this instead of repoUrl; the repo icon still uses repoUrl. */
 	projectSiteUrl?: string;
 	tier: 'primary';
 	/** Optional screenshot path under site root. */

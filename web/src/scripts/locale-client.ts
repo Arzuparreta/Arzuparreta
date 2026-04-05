@@ -4,6 +4,7 @@
  */
 import type { Locale } from '../i18n/config';
 import type { Messages } from '../i18n/types';
+import { primaryCaseNavUrl } from '../data/primary-case-nav';
 import type { PrimaryProject, SecondaryProject } from '../data/projects';
 import { refreshThemeButton } from './theme';
 
@@ -103,7 +104,7 @@ function applyPrimaryCase(
 
 	if (titleLink && project.repoUrl) {
 		titleLink.textContent = project.title;
-		titleLink.href = project.projectSiteUrl ?? project.repoUrl;
+		titleLink.href = primaryCaseNavUrl(project) ?? project.repoUrl;
 	}
 	if (titleText) titleText.textContent = project.title;
 	if (tech) tech.textContent = project.tech;
@@ -137,10 +138,11 @@ function applyPrimaryCase(
 		img.alt = `${project.title}${projectImageAltSuffix}`;
 	}
 
-	if (project.projectSiteUrl) {
-		article.dataset.projectSiteUrl = project.projectSiteUrl;
+	const navUrl = primaryCaseNavUrl(project);
+	if (navUrl) {
+		article.dataset.caseNavUrl = navUrl;
 	} else {
-		delete article.dataset.projectSiteUrl;
+		delete article.dataset.caseNavUrl;
 	}
 }
 
