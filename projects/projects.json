@@ -24,7 +24,7 @@
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/soundsible",
 			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-mobile.png"
+			"imageSrc": "/images/projects/soundsible-icon.jpg"
 		},
 		{
 			"slug": "synesthetic-visualizer",
@@ -124,7 +124,7 @@
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/soundsible",
 			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-mobile.png"
+			"imageSrc": "/images/projects/soundsible-icon.jpg"
 		},
 		{
 			"slug": "synesthetic-visualizer",
