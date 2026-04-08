@@ -1,5 +1,5 @@
 {
-	"$comment": "Canonical project list for the site (en/es). Edit this file; web/scripts/ensure-projects.mjs copies it to web/public/data/ for builds. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point.",
+	"$comment": "Canonical project list for the site (en/es). Edit this file; web/scripts/ensure-projects.mjs copies it to web/public/data/ for builds. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point. When imageSrc is set, optional imagePresentation: \"logo\" (square app icon, compact media column) or \"screenshot\" (default; wide UI capture).",
 	"en": [
 		{
 			"slug": "homelab",
@@ -24,7 +24,8 @@
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/soundsible",
 			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-icon.jpg"
+			"imageSrc": "/images/projects/soundsible-icon.jpg",
+			"imagePresentation": "logo"
 		},
 		{
 			"slug": "synesthetic-visualizer",
@@ -48,7 +49,8 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
-			"imageSrc": "/images/projects/docker-reader-light.png"
+			"imageSrc": "/images/projects/docker-reader-light.png",
+			"imagePresentation": "screenshot"
 		},
 		{
 			"slug": "logpilot",
@@ -73,7 +75,8 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
-			"imageSrc": "/images/projects/kitchen-clock-icon.png"
+			"imageSrc": "/images/projects/kitchen-clock-icon.png",
+			"imagePresentation": "logo"
 		},
 		{
 			"slug": "brain",
@@ -124,7 +127,8 @@
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/soundsible",
 			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-icon.jpg"
+			"imageSrc": "/images/projects/soundsible-icon.jpg",
+			"imagePresentation": "logo"
 		},
 		{
 			"slug": "synesthetic-visualizer",
@@ -148,7 +152,8 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
-			"imageSrc": "/images/projects/docker-reader-light.png"
+			"imageSrc": "/images/projects/docker-reader-light.png",
+			"imagePresentation": "screenshot"
 		},
 		{
 			"slug": "logpilot",
@@ -173,7 +178,8 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
-			"imageSrc": "/images/projects/kitchen-clock-icon.png"
+			"imageSrc": "/images/projects/kitchen-clock-icon.png",
+			"imagePresentation": "logo"
 		},
 		{
 			"slug": "brain",

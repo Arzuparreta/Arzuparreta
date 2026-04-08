@@ -32,6 +32,11 @@ export type PrimaryProject = {
 	tier: 'primary';
 	/** Optional screenshot path under site root. */
 	imageSrc?: string;
+	/**
+	 * When `imageSrc` is set: how the image is framed in the case card.
+	 * `logo` — square app icon (narrow column, capped size). `screenshot` — wide UI capture (default).
+	 */
+	imagePresentation?: 'logo' | 'screenshot';
 	/** Optional external demo (e.g. video). */
 	demoUrl?: string;
 };
@@ -90,9 +95,21 @@ function parsePrimary(o: Record<string, unknown>, ctx: string): PrimaryProject {
 		if (!isNonEmptyString(o.projectSiteUrl)) throw new Error(`${ctx}: "projectSiteUrl" must be a non-empty string when set`);
 		out.projectSiteUrl = o.projectSiteUrl;
 	}
+	if (o.imagePresentation !== undefined && o.imageSrc === undefined) {
+		throw new Error(`${ctx}: "imagePresentation" is only valid when "imageSrc" is set`);
+	}
 	if (o.imageSrc !== undefined) {
 		if (!isNonEmptyString(o.imageSrc)) throw new Error(`${ctx}: "imageSrc" must be a non-empty string when set`);
 		out.imageSrc = o.imageSrc;
+		const pres = o.imagePresentation;
+		if (pres !== undefined) {
+			if (pres !== 'logo' && pres !== 'screenshot') {
+				throw new Error(`${ctx}: "imagePresentation" must be "logo" or "screenshot"`);
+			}
+			out.imagePresentation = pres;
+		} else {
+			out.imagePresentation = 'screenshot';
+		}
 	}
 	if (o.demoUrl !== undefined) {
 		if (!isNonEmptyString(o.demoUrl)) throw new Error(`${ctx}: "demoUrl" must be a non-empty string when set`);

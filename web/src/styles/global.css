@@ -711,7 +711,7 @@ h3 {
 	border: 1px solid color-mix(in srgb, var(--border) 92%, var(--accent) 2%);
 	border-radius: 16px;
 	background: var(--surface);
-	padding: var(--s-4);
+	padding: var(--s-3) var(--s-4);
 	margin-bottom: var(--s-4);
 	box-shadow: var(--shadow-sm);
 	overflow: hidden;
@@ -769,13 +769,18 @@ h3 {
 
 .case--with-media {
 	display: grid;
-	gap: var(--s-4);
+	gap: var(--s-3);
 	align-items: start;
 }
 
 @media (min-width: 768px) {
 	.case--with-media {
 		grid-template-columns: 1fr minmax(280px, 400px);
+		align-items: end;
+	}
+
+	.case--with-media.case--media-logo {
+		grid-template-columns: 1fr minmax(8rem, 11rem);
 	}
 }
 
@@ -799,6 +804,21 @@ h3 {
 	max-width: 100%;
 	max-height: 22rem;
 	height: auto;
+}
+
+/* Square app icons only (see projects.json imagePresentation: logo) */
+.case--media-logo .case__media {
+	width: 100%;
+	max-width: 11rem;
+	margin-inline: auto;
+	padding: var(--s-2);
+}
+
+.case--media-logo .case__img {
+	max-height: 8.5rem;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
 }
 
 .case:last-child {

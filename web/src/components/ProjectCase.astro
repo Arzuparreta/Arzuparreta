@@ -16,10 +16,11 @@ const repoUrl = project.repoUrl;
 const caseNavUrl = primaryCaseNavUrl(project);
 const titleHref = caseNavUrl;
 const caseNavAttrs = caseNavUrl ? { 'data-case-nav-url': caseNavUrl } : {};
+const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
 ---
 
 <article
-	class:list={['case', project.imageSrc && 'case--with-media']}
+	class:list={['case', project.imageSrc && 'case--with-media', isLogoMedia && 'case--media-logo']}
 	id={project.slug}
 	data-project-slug={project.slug}
 	{...caseNavAttrs}
