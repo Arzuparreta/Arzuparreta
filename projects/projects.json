@@ -66,13 +66,14 @@
 			"slug": "kitchen-clock",
 			"title": "kitchen-clock",
 			"tech": "TypeScript, React Native, Expo",
-			"why": "Kitchen timer app for phones and tablets: run several countdowns at once, get notified when they finish, and use haptics (and optional alerts) so you do not miss a step—Expo Router keeps the UI small and focused.",
+			"why": "Timer app built for professional kitchens: juggle several dishes at once—each with its own countdown—so sauces, proteins, and sides stay on track during service. Clear notifications and haptics help you catch every finish without hovering over a single clock.",
 			"how": [
-				"Multiple concurrent timers with local notifications so you still get alerted when the app is in the background.",
-				"Built with Expo: one codebase for Android, iOS, and web testing from the same project."
+				"Many timers running in parallel with local notifications so alerts still fire when the app is in the background.",
+				"Expo and React Native: one codebase for Android, iOS, and web-based testing from the same project."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock"
+			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
+			"imageSrc": "/images/projects/kitchen-clock-icon.png"
 		},
 		{
 			"slug": "brain",
@@ -165,13 +166,14 @@
 			"slug": "kitchen-clock",
 			"title": "Kitchen-clock",
 			"tech": "TypeScript, React Native, Expo",
-			"why": "App de temporizadores de cocina para móvil y tablet: varias cuentas atrás a la vez, avisos al terminar y respuesta háptica clara, con Expo Router para una interfaz sencilla.",
+			"why": "App de temporizadores pensada para cocinas de restaurante: llevar varios platos a la vez con una cuenta atrás por preparación—salsas, carnes, guarniciones—sin perder el hilo en pleno servicio. Avisos claros y respuesta háptica para no perder ningún punto de cocción.",
 			"how": [
-				"Varios temporizadores concurrentes con notificaciones locales para que avisen aunque la app esté en segundo plano.",
-				"Expo permite el mismo código en Android, iOS y pruebas en web desde el mismo proyecto."
+				"Varios temporizadores en paralelo con notificaciones locales para que avisen aunque la app esté en segundo plano.",
+				"Expo y React Native: un solo código para Android, iOS y pruebas en web desde el mismo proyecto."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock"
+			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
+			"imageSrc": "/images/projects/kitchen-clock-icon.png"
 		},
 		{
 			"slug": "brain",
