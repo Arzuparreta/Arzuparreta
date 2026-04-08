@@ -820,18 +820,16 @@ h3 {
 
 .case--media-logo .case__img {
 	position: absolute;
-	/* Inset keeps the asset off the inner edge so letterboxing/subpixel gaps don’t read as a “top border” */
-	top: 5px;
-	right: 5px;
-	bottom: 5px;
-	left: 5px;
-	width: auto;
-	height: auto;
+	inset: 0;
+	width: 100%;
+	height: 100%;
 	max-width: none;
 	max-height: none;
 	object-fit: contain;
 	object-position: center;
 	display: block;
+	/* Match inner curve to the frame (12px radius − 1px border) */
+	border-radius: 11px;
 }
 
 .case:last-child {
