@@ -814,7 +814,7 @@ h3 {
 	padding: 0;
 	position: relative;
 	aspect-ratio: 1;
-	/* Drop inset ring — it reads as a hairline border inside rounded corners next to the image */
+	/* Avoid inner inset ring from base .case__media (hairline inside rounded corners) */
 	box-shadow: var(--shadow-sm);
 }
 
