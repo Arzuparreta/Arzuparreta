@@ -63,6 +63,18 @@
 			"repoUrl": "https://github.com/Arzuparreta/logpilot"
 		},
 		{
+			"slug": "kitchen-clock",
+			"title": "kitchen-clock",
+			"tech": "TypeScript, React Native, Expo",
+			"why": "Kitchen timer app for phones and tablets: run several countdowns at once, get notified when they finish, and use haptics (and optional alerts) so you do not miss a step—Expo Router keeps the UI small and focused.",
+			"how": [
+				"Multiple concurrent timers with local notifications so you still get alerted when the app is in the background.",
+				"Built with Expo: one codebase for Android, iOS, and web testing from the same project."
+			],
+			"tier": "primary",
+			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock"
+		},
+		{
 			"slug": "brain",
 			"title": "brain",
 			"tech": "Python",
@@ -148,6 +160,18 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/logpilot"
+		},
+		{
+			"slug": "kitchen-clock",
+			"title": "Kitchen-clock",
+			"tech": "TypeScript, React Native, Expo",
+			"why": "App de temporizadores de cocina para móvil y tablet: varias cuentas atrás a la vez, avisos al terminar y respuesta háptica clara, con Expo Router para una interfaz sencilla.",
+			"how": [
+				"Varios temporizadores concurrentes con notificaciones locales para que avisen aunque la app esté en segundo plano.",
+				"Expo permite el mismo código en Android, iOS y pruebas en web desde el mismo proyecto."
+			],
+			"tier": "primary",
+			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock"
 		},
 		{
 			"slug": "brain",
