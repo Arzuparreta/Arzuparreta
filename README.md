@@ -1,6 +1,4 @@
-I build and maintain small self-hosted tools for real daily use.
-
-This repository is my professional hub (not a code monorepo): landing page, CV, and project metadata that power my public portfolio.
+I've been hooked into computers since I can remember. Formed as a classical mussician but I prefer the mechanical keys.
 
 <p align="center">
   <a href="https://arzuparreta.github.io/">Portfolio</a> ·
