@@ -1,17 +1,9 @@
-# Soundsible landing (GitHub Pages)
+# Soundsible landing
 
-Marketing site for [Soundsible](https://github.com/Arzuparreta/soundsible).
+Marketing site for [Soundsible](https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible).
 
-## Published URL (important)
-
-GitHub Pages URLs depend on **who owns** this repo:
-
-- **Organization root site** — repo is `soundsible/soundsible.github.io` → live at **https://soundsible.github.io/**
-- **User project site** — repo is `SomeUser/soundsible.github.io` (user is not `soundsible`) → live at **https://SomeUser.github.io/soundsible.github.io/**
-
-[astro.config.mjs](astro.config.mjs) reads `GITHUB_REPOSITORY` (set automatically in Actions) and sets Astro `site` + `base` so CSS, JS, and images load on project pages. If your published URL looks like unstyled HTML, it is usually missing this `base` fix for a **subpath** deploy.
-
-For local dev with a project-page layout, open the URL Astro prints (it includes the subpath, e.g. `http://localhost:4321/soundsible.github.io/`).
+This app now lives inside the `Arzuparreta` monorepo at `projects/repos/soundsible-site`.
+The public entry point is the portfolio site at `https://arzuparreta.github.io/`.
 
 ## Stack
 
@@ -28,11 +20,7 @@ npm install
 npm run dev
 ```
 
-Use the URL Astro prints (root or `/soundsible.github.io/` depending on `GITHUB_REPOSITORY`).
-
-To mimic a different GitHub owner locally, for example:
-
-`GITHUB_REPOSITORY=soundsible/soundsible.github.io npm run dev`
+Use the URL Astro prints.
 
 ```bash
 npm run build    # output in dist/

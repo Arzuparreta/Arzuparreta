@@ -7,8 +7,8 @@ Thanks for your interest in contributing – every bug report, idea, and pull re
 1. **Fork and clone**
 
    ```bash
-   git clone https://github.com/Arzuparreta/soundsible.git
-   cd soundsible
+   git clone https://github.com/Arzuparreta/Arzuparreta.git
+   cd Arzuparreta/projects/repos/soundsible
    ```
 
 2. **Create a virtual environment and install dependencies**

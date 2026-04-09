@@ -22,8 +22,7 @@
 				"I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/soundsible",
-			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible",
 			"imageSrc": "/images/projects/soundsible-icon.jpg",
 			"imagePresentation": "logo"
 		},
@@ -36,7 +35,7 @@
 				"Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/synesthetic-visualizer",
 			"demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
 		},
 		{
@@ -48,7 +47,7 @@
 				"Docker Compose plus a small config file set users, port, and volumes—the same deploy on every host."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/docker-reader",
 			"imageSrc": "/images/projects/docker-reader-light.png",
 			"imagePresentation": "screenshot"
 		},
@@ -62,7 +61,7 @@
 				"The LLM runs via Ollama locally so you can ask questions about log lines without sending prompts to a third-party API."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/logpilot"
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/logpilot"
 		},
 		{
 			"slug": "kitchen-clock",
@@ -74,7 +73,7 @@
 				"Expo and React Native: one codebase for Android, iOS, and web-based testing from the same project."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/kitchen-clock",
 			"imageSrc": "/images/projects/kitchen-clock-icon.png",
 			"imagePresentation": "logo"
 		},
@@ -83,7 +82,6 @@
 			"title": "brain",
 			"tech": "Python",
 			"summary": "Minimal terminal tool to add, edit, and list Markdown notes in one folder—plain Python, no install beyond the interpreter.",
-			"repoUrl": "https://github.com/Arzuparreta/brain",
 			"tier": "secondary"
 		},
 		{
@@ -91,7 +89,7 @@
 			"title": "remove-multi-titles-yt",
 			"tech": "JavaScript, WebExtensions",
 			"summary": "Chrome/Firefox extension that remembers the first title you saw for each video and keeps it when YouTube A/B-tests different titles for the same clip.",
-			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/remove-multi-titles-yt",
 			"tier": "secondary"
 		},
 		{
@@ -99,7 +97,7 @@
 			"title": "fish-echo-alias",
 			"tech": "Fish shell, Fisher",
 			"summary": "Fish function that echoes an alias definition as a string; installable with Fisher.",
-			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/fish-echo-alias",
 			"tier": "secondary"
 		}
 	],
@@ -125,8 +123,7 @@
 				"Lo uso como infraestructura diaria en casa; con Tailscale el acceso remoto fuera de la LAN es directo."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/soundsible",
-			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible",
 			"imageSrc": "/images/projects/soundsible-icon.jpg",
 			"imagePresentation": "logo"
 		},
@@ -139,7 +136,7 @@
 				"Rust de punta a punta en captura y renderizado GPU para que la imagen vaya al ritmo del audio con poco retraso."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/synesthetic-visualizer",
 			"demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
 		},
 		{
@@ -151,7 +148,7 @@
 				"Docker Compose y un `config.json` pequeño definen usuarios, puerto y volúmenes—el mismo despliegue en cualquier máquina."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/docker-reader",
 			"imageSrc": "/images/projects/docker-reader-light.png",
 			"imagePresentation": "screenshot"
 		},
@@ -165,7 +162,7 @@
 				"El LLM corre con Ollama en local para preguntar por líneas de log sin mandar prompts a APIs de terceros."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/logpilot"
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/logpilot"
 		},
 		{
 			"slug": "kitchen-clock",
@@ -177,7 +174,7 @@
 				"Expo y React Native: un solo código para Android, iOS y pruebas en web desde el mismo proyecto."
 			],
 			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/kitchen-clock",
 			"imageSrc": "/images/projects/kitchen-clock-icon.png",
 			"imagePresentation": "logo"
 		},
@@ -186,7 +183,6 @@
 			"title": "Brain",
 			"tech": "Python",
 			"summary": "Herramienta de terminal mínima en Python para crear, editar y listar notas Markdown en una carpeta—sin dependencias externas.",
-			"repoUrl": "https://github.com/Arzuparreta/brain",
 			"tier": "secondary"
 		},
 		{
@@ -194,7 +190,7 @@
 			"title": "Remove-multi-titles-yt",
 			"tech": "JavaScript, WebExtensions",
 			"summary": "Extensión para Chrome/Firefox que guarda el primer título que ves de cada vídeo y lo mantiene aunque YouTube pruebe variantes distintas en el mismo contenido.",
-			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/remove-multi-titles-yt",
 			"tier": "secondary"
 		},
 		{
@@ -202,7 +198,7 @@
 			"title": "Fish-echo-alias",
 			"tech": "Fish shell, Fisher",
 			"summary": "Función de Fish que imprime la definición de un alias como cadena; se instala con Fisher.",
-			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/fish-echo-alias",
 			"tier": "secondary"
 		}
 	]

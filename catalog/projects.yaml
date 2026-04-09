@@ -12,7 +12,7 @@ defaultPolicy:
 projects:
   - id: soundsible
     path: projects/repos/soundsible
-    sourceRepo: https://github.com/Arzuparreta/soundsible
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible
     stage: active
     domains: [music, self-hosting, web-app]
     stack: [javascript, node, sqlite, docker, python]
@@ -24,7 +24,7 @@ projects:
       run: "project-specific"
   - id: logpilot
     path: projects/repos/logpilot
-    sourceRepo: https://github.com/Arzuparreta/logpilot
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/logpilot
     stage: active
     domains: [ai, observability, self-hosting]
     stack: [python, postgres, pgvector, docker]
@@ -36,7 +36,7 @@ projects:
       run: "project-specific"
   - id: synesthetic-visualizer
     path: projects/repos/synesthetic-visualizer
-    sourceRepo: https://github.com/Arzuparreta/synesthetic-visualizer
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/synesthetic-visualizer
     stage: active
     domains: [music, graphics, realtime-audio]
     stack: [rust, gpu]
@@ -48,7 +48,7 @@ projects:
       run: "project-specific"
   - id: kitchen-clock
     path: projects/repos/kitchen-clock
-    sourceRepo: https://github.com/Arzuparreta/kitchen-clock
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/kitchen-clock
     stage: active
     domains: [mobile, productivity]
     stack: [typescript, react-native, expo]
@@ -60,7 +60,7 @@ projects:
       run: "project-specific"
   - id: docker-reader
     path: projects/repos/docker-reader
-    sourceRepo: https://github.com/Arzuparreta/docker-reader
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/docker-reader
     stage: active
     domains: [books, self-hosting, web-app]
     stack: [javascript, docker, compose]
@@ -72,7 +72,7 @@ projects:
       run: "project-specific"
   - id: remove-multi-titles-yt
     path: projects/repos/remove-multi-titles-yt
-    sourceRepo: https://github.com/Arzuparreta/remove-multi-titles-yt
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/remove-multi-titles-yt
     stage: active
     domains: [browser-extension, ux]
     stack: [javascript, webextensions]
@@ -84,7 +84,7 @@ projects:
       run: "project-specific"
   - id: fish-echo-alias
     path: projects/repos/fish-echo-alias
-    sourceRepo: https://github.com/Arzuparreta/fish-echo-alias
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/fish-echo-alias
     stage: active
     domains: [cli, shell, productivity]
     stack: [shell, fish]
@@ -96,7 +96,7 @@ projects:
       run: "project-specific"
   - id: soundsible-site
     path: projects/repos/soundsible-site
-    sourceRepo: https://github.com/Arzuparreta/soundsible.github.io
+    sourceRepo: https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible-site
     stage: active
     domains: [docs-site, web]
     stack: [astro, typescript]

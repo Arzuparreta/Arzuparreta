@@ -63,8 +63,8 @@ The upload file is **not stored in git** on purpose: it is generated from the tr
 **On your machine**
 
 ```bash
-git clone https://github.com/Arzuparreta/remove-multi-titles-yt.git
-cd remove-multi-titles-yt
+git clone https://github.com/Arzuparreta/Arzuparreta.git
+cd Arzuparreta/projects/repos/remove-multi-titles-yt
 npm ci
 npm run build:amo
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "soundsible.github.io",
+  "name": "soundsible-site",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arzuparreta/soundsible.github.io.git"
+    "url": "git+https://github.com/Arzuparreta/Arzuparreta.git"
   },
-  "homepage": "https://soundsible.github.io",
+  "homepage": "https://arzuparreta.github.io/",
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/dm-sans": "^5.2.8",

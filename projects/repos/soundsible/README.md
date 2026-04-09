@@ -1,7 +1,7 @@
-# [<img src="branding/logo-app.png" alt="Soundsible" width="52" height="52" align="center"> **Soundsible**](https://arzuparreta.github.io/soundsible.github.io/)
+# [<img src="branding/logo-app.png" alt="Soundsible" width="52" height="52" align="center"> **Soundsible**](https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible)
 
 <p align="left">
-  <a href="https://arzuparreta.github.io/soundsible.github.io/"><img src="https://img.shields.io/badge/Visit%20website-Soundsible-6366f1?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit Soundsible website"></a>
+  <a href="https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible"><img src="https://img.shields.io/badge/View%20project-Monorepo-6366f1?style=for-the-badge&logo=github&logoColor=white" alt="View Soundsible in monorepo"></a>
 </p>
 
 **Self-hosted music environment** — this repo is the full stack (Station UI, engine, tooling). Overview, screenshots, and product details are on the site linked above.
@@ -41,8 +41,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Arzuparreta/soundsible.git
-cd soundsible
+git clone https://github.com/Arzuparreta/Arzuparreta.git
+cd Arzuparreta/projects/repos/soundsible
 ```
 
 ### 2. Create a virtual environment
