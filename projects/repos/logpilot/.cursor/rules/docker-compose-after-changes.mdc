@@ -1,0 +1,57 @@
+---
+description: MUST rebuild Docker Compose after any change under runtime paths; mandatory verification
+alwaysApply: true
+---
+
+# Docker Compose rebuild (logpilot) — mandatory for agents
+
+Canonical pointer: **`docs/agents/INDEX.md`** (Docker section). This rule is **non-optional** whenever the conditions below are met.
+
+## When you MUST run Compose rebuild
+
+If **any** file you changed, added, or deleted in the task matches **any** of these paths (repo-root relative), you **MUST** run the commands in the next section **before** marking the task complete—**unless** Docker is unavailable in this environment (then say so explicitly; do not claim the rebuild ran).
+
+**Trigger paths (if in doubt, rebuild):**
+
+- `Dockerfile`, `docker-compose.yml`, `docker/**`
+- `pyproject.toml`, `uv.lock`, `poetry.lock`, `requirements*.txt` (if used by the image)
+- `alembic/**`
+- `logpilot/**`, `ingestor/**`, `query/**`, `embedder/**`, `db/**`
+- Any other file **copied into or used by** the runtime image or `entrypoint` (e.g. scripts invoked from `Dockerfile`)
+
+**Safe default:** If you are **unsure** whether a file affects the image or container behavior, **run the rebuild** rather than skipping.
+
+## Commands (repository root)
+
+```bash
+docker compose down
+docker compose up -d --build --remove-orphans
+```
+
+Wait until the command finishes. If healthchecks exist, **confirm** services are healthy (e.g. `docker compose ps`) when Docker is available.
+
+## When you MAY skip (strict allowlist only)
+
+You may skip **only** if **every** change in the task is confined to **one or more** of:
+
+- `docs/**` (documentation only)
+- `AGENTS.md`, `README.md` (content-only; no embedded runnable config that alters Compose)
+- `.cursor/**` (Cursor rules and IDE metadata)
+- `.github/**` (CI/workflows only—no app source)
+- Pure decision notes under `docs/decisions/**`
+
+Do **not** use “probably docs-only” as an excuse: if you touched **both** a trigger path and a doc, you **MUST** rebuild.
+
+## Completion requirement (every task)
+
+In your **final message to the user**, include **exactly one** of:
+
+1. **`Docker Compose:`** rebuilt (`docker compose …` as above), or  
+2. **`Docker Compose:`** skipped — no files under trigger paths were modified, or  
+3. **`Docker Compose:`** not run — Docker unavailable / not applicable here (explain briefly).
+
+Omitting this line is a **failed** follow-through for this rule.
+
+## If Docker is unavailable
+
+State that clearly. Do not imply containers were rebuilt.

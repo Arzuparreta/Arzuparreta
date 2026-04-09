@@ -1,0 +1,23 @@
+---
+description: Automate quality steps — MAINTAIN, make check, decisions, small tasks
+alwaysApply: true
+---
+
+# Agent automation (logpilot)
+
+Follow **[`docs/agents/AUTOMATION.md`](../../docs/agents/AUTOMATION.md)** in addition to **[`docs/agents/MAINTAIN.md`](../../docs/agents/MAINTAIN.md)**.
+
+## Before marking substantive work complete
+
+1. Apply the **MAINTAIN** matrix for every change category you touched.
+2. Run **`make check`** (or `PYTHON=.venv/bin/python make check` if needed).
+3. For **cross-cutting** design (architecture, safety boundary, new connector policy), add **`docs/decisions/NNN_….md`** (see [`docs/decisions/README.md`](../../docs/decisions/README.md)).
+4. For **roadmap / phase** changes, update **[`docs/plans/local-sysadmin-copilot-roadmap.md`](../../docs/plans/local-sysadmin-copilot-roadmap.md)** or the relevant plan under **`docs/plans/`**.
+
+## Task size
+
+Prefer **small, explicit tasks** (one concern) so checks and doc updates stay tractable.
+
+## Optional for the human
+
+Suggest **`make install-git-hooks`** once per clone so **`git push`** runs **`make check`** automatically (skip with `LOGPILOT_SKIP_HOOKS=1` if truly needed).
