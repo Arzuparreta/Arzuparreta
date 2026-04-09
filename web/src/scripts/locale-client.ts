@@ -150,13 +150,12 @@ function applySmallTool(article: HTMLElement, tool: SecondaryProject, githubCta:
 	const name = article.querySelector('.small-tool__name');
 	const tech = article.querySelector('.small-tool__tech');
 	const summary = article.querySelector('.small-tool__summary');
-	const githubBtn = article.querySelector<HTMLAnchorElement>('.small-tool__github-btn');
 	if (name) name.textContent = tool.title;
 	if (tech) tech.textContent = `${tool.tech}.`;
 	if (summary) summary.textContent = `${tool.summary} `;
-	if (githubBtn) {
-		githubBtn.setAttribute('aria-label', githubCta);
-		githubBtn.href = tool.repoUrl;
+	if (article instanceof HTMLAnchorElement && article.classList.contains('small-tool')) {
+		article.href = tool.repoUrl;
+		article.setAttribute('aria-label', `${tool.title} — ${githubCta}`);
 	}
 }
 

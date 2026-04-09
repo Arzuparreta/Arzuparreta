@@ -978,6 +978,7 @@ a.case__github-btn:focus-visible {
 
 .small-tool {
 	position: relative;
+	display: block;
 	border: 1px solid color-mix(in srgb, var(--border) 92%, var(--accent) 2%);
 	border-radius: 16px;
 	background: var(--surface);
@@ -985,10 +986,18 @@ a.case__github-btn:focus-visible {
 	box-shadow: var(--shadow-sm);
 	overflow: hidden;
 	isolation: isolate;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
 	transition:
 		transform 0.25s ease,
 		box-shadow 0.25s ease,
 		border-color 0.25s ease;
+}
+
+a.small-tool:focus-visible {
+	outline: 2px solid var(--focus-ring);
+	outline-offset: 2px;
 }
 
 .small-tool::before {
@@ -1036,7 +1045,7 @@ a.case__github-btn:focus-visible {
 	color: var(--text-muted);
 }
 
-a.small-tool__github-btn {
+.small-tool__github-mark {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -1048,23 +1057,15 @@ a.small-tool__github-btn {
 	border-radius: 8px;
 	background: color-mix(in srgb, var(--surface) 90%, var(--surface-elevated));
 	color: var(--text-muted);
-	text-decoration: none;
 	vertical-align: middle;
 	transition:
 		border-color 0.2s,
 		color 0.2s;
 }
 
-a.small-tool__github-btn:hover {
+a.small-tool:hover .small-tool__github-mark {
 	border-color: var(--accent);
 	color: var(--accent);
-}
-
-a.small-tool__github-btn:focus-visible {
-	border-color: var(--accent);
-	color: var(--accent);
-	outline: 2px solid var(--focus-ring);
-	outline-offset: 2px;
 }
 
 .small-tool__github-icon {

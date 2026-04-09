@@ -8,25 +8,27 @@ interface Props {
 }
 
 const { tool, githubCta } = Astro.props;
+const cardAriaLabel = `${tool.title} — ${githubCta}`;
 ---
 
-<article class="small-tool" id={tool.slug}>
+<a
+	class="small-tool"
+	id={tool.slug}
+	href={tool.repoUrl}
+	target="_blank"
+	rel="noopener noreferrer"
+	aria-label={cardAriaLabel}
+>
 	<p class="small-tool__line">
 		<span class="small-tool__name-row">
 			<strong class="small-tool__name">{tool.title}</strong>
-			<a
-				class="small-tool__github-btn"
-				href={tool.repoUrl}
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label={githubCta}
-			>
+			<span class="small-tool__github-mark" aria-hidden="true">
 				<GitHubIcon class="small-tool__github-icon" />
-			</a>
+			</span>
 		</span>
 		<span class="small-tool__sep" aria-hidden="true"> | </span>
 		<span class="small-tool__tech">{tool.tech}.</span>
 		{' '}
 		<span class="small-tool__summary">{tool.summary} </span>
 	</p>
-</article>
+</a>
