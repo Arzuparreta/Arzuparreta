@@ -1,20 +1,17 @@
-# Projects Workspace
+# Projects
 
-This directory mixes two concerns on purpose:
+This is the main project area.
 
-- `projects.json`: public portfolio project catalog consumed by the website.
-- `repos/`: imported standalone repositories integrated into this monorepo.
+- `repos/`: project code directories.
+- `projects.json`: public project catalog used by the portfolio.
 
-## Monorepo sync model
+## Working style
 
-- Upstream project repos are imported as subtrees into `projects/repos/<name>`.
-- Local monorepo improvements can be developed across multiple projects together.
-- If needed later, changes can be pushed back to standalone repos with `git subtree push`.
+- Keep one folder per project under `repos/`.
+- Keep public-facing project metadata in `projects.json`.
+- Prefer clear project-level `README.md` files with links to related projects.
 
-## Adding another repository
+## Related pages
 
-Use:
-
-`git subtree add --prefix="projects/repos/<name>" "https://github.com/<owner>/<repo>.git" main --squash`
-
-Then register metadata in `catalog/projects.yaml`.
+- [`../knowledge/README.md`](../knowledge/README.md)
+- [`../automation/README.md`](../automation/README.md)

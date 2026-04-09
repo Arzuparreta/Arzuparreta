@@ -9,11 +9,10 @@ For projects, stack, and the tidier story, tap through below.
   <a href="mailto:rubenpenarubio02@gmail.com">Email</a>
 </p>
 
-## Lab Monorepo Model
+## Navigate this space
 
-This repository now acts as a catalog-first personal lab monorepo.
-
-- Projects are integrated in `projects/repos/` as subtrees from standalone repositories.
-- Classification is metadata-driven in `catalog/projects.yaml` and `catalog/taxonomy.yaml`.
-- New project kinds are added by extending taxonomy tags and profiles, not by redesigning folders.
-- Cross-project tooling belongs in `platform/`; homelab and ops definitions belong in `systems/`.
+- [`projects/`](projects/README.md): active and archived code projects.
+- [`knowledge/`](knowledge/README.md): notes, decisions, runbooks, and generated maps.
+- [`automation/`](automation/README.md): scripts, templates, and workflows that keep this repo organized.
+- [`cv/`](cv/README.md): public resume material.
+- [`web/`](web/README.md): portfolio website source.

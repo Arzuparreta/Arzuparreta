@@ -2,7 +2,7 @@
 
 Marketing site for [Soundsible](https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible).
 
-This app now lives inside the `Arzuparreta` monorepo at `projects/repos/soundsible-site`.
+This app lives in this repository at `projects/repos/soundsible-site`.
 The public entry point is the portfolio site at `https://arzuparreta.github.io/`.
 
 ## Stack

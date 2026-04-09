@@ -1,6 +1,6 @@
 # Catalog
 
-This catalog is the monorepo source of truth.
+This catalog is the source of truth for project metadata.
 
 ## Purpose
 
