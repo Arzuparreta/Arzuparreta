@@ -45,11 +45,16 @@ git clone https://github.com/Arzuparreta/Arzuparreta.git
 cd Arzuparreta/projects/repos/soundsible
 ```
 
-### 2. Create a virtual environment
+### 2. First run (recommended, self-healing)
 
 ```bash
-python3 -m venv venv
+python3 run.py
 ```
+
+This command now bootstraps automatically on fresh clones:
+- creates `./venv` if missing
+- installs/updates `requirements.txt`
+- starts the launcher/CLI flow
 
 If `python3` is missing, install from [python.org](https://www.python.org/downloads/) or your package manager, for example:
 
@@ -57,19 +62,13 @@ If `python3` is missing, install from [python.org](https://www.python.org/downlo
 sudo apt install python3 python3-venv python3-pip
 ```
 
-### 3. Install Python dependencies
-
-```bash
-./venv/bin/pip install -r requirements.txt
-```
-
 **Windows (PowerShell):**
 
 ```powershell
-venv\Scripts\pip.exe install -r requirements.txt
+python run.py
 ```
 
-### 4. Run Soundsible
+### 3. Run Soundsible
 
 **Launcher (recommended)** — from the project root, using the venv’s Python:
 
@@ -86,7 +85,7 @@ venv\Scripts\pip.exe install -r requirements.txt
 **CLI / SSH** — alternative when you prefer a terminal menu:
 
 ```bash
-./venv/bin/python run.py
+python3 run.py
 ```
 
 - Choose **Start Station Engine & Open Station**.
@@ -98,6 +97,17 @@ Remote access over [Tailscale](https://tailscale.com/): use **http://\<your-tail
 **Native share** (the device share sheet on iOS/Android for WhatsApp, Messages, etc.) needs a **secure context**: use **HTTPS** or open the player as **`http://localhost`**. Over plain HTTP using the server’s LAN address, browsers usually block **Web Share**; the player still copies the YouTube link.
 
 The player UI adapts to desktop and mobile layouts.
+
+### 4. Troubleshooting fresh clone errors
+
+If you moved/re-cloned the repo and hit dependency errors (for example `ModuleNotFoundError: gevent`), run:
+
+```bash
+rm -rf venv
+python3 run.py
+```
+
+This forces a clean bootstrap and dependency reinstall for the new clone location.
 
 ### Install as a web app (PWA)
 

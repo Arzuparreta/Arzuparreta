@@ -9,38 +9,47 @@ import subprocess
 import hashlib
 from pathlib import Path
 import platform
-_run_dir = Path(__file__).resolve().parent
-_venv = _run_dir / "venv"
-if _venv.exists():
-    import site
-    _sp = _venv / ("Lib/site-packages" if platform.system() == "Windows" else f"lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages")
-    if _sp.exists():
-        site.addsitedir(str(_sp))
-    # Note: Install/update requirements (including gevent) before importing gevent, so first-time run works.
-    _req_file = _run_dir / "requirements.txt"
-    _marker = _venv / ".installed_requirements_hash"
-    _py = _venv / ("Scripts/python.exe" if platform.system() == "Windows" else "bin/python")
-    if _req_file.exists() and _py.exists():
-        _current_hash = hashlib.md5(_req_file.read_bytes()).hexdigest()
-        if not _marker.exists() or _marker.read_text() != _current_hash:
+# Note: Gevent monkey-patching must happen early, but only after deps are ensured.
+def _ensure_bootstrap_before_gevent():
+    """Create venv and install requirements before importing gevent.
+
+    Fresh clones may not have a venv yet; importing gevent before bootstrap would
+    fail with ModuleNotFoundError and prevent self-healing.
+    """
+    root_dir = Path(__file__).resolve().parent
+    venv_dir = root_dir / "venv"
+    py = venv_dir / ("Scripts/python.exe" if platform.system() == "Windows" else "bin/python")
+    req_file = root_dir / "requirements.txt"
+    marker = venv_dir / ".installed_requirements_hash"
+
+    if not venv_dir.exists():
+        print("Creating virtual environment...")
+        subprocess.check_call([sys.executable, "-m", "venv", str(venv_dir)])
+
+    if req_file.exists() and py.exists():
+        current_hash = hashlib.md5(req_file.read_bytes()).hexdigest()
+        if not marker.exists() or marker.read_text() != current_hash:
             print("Installing/Updating requirements...")
-            _r = subprocess.run([str(_py), "-m", "pip", "install", "-r", str(_req_file)], capture_output=True, text=True)
-            if _r.returncode != 0:
-                print("Requirement installation failed:", _r.stderr or _r.stdout)
+            result = subprocess.run([str(py), "-m", "pip", "install", "-r", str(req_file)], capture_output=True, text=True)
+            if result.returncode != 0:
+                print("Requirement installation failed:", result.stderr or result.stdout)
                 sys.exit(1)
-            _marker.write_text(_current_hash)
-        # Note: If critical deps are broken (e.g. user removed yt-dlp), reinstall on every start.
-        # Note: Use subprocess so we don't import yt_dlp/urllib3/ssl here; gevent must monkey-patch before those.
-        _r = subprocess.run([str(_py), "-c", "import yt_dlp"], capture_output=True, text=True)
-        if _r.returncode != 0:
-            print("Dependencies missing or broken (e.g. yt-dlp). Reinstalling...")
-            _marker.unlink(missing_ok=True)
-            _r = subprocess.run([str(_py), "-m", "pip", "install", "-r", str(_req_file)], capture_output=True, text=True)
-            if _r.returncode != 0:
-                print("Reinstall failed:", _r.stderr or _r.stdout)
-                sys.exit(1)
-            _marker.write_text(_current_hash)
-# Note: Gevent must patch before any other imports that use socket/threading (so the API can handle multiple requests concurrently)
+            marker.write_text(current_hash)
+
+    # Ensure the current interpreter can import packages installed in ./venv.
+    import site
+    venv_site = venv_dir / (
+        "Lib/site-packages"
+        if platform.system() == "Windows"
+        else f"lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages"
+    )
+    if venv_site.exists():
+        site.addsitedir(str(venv_site))
+
+
+_ensure_bootstrap_before_gevent()
+
+# Note: Gevent must patch before imports that use socket/threading.
 from gevent import monkey
 monkey.patch_all()
 
@@ -86,26 +95,8 @@ def _kill_station_process(port: int = STATION_PORT) -> tuple[bool, str]:
 
 
 def bootstrap():
-    """Ensure we are running inside the virtual environment."""
-    if not VENV_DIR.exists():
-        print("Creating virtual environment...")
-        subprocess.check_call([sys.executable, "-m", "venv", str(VENV_DIR)])
-        
-    # Note: Instead of re-executing, we can "activate" the venv in-process for the initial setup
-    venv_site_packages = VENV_DIR / ("Lib/site-packages" if platform.system() == "Windows" else f"lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages")
-    
-    if str(venv_site_packages) not in sys.path:
-        import site
-        site.addsitedir(str(venv_site_packages))
-        
-    # Note: Install basic deps if missing
-    try:
-        import rich
-        import requests
-    except ImportError:
-        print("Installing core dependencies (rich, requests)...")
-        subprocess.check_call([str(PYTHON_EXE), "-m", "pip", "install", "rich", "requests"], 
-                              stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    """Unified bootstrap entry point kept for backward compatibility."""
+    _ensure_bootstrap_before_gevent()
 
 if __name__ == "__main__":
     bootstrap()
@@ -118,7 +109,6 @@ try:
     from rich.prompt import Prompt
     from rich.table import Table
     from rich.live import Live
-    from rich.text import Text
 except ImportError:
     print("Error: 'rich' library not found even after bootstrap.")
     sys.exit(1)
@@ -374,40 +364,7 @@ class SoundsibleLauncher:
             self.show_menu()
 
     def _install_requirements_if_needed(self):
-        req_file = self.root_dir / "requirements.txt"
-        marker = self.venv_dir / ".installed_requirements_hash"
-        if req_file.exists():
-            import hashlib
-            current_hash = hashlib.md5(req_file.read_bytes()).hexdigest()
-            if not marker.exists() or marker.read_text() != current_hash:
-                console.print("[cyan]Installing/Updating requirements...[/cyan]")
-                result = subprocess.run([str(self.python_exe), "-m", "pip", "install", "-r", str(req_file)],
-                                      capture_output=True, text=True)
-                
-                if result.returncode != 0:
-                    error_panel = Panel(
-                        Text.from_markup(f"[bold red]Requirement Installation Failed![/bold red]\n\n"
-                                         f"[yellow]Command:[/yellow] {' '.join(result.args)}\n\n"
-                                         f"[bold white]Error Output:[/bold white]\n{result.stderr}"),
-                        title="Bootstrap Error",
-                        border_style="red"
-                    )
-                    console.print(error_panel)
-                    sys.exit(1)
-                    
-                marker.write_text(current_hash)
-            # Note: If critical deps are broken (e.g. user removed yt-dlp), reinstall on every start
-            try:
-                import yt_dlp  # noqa: F401
-            except ImportError:
-                console.print("[cyan]Dependencies missing or broken. Reinstalling...[/cyan]")
-                marker.unlink(missing_ok=True)
-                result = subprocess.run([str(self.python_exe), "-m", "pip", "install", "-r", str(req_file)],
-                                       capture_output=True, text=True)
-                if result.returncode != 0:
-                    console.print("[red]Reinstall failed:[/red]", result.stderr or result.stdout)
-                    sys.exit(1)
-                marker.write_text(current_hash)
+        _ensure_bootstrap_before_gevent()
 
 if __name__ == "__main__":
     launcher = SoundsibleLauncher()
