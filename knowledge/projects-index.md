@@ -13,7 +13,6 @@ Auto-generated from `projects/projects.json`.
 
 ## Secondary
 
-- **brain**
 - **remove-multi-titles-yt** - [open](https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/remove-multi-titles-yt)
 - **fish-echo-alias** - [open](https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/fish-echo-alias)
 
