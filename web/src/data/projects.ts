@@ -1,13 +1,13 @@
 /**
- * Technical projects — narratives loaded directly from monorepo `projects/projects.json`.
- * https://github.com/Arzuparreta
+ * Technical projects metadata loaded from `projects/projects.json` in the hub repo.
+ * Standalone source code lives in dedicated project repositories.
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Locale } from '../i18n/config';
 
 /**
- * Canonical file lives next to `web/` at `projects/projects.json`.
+ * Canonical metadata file lives next to `web/` at `projects/projects.json`.
  * Use cwd (always `web/` for `npm run dev` / `build` here), not `import.meta.url` — bundled prerender chunks would resolve the wrong directory.
  */
 function projectsJsonPath(): string {

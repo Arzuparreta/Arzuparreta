@@ -1,6 +1,6 @@
 I build and maintain small self-hosted tools for real daily use.
 
-This repository is a focused monorepo for my public portfolio and project catalog.
+This repository is my professional hub (not a code monorepo): landing page, CV, and project metadata that power my public portfolio.
 
 <p align="center">
   <a href="https://arzuparreta.github.io/">Portfolio</a> ·
@@ -11,10 +11,11 @@ This repository is a focused monorepo for my public portfolio and project catalo
 
 ### Repository structure
 
-- [`projects/`](projects/README.md): active and archived code projects.
+- [`projects/`](projects/README.md): metadata catalog for standalone repositories.
 - [`cv/`](cv/README.md): public resume material.
 - [`web/`](web/README.md): portfolio website source.
 
 ### How it fits together
 
 `projects/projects.json` is the canonical project catalog, and `web/` reads it to render the portfolio.
+Project source code lives in dedicated standalone repositories under the `Arzuparreta` GitHub account.

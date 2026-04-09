@@ -1,6 +1,0 @@
-data/
-library/
-web/node_modules/
-web/dist/
-.gocache/
-.gopath/
