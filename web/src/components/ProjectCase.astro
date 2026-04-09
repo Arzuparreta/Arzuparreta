@@ -76,16 +76,36 @@ const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
 		}
 	</div>
 	{
-		project.imageSrc && (
-			<figure class="case__media">
-				<img
-					class="case__img"
-					src={project.imageSrc}
-					alt={imgAlt}
-					loading="lazy"
-					decoding="async"
-				/>
-			</figure>
-		)
+		project.imageSrc &&
+			(caseNavUrl ? (
+				<a
+					class="case__media-link"
+					href={caseNavUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<figure class="case__media">
+						<img
+							class="case__img"
+							src={project.imageSrc}
+							alt={imgAlt}
+							loading="lazy"
+							decoding="async"
+							draggable="false"
+						/>
+					</figure>
+				</a>
+			) : (
+				<figure class="case__media">
+					<img
+						class="case__img"
+						src={project.imageSrc}
+						alt={imgAlt}
+						loading="lazy"
+						decoding="async"
+						draggable="false"
+					/>
+				</figure>
+			))
 	}
 </article>

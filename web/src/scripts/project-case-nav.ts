@@ -1,8 +1,8 @@
 /**
- * Opens project URLs when clicking card backgrounds (not links or buttons).
- * Primary cases: projectSiteUrl when set, otherwise repoUrl (`data-case-nav-url`).
- * Smaller tools: repository (`data-tool-repo-url`).
- * Uses delegation on `#projects` so locale updates to `dataset.*` apply without rebinding.
+ * Opens the primary case card’s main external URL when clicking “empty” areas
+ * (not links or buttons). URL is projectSiteUrl when set, otherwise repoUrl.
+ * Uses delegation on `#projects` so `data-case-nav-url` updates from locale switching apply without rebinding.
+ * The media column uses a real `<a>` (see ProjectCase.astro) so logos/screenshots open without relying on this.
  */
 export function initProjectCaseNav(): void {
 	const section = document.getElementById('projects');
@@ -16,15 +16,7 @@ export function initProjectCaseNav(): void {
 
 		const caseEl = target.closest<HTMLElement>('.case');
 		const caseUrl = caseEl?.dataset.caseNavUrl;
-		if (caseUrl) {
-			window.open(caseUrl, '_blank', 'noopener,noreferrer');
-			return;
-		}
-
-		const toolEl = target.closest<HTMLElement>('.small-tool');
-		const repoUrl = toolEl?.dataset.toolRepoUrl;
-		if (repoUrl) {
-			window.open(repoUrl, '_blank', 'noopener,noreferrer');
-		}
+		if (!caseUrl) return;
+		window.open(caseUrl, '_blank', 'noopener,noreferrer');
 	});
 }

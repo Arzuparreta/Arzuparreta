@@ -784,6 +784,21 @@ h3 {
 	}
 }
 
+a.case__media-link {
+	display: block;
+	width: fit-content;
+	max-width: 100%;
+	margin-inline: auto;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 12px;
+	outline-offset: 3px;
+}
+
+a.case__media-link:focus-visible {
+	outline: 2px solid var(--focus-ring);
+}
+
 .case__media {
 	margin: 0;
 	border: 1px solid color-mix(in srgb, var(--border) 85%, var(--accent) 6%);
@@ -807,6 +822,11 @@ h3 {
 }
 
 /* Square app icons only (see projects.json imagePresentation: logo) */
+.case--media-logo a.case__media-link {
+	width: 100%;
+	max-width: 11rem;
+}
+
 .case--media-logo .case__media {
 	width: 100%;
 	max-width: 11rem;

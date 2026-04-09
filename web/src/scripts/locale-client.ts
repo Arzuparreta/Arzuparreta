@@ -144,6 +144,11 @@ function applyPrimaryCase(
 	} else {
 		delete article.dataset.caseNavUrl;
 	}
+
+	const mediaLink = article.querySelector<HTMLAnchorElement>('a.case__media-link');
+	if (mediaLink && navUrl) {
+		mediaLink.href = navUrl;
+	}
 }
 
 function applySmallTool(article: HTMLElement, tool: SecondaryProject, githubCta: string): void {
