@@ -78,13 +78,6 @@
 			"imagePresentation": "logo"
 		},
 		{
-			"slug": "brain",
-			"title": "brain",
-			"tech": "Python",
-			"summary": "Minimal terminal tool to add, edit, and list Markdown notes in one folder—plain Python, no install beyond the interpreter.",
-			"tier": "secondary"
-		},
-		{
 			"slug": "remove-multi-titles-yt",
 			"title": "remove-multi-titles-yt",
 			"tech": "JavaScript, WebExtensions",
@@ -177,13 +170,6 @@
 			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/kitchen-clock",
 			"imageSrc": "/images/projects/kitchen-clock-icon.png",
 			"imagePresentation": "logo"
-		},
-		{
-			"slug": "brain",
-			"title": "Brain",
-			"tech": "Python",
-			"summary": "Herramienta de terminal mínima en Python para crear, editar y listar notas Markdown en una carpeta—sin dependencias externas.",
-			"tier": "secondary"
 		},
 		{
 			"slug": "remove-multi-titles-yt",
