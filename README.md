@@ -1,6 +1,6 @@
-I've been hooked on computers and hardware for about as long as I can remember. These days, that mostly means maintaining a homelab I actually use every day, in which I generally deploy containerized small tools that solve my inmediate problems. I was trained as a classical trombonist, so my head lives happily between scores and shell prompts.
+I build and maintain small self-hosted tools for real daily use.
 
-For projects, stack, and the tidier story, tap through below.
+This repository is a focused monorepo for my public portfolio and project catalog.
 
 <p align="center">
   <a href="https://arzuparreta.github.io/">Portfolio</a> ·
@@ -9,8 +9,12 @@ For projects, stack, and the tidier story, tap through below.
   <a href="mailto:rubenpenarubio02@gmail.com">Email</a>
 </p>
 
-### This is my monorepo:
+### Repository structure
 
 - [`projects/`](projects/README.md): active and archived code projects.
 - [`cv/`](cv/README.md): public resume material.
 - [`web/`](web/README.md): portfolio website source.
+
+### How it fits together
+
+`projects/projects.json` is the canonical project catalog, and `web/` reads it to render the portfolio.
