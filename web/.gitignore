@@ -1,6 +1,6 @@
 # Copied from monorepo ../cv/CV.md by scripts/ensure-cv.mjs
 public/resume/CV.md
-# Copied from monorepo ../projects/projects.json by scripts/ensure-projects.mjs
+# Optional local artifact from previous workflows (kept ignored if generated manually)
 public/data/projects.json
 
 # build output
