@@ -1,0 +1,96 @@
+---
+import { publicAsset } from "../public-asset";
+
+const desktop = {
+  src: publicAsset("/screenshots/desktop-player-dark.png"),
+  alt: "Soundsible desktop player with dark theme showing library and playback",
+  caption: "Station — desktop",
+};
+const mobile = [
+  {
+    src: publicAsset("/screenshots/mobile-yt-search.PNG"),
+    alt: "YouTube and YouTube Music search on Soundsible mobile",
+    cap: "YouTube & YouTube Music",
+  },
+  {
+    src: publicAsset("/screenshots/mobile-now-playing.PNG"),
+    alt: "Now playing screen on mobile",
+    cap: "Now playing",
+  },
+  {
+    src: publicAsset("/screenshots/mobile-songs-library.PNG"),
+    alt: "Songs library on mobile",
+    cap: "Library",
+  },
+] as const;
+---
+
+<section
+  class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8"
+  aria-labelledby="showcase-heading"
+>
+  <div data-reveal class="text-center">
+    <h2
+      id="showcase-heading"
+      class="font-display text-3xl font-semibold tracking-tight text-main sm:text-4xl"
+    >
+      Built for daily listening
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-dim">
+      The same interface scales from your desk to your phone: add tracks from YouTube and YouTube Music on their own screens, then browse and search your library separately—in dark-first layouts built for big collections.
+    </p>
+  </div>
+
+  <div data-reveal class="mt-14 space-y-8">
+    <figure
+      class="overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-card/60 shadow-card backdrop-blur-sm"
+    >
+      <img
+        src={desktop.src}
+        alt={desktop.alt}
+        width="1200"
+        height="675"
+        class="h-auto w-full object-cover object-top"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption
+        class="min-w-0 truncate border-t border-[var(--glass-border)] px-4 py-3 text-center text-sm text-dim"
+      >
+        {desktop.caption}
+      </figcaption>
+    </figure>
+
+    <div
+      class="flex flex-row items-start justify-center gap-3 sm:gap-5 md:gap-6"
+      role="group"
+      aria-label="Mobile app screenshots"
+    >
+      {
+        mobile.map((m, i) => (
+          <figure
+            class:list={[
+              "min-w-0 flex-1 overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-card/60 shadow-card backdrop-blur-sm",
+              i === 0 && "hidden sm:block",
+            ]}
+          >
+            <img
+              src={m.src}
+              alt={m.alt}
+              width="390"
+              height="844"
+              class="h-auto w-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption
+              class="min-w-0 truncate border-t border-[var(--glass-border)] px-4 py-3 text-center text-sm text-dim"
+            >
+              {m.cap}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+---
+import { REPO_URL, DOCS_INSTALL_URL } from "../constants";
+
+const steps = String.raw`git clone https://github.com/Arzuparreta/soundsible.git
+cd soundsible
+python3 -m venv venv
+./venv/bin/pip install -r requirements.txt
+./venv/bin/python start_launcher.py`;
+---
+
+<section
+  class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8"
+  aria-labelledby="quickstart-heading"
+>
+  <div class="grid min-w-0 gap-12 lg:grid-cols-2 lg:items-center">
+    <div data-reveal class="min-w-0">
+      <h2
+        id="quickstart-heading"
+        class="font-display text-3xl font-semibold tracking-tight text-main sm:text-4xl"
+      >
+        Up and listening in minutes
+      </h2>
+      <p class="mt-4 text-lg text-dim">
+        You need <strong class="font-medium text-main">Python 3.10+</strong>, <strong class="font-medium text-main">FFmpeg</strong>, and <strong class="font-medium text-main">git</strong>. Then clone, install dependencies, and launch the ecosystem from the project root.
+      </p>
+      <p class="mt-4 text-dim">
+        On Windows, use <code class="rounded bg-card px-1.5 py-0.5 text-sm text-main">venv\\Scripts\\python.exe</code> instead of <code class="rounded bg-card px-1.5 py-0.5 text-sm text-main">./venv/bin/python</code>.
+      </p>
+      <p class="mt-6">
+        <a
+          href={DOCS_INSTALL_URL}
+          class="font-semibold text-secondary underline decoration-secondary/40 underline-offset-4 transition hover:decoration-secondary"
+        >
+          Advanced install: Tailscale, headless, storage backends →
+        </a>
+      </p>
+    </div>
+
+    <div data-reveal class="relative min-w-0">
+      <div
+        class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/25 via-transparent to-secondary/20 opacity-80 blur-xl"
+        aria-hidden="true"
+      />
+      <div
+        class="relative min-w-0 overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[#0d0d0f] shadow-card"
+      >
+        <div
+          class="flex items-center gap-2 border-b border-[var(--glass-border)] px-4 py-3"
+        >
+          <span class="h-3 w-3 rounded-full bg-[#ff5f57]" aria-hidden="true"
+          ></span>
+          <span class="h-3 w-3 rounded-full bg-[#febc2e]" aria-hidden="true"
+          ></span>
+          <span class="h-3 w-3 rounded-full bg-[#28c840]" aria-hidden="true"
+          ></span>
+          <span class="ml-3 text-xs text-dim">terminal</span>
+        </div>
+        <pre
+          class="min-w-0 overflow-x-auto p-4 font-mono text-[0.8rem] leading-relaxed text-main sm:text-sm"
+          tabindex="0"><code>{steps}</code></pre>
+        <div
+          class="border-t border-[var(--glass-border)] bg-card/50 px-4 py-3 text-sm text-dim"
+        >
+          Open <span class="font-medium text-accent">http://localhost:5099</span> and choose <strong class="text-main">Launch Ecosystem</strong>. Keep that terminal open while you listen.
+        </div>
+      </div>
+      <p class="mt-4 text-center text-sm text-dim">
+        Full source on{" "}
+        <a
+          href={REPO_URL}
+          class="font-medium text-secondary hover:underline"
+        >
+          GitHub
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
