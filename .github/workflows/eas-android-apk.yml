@@ -1,0 +1,105 @@
+# Builds Android APK on EAS, downloads it, uploads a workflow artifact, and publishes a GitHub pre-release with the APK.
+# Requires: repository secret EXPO_TOKEN — create at https://expo.dev (Access tokens). Never commit the token.
+# Requires: expo.extra.eas.projectId in app.json (run `npx eas-cli init` once locally and commit the change).
+
+name: EAS Android APK
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "app/**"
+      - "src/**"
+      - "assets/**"
+      - "app.json"
+      - "eas.json"
+      - "package.json"
+      - "package-lock.json"
+      - "babel.config.js"
+      - "tsconfig.json"
+      - ".github/workflows/eas-android-apk.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: eas-android-apk-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and upload APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+          packager: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: EAS build (wait for APK)
+        id: eas
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          eas build -p android --profile preview --non-interactive --wait --json > build-result.json
+          URL=$(jq -r '(if type == "array" then .[0] else . end) | .artifacts.applicationArchiveUrl // empty' build-result.json)
+          if [ -z "$URL" ] || [ "$URL" = "null" ]; then
+            echo "::error::Could not read applicationArchiveUrl from EAS output"
+            cat build-result.json
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Download URL obtained (not printed; use artifact below)."
+
+      - name: Download APK
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          URL: ${{ steps.eas.outputs.url }}
+        run: |
+          set -euo pipefail
+          # EAS often returns a presigned URL (plain curl). If that fails, retry with token.
+          if ! curl -fsSL -o "kitchen-clock-preview.apk" "$URL"; then
+            curl -fsSL -H "Authorization: Bearer ${EXPO_TOKEN}" -o "kitchen-clock-preview.apk" "$URL"
+          fi
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kitchen-clock-android-apk
+          path: kitchen-clock-preview.apk
+          if-no-files-found: error
+
+      - name: Publish GitHub pre-release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: android-preview-r${{ github.run_id }}
+          name: Kitchen Clock — Android preview (#${{ github.run_number }})
+          prerelease: true
+          generate_release_notes: true
+          files: kitchen-clock-preview.apk
+          body: |
+            EAS **preview** APK (`preview` profile in `eas.json`). For internal testing only.
+
+            - **Commit:** `${{ github.sha }}`
+            - Tester notes: see `ANDROID_APK.md` in the repo.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
