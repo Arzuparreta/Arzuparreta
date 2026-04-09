@@ -1,4 +1,4 @@
-# Landing site (Astro)
+# Landing site 
 
 Published at [arzuparreta.github.io](https://arzuparreta.github.io/).
 
