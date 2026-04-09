@@ -23,6 +23,7 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible",
+			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
 			"imageSrc": "/images/projects/soundsible-icon.jpg",
 			"imagePresentation": "logo"
 		},
@@ -117,6 +118,7 @@
 			],
 			"tier": "primary",
 			"repoUrl": "https://github.com/Arzuparreta/Arzuparreta/tree/main/projects/repos/soundsible",
+			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
 			"imageSrc": "/images/projects/soundsible-icon.jpg",
 			"imagePresentation": "logo"
 		},
