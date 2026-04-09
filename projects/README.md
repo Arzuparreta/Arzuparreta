@@ -13,5 +13,4 @@ This is the main project area.
 
 ## Related pages
 
-- [`../knowledge/README.md`](../knowledge/README.md)
 - [`../automation/README.md`](../automation/README.md)

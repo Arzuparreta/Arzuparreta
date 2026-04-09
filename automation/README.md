@@ -9,12 +9,9 @@ This area is for maintenance helpers used by you and coding agents.
 
 ## What is automated
 
-- Project index generation from `projects/projects.json`.
-- Internal link map generation across core sections.
-- Workflow-based auto-refresh of generated knowledge pages.
+- Project metadata maintenance and publishing support.
 
 ## Related pages
 
 - [`../README.md`](../README.md)
 - [`../projects/README.md`](../projects/README.md)
-- [`../knowledge/README.md`](../knowledge/README.md)

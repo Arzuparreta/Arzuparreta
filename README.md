@@ -12,7 +12,6 @@ For projects, stack, and the tidier story, tap through below.
 ## Navigate this space
 
 - [`projects/`](projects/README.md): active and archived code projects.
-- [`knowledge/`](knowledge/README.md): notes, decisions, runbooks, and generated maps.
 - [`automation/`](automation/README.md): scripts, templates, and workflows that keep this repo organized.
 - [`cv/`](cv/README.md): public resume material.
 - [`web/`](web/README.md): portfolio website source.
