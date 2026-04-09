@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "description": "Broad homelab + server suite: hardware probes, systemd services, Docker, journals, Linux errors, reboots, and edge-case phrasing to stress every allowlisted evidence path.",
+  "items": [
+    {
+      "id": "disk_space_any",
+      "question": "Is my disk running out of space anywhere on this system?",
+      "tags": [
+        "disk",
+        "homelab"
+      ]
+    },
+    {
+      "id": "disk_root_full",
+      "question": "How full is the root filesystem and should I worry?",
+      "tags": [
+        "disk"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "docker_restart_storm",
+      "question": "Which Docker containers restarted a lot recently and what do the logs say?",
+      "tags": [
+        "docker"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "docker_container_errors",
+      "question": "Show me errors from my Docker containers in the last few hours.",
+      "tags": [
+        "docker"
+      ],
+      "since": "6h"
+    },
+    {
+      "id": "nginx_5xx",
+      "question": "Are there any 5xx errors from nginx in the logs?",
+      "tags": [
+        "web",
+        "nginx"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "apache_errors",
+      "question": "Did Apache httpd log any errors today?",
+      "tags": [
+        "web"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "ssh_bruteforce",
+      "question": "Do the logs show SSH brute-force or repeated failed logins?",
+      "tags": [
+        "security",
+        "ssh"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "sudo_denied",
+      "question": "Were there failed sudo attempts or permission denials?",
+      "tags": [
+        "security",
+        "auth"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "systemd_unit_failed",
+      "question": "What systemd units failed to start recently?",
+      "tags": [
+        "systemd"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "kernel_panic_oops",
+      "question": "Any kernel oops, panic, or BUG messages recently?",
+      "tags": [
+        "kernel"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "oom_killer",
+      "question": "Was the OOM killer invoked and which process was killed?",
+      "tags": [
+        "memory"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "postgres_errors",
+      "question": "PostgreSQL errors or connection failures in the logs?",
+      "tags": [
+        "database"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "mysql_mariadb_errors",
+      "question": "MySQL or MariaDB errors in the last day?",
+      "tags": [
+        "database"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "redis_errors",
+      "question": "Redis connection or startup errors?",
+      "tags": [
+        "database",
+        "cache"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "tls_cert_problems",
+      "question": "TLS certificate expiry or handshake errors mentioned in logs?",
+      "tags": [
+        "tls"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "cron_failures",
+      "question": "Did any cron jobs fail or produce error output?",
+      "tags": [
+        "cron"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "backup_job_failed",
+      "question": "Signs that a backup or rsync job failed?",
+      "tags": [
+        "ops"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "mdadm_raid",
+      "question": "RAID or mdadm events or disk degradation warnings?",
+      "tags": [
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "zfs_events",
+      "question": "ZFS pool or scrub errors in the logs?",
+      "tags": [
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "network_drop",
+      "question": "Network disconnects or carrier loss events?",
+      "tags": [
+        "network"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "dhcp_dns_issues",
+      "question": "DHCP or DNS resolution problems on this host?",
+      "tags": [
+        "network"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "nftables_iptables",
+      "question": "Firewall drops or iptables/nftables denials?",
+      "tags": [
+        "security",
+        "network"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "apt_dpkg_errors",
+      "question": "apt or dpkg errors during package operations?",
+      "tags": [
+        "packages"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "dnf_yum_errors",
+      "question": "dnf/yum package errors if this were a RHEL-style box?",
+      "tags": [
+        "packages"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "last_reboot_why",
+      "question": "When did the system last reboot and is there a reason in the logs?",
+      "tags": [
+        "reboot"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "unexpected_shutdown",
+      "question": "Evidence of unexpected shutdown or power loss?",
+      "tags": [
+        "reboot",
+        "hardware"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "user_logins",
+      "question": "Who logged in to this system recently (successful logins)?",
+      "tags": [
+        "auth"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "fail2ban_activity",
+      "question": "fail2ban bans or jail actions in the logs?",
+      "tags": [
+        "security"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "mail_queue_errors",
+      "question": "Mail server (postfix/exim) errors or queue problems?",
+      "tags": [
+        "mail"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "smtp_tls_errors",
+      "question": "SMTP TLS or STARTTLS failures?",
+      "tags": [
+        "mail"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "reverse_proxy_upstream",
+      "question": "Upstream connection errors behind a reverse proxy?",
+      "tags": [
+        "web"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "letsencrypt_acme",
+      "question": "Let's Encrypt certbot or ACME renewal failures?",
+      "tags": [
+        "tls",
+        "ops"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "swap_pressure",
+      "question": "Signs of heavy swap use or memory pressure?",
+      "tags": [
+        "memory"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "load_average_high",
+      "question": "Periods of very high load average and what was running?",
+      "tags": [
+        "performance"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "disk_io_errors",
+      "question": "Disk I/O errors, SCSI/NVMe medium errors, or I/O timeouts?",
+      "tags": [
+        "storage",
+        "hardware"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "readonly_remount",
+      "question": "Filesystem remounted read-only or ext4/btrfs errors?",
+      "tags": [
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "systemd_timer_missed",
+      "question": "systemd timers that failed or missed runs?",
+      "tags": [
+        "systemd"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "journal_priority_err",
+      "question": "journal-level err or crit messages in the last 24 hours?",
+      "tags": [
+        "journal"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "container_healthcheck",
+      "question": "Docker healthcheck failures for any service?",
+      "tags": [
+        "docker"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "gpu_xid_nvidia",
+      "question": "NVIDIA Xid GPU errors or driver resets in logs?",
+      "tags": [
+        "gpu"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "gpu_rocm_errors",
+      "question": "AMD ROCm or GPU-related errors?",
+      "tags": [
+        "gpu"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "thermal_throttle",
+      "question": "CPU thermal throttling or temperature warnings?",
+      "tags": [
+        "hardware"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "ntp_time_sync",
+      "question": "NTP or time synchronization problems?",
+      "tags": [
+        "time"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "nfs_stale_mount",
+      "question": "NFS stale file handle or mount errors?",
+      "tags": [
+        "network",
+        "storage"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "samba_cifs_errors",
+      "question": "Samba or CIFS authentication or mount errors?",
+      "tags": [
+        "network",
+        "storage"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "under_attack_signals",
+      "question": "Do logs suggest this host is under attack or being scanned?",
+      "tags": [
+        "security"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "before_outage",
+      "question": "What errors appeared right before the last service outage window I care about?",
+      "tags": [
+        "ops"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "ssl_handshake_failures",
+      "question": "SSL/TLS handshake failures from clients?",
+      "tags": [
+        "tls",
+        "web"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "database_restarts",
+      "question": "Did the database process restart unexpectedly?",
+      "tags": [
+        "database"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "docker_build_fail",
+      "question": "Docker build or BuildKit errors in captured logs?",
+      "tags": [
+        "docker",
+        "ci"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "lvm_volume_errors",
+      "question": "LVM thin pool or volume group errors?",
+      "tags": [
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "btrfs_errors",
+      "question": "btrfs checksum or space errors?",
+      "tags": [
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "wireguard_vpn",
+      "question": "WireGuard or VPN tunnel errors?",
+      "tags": [
+        "network",
+        "vpn"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "coredumps",
+      "question": "Application crashes or core dumps logged?",
+      "tags": [
+        "debug"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "selinux_avc",
+      "question": "SELinux AVC denials or AppArmor denials?",
+      "tags": [
+        "security"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "apparmor_denied",
+      "question": "AppArmor DENIED messages?",
+      "tags": [
+        "security"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "smart_disk_warnings",
+      "question": "SMART or disk predictive failure warnings?",
+      "tags": [
+        "hardware",
+        "storage"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "usb_disconnect_storm",
+      "question": "USB device reset or disconnect storms?",
+      "tags": [
+        "hardware"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "print_cups_errors",
+      "question": "CUPS or printing subsystem errors?",
+      "tags": [
+        "misc"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "snap_daemon_errors",
+      "question": "snapd errors or snap refresh failures?",
+      "tags": [
+        "packages"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "flatpak_errors",
+      "question": "Flatpak or related errors in user session logs?",
+      "tags": [
+        "packages"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "synology_style_backup",
+      "question": "rsnapshot or backup rotation errors mentioned in logs?",
+      "tags": [
+        "ops"
+      ],
+      "since": "14d"
+    },
+    {
+      "id": "homelab_single_service",
+      "question": "Is my Plex (or similar) service logging errors?",
+      "tags": [
+        "homelab"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "generic_what_failed",
+      "question": "What failed on this server in the last hour?",
+      "tags": [
+        "general"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "generic_errors_today",
+      "question": "Summarize the most important errors from today.",
+      "tags": [
+        "general"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "hw_cpu_temp_now",
+      "question": "What is the CPU temperature on this machine right now (or closest thermal signal you have)?",
+      "tags": [
+        "hardware",
+        "thermal",
+        "probes"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "hw_load_vs_cpus",
+      "question": "Is load average unusually high for the number of CPUs on this host?",
+      "tags": [
+        "hardware",
+        "performance",
+        "probes"
+      ],
+      "since": "6h"
+    },
+    {
+      "id": "hw_memory_pressure",
+      "question": "Do the logs show memory pressure, swap thrash, or OOM-like signals recently?",
+      "tags": [
+        "hardware",
+        "memory"
+      ],
+      "since": "72h"
+    },
+    {
+      "id": "hw_disk_io_saturation_question",
+      "question": "Is the disk I/O saturated or the storage subsystem struggling (not just disk full)?",
+      "tags": [
+        "hardware",
+        "storage",
+        "performance"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "hw_nic_flap",
+      "question": "Did any network interface go down/up or lose carrier recently?",
+      "tags": [
+        "hardware",
+        "network"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "hw_gpu_vram_temp",
+      "question": "What is GPU utilization, temperature, and VRAM use right now (if a GPU exists)?",
+      "tags": [
+        "hardware",
+        "gpu",
+        "probes"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "svc_active_services_overview",
+      "question": "Give an overview of important running services on this server — especially anything that looks failed or restarting.",
+      "tags": [
+        "systemd",
+        "services",
+        "probes"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "svc_sshd_state",
+      "question": "Is sshd running and in a healthy state according to live service data and logs?",
+      "tags": [
+        "systemd",
+        "ssh",
+        "services"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "svc_postgresql_state",
+      "question": "Is PostgreSQL (the database service) up, and did it fail or restart recently?",
+      "tags": [
+        "systemd",
+        "database",
+        "services"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "svc_nginx_state",
+      "question": "Is nginx running as a native service and stable, or flapping?",
+      "tags": [
+        "systemd",
+        "web",
+        "services"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "svc_samba_state",
+      "question": "Is Samba / smbd working properly as a native service (not only Docker logs)?",
+      "tags": [
+        "systemd",
+        "samba",
+        "services"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "svc_systemd_failed_units",
+      "question": "List systemd units that are in failed state or exited with errors in the last 7 days.",
+      "tags": [
+        "systemd",
+        "errors"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "svc_cron_daemon",
+      "question": "Is the cron / scheduled-jobs daemon healthy on this host?",
+      "tags": [
+        "systemd",
+        "cron"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "dkr_engine_inventory",
+      "question": "Summarize Docker on this machine: which containers exist, which are running, and any high RestartCount from live engine data.",
+      "tags": [
+        "docker",
+        "probes"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "dkr_stopped_vs_running",
+      "question": "Which Docker containers are stopped vs running right now, and anything suspicious?",
+      "tags": [
+        "docker",
+        "probes"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "dkr_logs_errors_recent",
+      "question": "From Docker container logs only, what errors or fatals stand out in the last 6 hours?",
+      "tags": [
+        "docker",
+        "logs"
+      ],
+      "since": "6h",
+      "source_scope": "docker",
+      "min_level": "err"
+    },
+    {
+      "id": "dkr_named_container_postgres",
+      "question": "Anything wrong in postgres-related container logs recently?",
+      "tags": [
+        "docker",
+        "database"
+      ],
+      "since": "24h",
+      "source_scope": "docker",
+      "source_contains": "postgres"
+    },
+    {
+      "id": "jrn_ssh_journal_only",
+      "question": "What does the systemd journal say about SSH (sshd) in the last 48 hours?",
+      "tags": [
+        "journal",
+        "ssh"
+      ],
+      "since": "48h",
+      "source_scope": "journal",
+      "source_contains": "sshd"
+    },
+    {
+      "id": "jrn_systemd_critical",
+      "question": "Any critical or alert-priority messages in journald recently that imply the system is sick?",
+      "tags": [
+        "journal",
+        "errors"
+      ],
+      "since": "48h",
+      "source_scope": "journal",
+      "min_level": "crit"
+    },
+    {
+      "id": "file_syslog_tail_auth",
+      "question": "From auth / secure style file logs, any brute force or repeated auth failures?",
+      "tags": [
+        "file",
+        "security"
+      ],
+      "since": "7d",
+      "source_scope": "file",
+      "source_contains": "auth"
+    },
+    {
+      "id": "lin_severe_kernel_last_week",
+      "question": "Severe Linux kernel messages (panic, BUG, GPF, MCE) in the last week?",
+      "tags": [
+        "linux",
+        "kernel"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "lin_generic_platform_errors",
+      "question": "What platform-level Linux errors should I care about that are not tied to one app?",
+      "tags": [
+        "linux",
+        "errors"
+      ],
+      "since": "72h"
+    },
+    {
+      "id": "rbt_count_boots_14d",
+      "question": "How many times did this machine boot in the last 14 days?",
+      "tags": [
+        "reboot",
+        "journal"
+      ],
+      "since": "14d"
+    },
+    {
+      "id": "rbt_unclean_shutdown_clues",
+      "question": "Clues of unclean shutdown, power loss, or filesystem not unmounted cleanly in the last 30 days?",
+      "tags": [
+        "reboot",
+        "hardware"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "net_internet_reachability_logs",
+      "question": "Can you tell from logs whether outbound internet or upstream connectivity was broken (e.g. repeated DNS or routing failures)?",
+      "tags": [
+        "network",
+        "edge-case"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "net_wifi_or_modem_weird",
+      "question": "Any weird modem, PPPoE, Wi-Fi, or link-layer chatter in logs that might explain flaky internet?",
+      "tags": [
+        "network",
+        "edge-case"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "time_ntp_chrony_drift",
+      "question": "Signs the system clock drifted, jumped, or lost NTP/chrony sync?",
+      "tags": [
+        "time",
+        "edge-case"
+      ],
+      "since": "14d"
+    },
+    {
+      "id": "storage_inode_exhaustion",
+      "question": "Any 'no space left on device' that might be inode exhaustion, not just full bytes?",
+      "tags": [
+        "storage",
+        "linux"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "virt_cgroup_oom",
+      "question": "Any cgroup / container OOM or memory limit kills in logs?",
+      "tags": [
+        "linux",
+        "docker"
+      ],
+      "since": "7d"
+    },
+    {
+      "id": "db_connection_storms_logs",
+      "question": "Database connection storms, 'too many connections', or pool exhaustion in logs?",
+      "tags": [
+        "database",
+        "ops"
+      ],
+      "since": "24h"
+    },
+    {
+      "id": "web_reverse_proxy_misconfig",
+      "question": "Reverse proxy misconfig signals (bad gateway, upstream refused, cert name mismatch) in logs?",
+      "tags": [
+        "web",
+        "ops"
+      ],
+      "since": "48h"
+    },
+    {
+      "id": "weird_cosmic_ray_flip_bit",
+      "question": "Ignore cosmic rays — purely as a test: do logs show silent data corruption or ECC errors (DRAM/MCE) worth chasing?",
+      "tags": [
+        "edge-case",
+        "hardware"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "weird_ai_hal_9000",
+      "question": "Half joking: any log lines that read like an automated system refusing a request ('I'm sorry Dave') or policy blocks?",
+      "tags": [
+        "edge-case",
+        "humor"
+      ],
+      "since": "30d"
+    },
+    {
+      "id": "coverage_probes_explicit_list",
+      "question": "Name every read-only live probe this stack can attach to an answer (disk, CPU, GPU, Docker engine, systemd services snapshot, journalctl…) and whether each is enabled in settings.",
+      "tags": [
+        "meta",
+        "capabilities"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "coverage_meta",
+      "question": "What log sources does Logpilot search on this host, and which live read-only probes (disk usage, CPU load and temperature, GPU status, Docker engine) can answers use when enabled?",
+      "tags": [
+        "meta"
+      ],
+      "since": "1h"
+    },
+    {
+      "id": "capabilities_host",
+      "question": "Summarize everything Logpilot can use to help me on this machine—not only similarity-retrieved log lines, but also disk space, CPU/thermal, GPU, and Docker facts when available.",
+      "tags": [
+        "meta",
+        "capabilities"
+      ],
+      "since": "1h"
+    }
+  ]
+}

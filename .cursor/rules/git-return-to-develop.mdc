@@ -1,0 +1,24 @@
+---
+description: After git work on main, checkout develop before finishing (Cursor agents only)
+alwaysApply: true
+---
+
+# Return to `develop` after work on `main` (Cursor only)
+
+This file is **not** part of repo-wide contributor docs (`AGENTS.md` stays IDE-agnostic). It guides **Cursor agents** when they run **terminal git commands** in this workspace.
+
+## Rule
+
+If you run git commands that **`checkout main`**, **merge into `main`**, or otherwise leave the repository on **`main`**, then **before you consider the task done** (unless the user explicitly wants to stay on `main`):
+
+1. Run **`git checkout develop`**.
+2. If the user syncs with a remote and `develop` may have moved, **`git pull`** (with fast-forward / rebase per their workflow) is appropriate when safe.
+
+## Rationale
+
+Merge and release flows often end with `main` checked out; the default working branch for this project is **`develop`**. Switching back avoids accidental commits on `main` and matches the user’s expectation that they “were on develop before.”
+
+## Scope
+
+- Applies when **you** (the agent) ran the commands. It does not change Git hooks or other IDEs.
+- Skip if the user says to remain on `main` or the session is only inspecting `main` with no follow-up edits.
