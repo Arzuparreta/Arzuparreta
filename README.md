@@ -8,3 +8,12 @@ For projects, stack, and the tidier story, tap through below.
   <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">LinkedIn</a> ·
   <a href="mailto:rubenpenarubio02@gmail.com">Email</a>
 </p>
+
+## Lab Monorepo Model
+
+This repository now acts as a catalog-first personal lab monorepo.
+
+- Projects are integrated in `projects/repos/` as subtrees from standalone repositories.
+- Classification is metadata-driven in `catalog/projects.yaml` and `catalog/taxonomy.yaml`.
+- New project kinds are added by extending taxonomy tags and profiles, not by redesigning folders.
+- Cross-project tooling belongs in `platform/`; homelab and ops definitions belong in `systems/`.
