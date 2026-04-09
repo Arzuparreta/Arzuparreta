@@ -9,7 +9,7 @@ For projects, stack, and the tidier story, tap through below.
   <a href="mailto:rubenpenarubio02@gmail.com">Email</a>
 </p>
 
-## Navigate this space
+## This repo.
 
 - [`projects/`](projects/README.md): active and archived code projects.
 - [`automation/`](automation/README.md): scripts, templates, and workflows that keep this repo organized.
