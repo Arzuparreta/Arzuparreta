@@ -1,8 +1,9 @@
 I've been hooked into computers since I can remember.  
 Formed as a classical mussician but I prefer the mechanical keys.
 
-Contact:
-
+<p align="right" >
+Contact:       
+</p>
 <p align="right"> 
 <a href="https://arzuparreta.github.io/">Website</a> 
   <a href="https://arzuparreta.github.io/resume/CV.md">CV</a> 
