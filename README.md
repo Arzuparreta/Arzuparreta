@@ -1,7 +1,7 @@
 I've been hooked into computers since I can remember.  
 Formed as a classical mussician but I prefer the mechanical keys.
 
-<p align="right">
+<p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=git,docker,linux,arch,debian,python,javascript,neovim," />
   </a>
