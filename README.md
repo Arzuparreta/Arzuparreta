@@ -12,7 +12,7 @@ Contact:
 </p>
 
 
-<p align="center">
+<p align="left">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=git,docker,linux,arch,debian,python,javascript,neovim," />
   </a>
