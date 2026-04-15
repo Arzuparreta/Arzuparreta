@@ -7,7 +7,7 @@
 <br>
 
 <p align="center"> 
-  Systems are my thing — I create and maintain focused infrastructure that gets actual work done.
+  Systems are my thing — I create and maintain focused infrastructure that gets actual work done.  
   Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
