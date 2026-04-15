@@ -11,16 +11,6 @@
   Systems are my thing — I create and maintain focused infrastructure that gets actual work done.
 </p>
 
-<br>
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,docker,linux,arch,debian,python,javascript,neovim" />
-  </a>
-</p>
-
-<br>
-
 <p align="center">
   <a href="https://arzuparreta.github.io/">website</a>
   &nbsp;·&nbsp;
