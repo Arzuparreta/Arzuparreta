@@ -4,8 +4,6 @@
   <sub>SYSTEMS ENGINEER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
 </p>
 
-<br>
-
 <p align="center"> 
   Systems are my thing — I create and maintain focused infrastructure that gets actual work done. 
 </p>
