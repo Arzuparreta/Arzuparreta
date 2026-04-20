@@ -1,6 +1,6 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
-<p align="justify">
+<p align="center">
   <sub>SYSTEMS ENGINEER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
 </p>
 
