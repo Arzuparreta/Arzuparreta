@@ -1,13 +1,13 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
-<p align="center">
+<p align="justify">
   <sub>SYSTEMS ENGINEER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
 </p>
 
 <p align="justify"> 
   Systems are my thing — I create and maintain focused infrastructure that gets work done. 
 </p>
-<p align="center">
+<p align="justify">
 Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
