@@ -4,11 +4,12 @@
   <sub>SYSTEMS ENGINEER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
 </p>
 
-<p align="center"> 
-  Systems are my thing — I create and maintain focused infrastructure that gets work done. 
-</p>
 <p align="center">
 Formed as a classical musician but I prefer the mechanical keys.<br>
+</p>
+
+<p align="center"> 
+  Systems are my thing — I create and maintain focused infrastructure that gets work done. 
 </p>
 
 <p align="center">
