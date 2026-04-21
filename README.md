@@ -22,7 +22,10 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 ---
 
-
 ### Currently focused on:
-- Systems design: Focused on Linux as a tool, systems architecture, and how everything translates into operability, security and reliability. Running my multi-server homelab + RAGs in my everyday work, improving it everyday.
-- [agent-aquila](https://github.com/Arzuparreta/agent-aquila) : personal AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.
+- **Systems design**: Focused on Linux as a tool, systems architecture, and how everything translates into operability, security and reliability. Running my multi-server homelab + RAGs in my everyday work, improving my resources everyday.
+
+
+### Actively working-maintaining:
+- [**agent-aquila**](https://github.com/Arzuparreta/agent-aquila) : personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.
+- [**soundsible**](https://github.com/Arzuparreta/soundsible) : self-hosted music library (SQLite + Python API) with downloader (yt-dll wrapper) + high end, full featured web player client, with specific mobile layout.
