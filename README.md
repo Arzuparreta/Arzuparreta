@@ -14,11 +14,11 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center">
-  <a href="https://arzuparreta.github.io/">portfolio</a>
+  <a href="https://arzuparreta.github.io/">portfolio👤</a>
   &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">linkedin</a>
+  <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">linkedin🔗‍️</a>
   &nbsp;·&nbsp;
-  <a href="mailto:rubenpenarubio02@gmail.com">email</a>
+  <a href="mailto:rubenpenarubio02@gmail.com">email✉️</a>
 </p>
 
 
