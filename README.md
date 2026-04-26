@@ -31,5 +31,5 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 - [**soundsible**](https://github.com/Arzuparreta/soundsible) : Self-hosted music streaming ecosystem: (SQLite + Python API) with downloader (yt-dll wrapper) + high end, full featured web player client, with specific mobile layout.
 
 ### Maintaining / improving:
-- [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer): The only audio visualizer that represents harmonic relationships and harmonic (dissonace-to-tartini) movement through time.
+- [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer): The only audio visualizer that represents harmonic relationships and harmonic (dissonace-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on my dual-core thinkpad.
 - [**remove-multi-titles**](https://github.com/Arzuparreta/remove-multi-titles-yt): Firefox/Chrome extension that stops youtube from testing A/B titles. The browser pins the first title you see and always shows the same. Very simple implementation with absulute minimal memory consupmtion. Available on the official extension stores.
