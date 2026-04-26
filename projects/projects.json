@@ -1,193 +1,143 @@
 {
-	"$comment": "Canonical project list for the site (en/es). Edit this file as the single source of truth. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point. When imageSrc is set, optional imagePresentation: \"logo\" (square app icon, compact media column) or \"screenshot\" (default; wide UI capture).",
-	"en": [
-		{
-			"slug": "homelab",
-			"title": "Remote administration & homelab",
-			"tech": "Debian, Tailscale, Pi-hole, SSH, Mosh",
-			"why": "A headless home server in Seville I use every day for reliable remote access, DNS filtering, and network-wide ad blocking—without exposing SSH to the public internet.",
-			"how": [
-				"I reach it from a ThinkPad over Tailscale with Mosh for resilient sessions; Pi-hole runs on the mesh for whole-network filtering.",
-				"Tailscale is the only way in—no open SSH port on the router."
-			],
-			"tier": "primary"
-		},
-		{
-			"slug": "soundsible",
-			"title": "soundsible",
-			"tech": "JavaScript, Node, SQLite, Docker, Python",
-			"why": "Self-hosted music environment aimed at a full streaming-style experience: search and manage your library, play from any device, and keep queues and settings in sync—your files, your infrastructure.",
-			"how": [
-				"Python launcher and browser-based Station on a headless Linux host; SQLite backs the catalog and metadata.",
-				"I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/soundsible",
-			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-icon.jpg",
-			"imagePresentation": "logo"
-		},
-		{
-			"slug": "synesthetic-visualizer",
-			"title": "synesthetic-visualizer",
-			"tech": "Rust, real-time audio, GPU-oriented graphics",
-			"why": "Desktop visualizer that shows harmony and musical form in 3D—consonance and movement read as geometry on a Tonnetz-style spiral, not a plain volume or spectrum bar.",
-			"how": [
-				"Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
-			"demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
-		},
-		{
-			"slug": "docker-reader",
-			"title": "docker-reader",
-			"tech": "Docker, Docker Compose, JavaScript",
-			"why": "PDF library in Docker: upload books, read in the browser, and resume on any device—multi-user so each account keeps its own progress.",
-			"how": [
-				"Docker Compose plus a small config file set users, port, and volumes—the same deploy on every host."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
-			"imageSrc": "/images/projects/docker-reader-light.png",
-			"imagePresentation": "screenshot"
-		},
-		{
-			"slug": "logpilot",
-			"title": "logpilot",
-			"tech": "Python, Postgres, pgvector, Ollama",
-			"why": "Self-hosted log search and natural-language Q&A over your own data—Postgres for storage, pgvector for similarity search, and a local Ollama model so answers stay on your machine.",
-			"how": [
-				"Ingest and index logs into Postgres with vector embeddings for semantic retrieval, not just keyword matches.",
-				"The LLM runs via Ollama locally so you can ask questions about log lines without sending prompts to a third-party API."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/logpilot"
-		},
-		{
-			"slug": "kitchen-clock",
-			"title": "kitchen-clock",
-			"tech": "TypeScript, React Native, Expo",
-			"why": "Timer app built for professional kitchens: juggle several dishes at once—each with its own countdown—so sauces, proteins, and sides stay on track during service. Clear notifications and haptics help you catch every finish without hovering over a single clock.",
-			"how": [
-				"Many timers running in parallel with local notifications so alerts still fire when the app is in the background.",
-				"Expo and React Native: one codebase for Android, iOS, and web-based testing from the same project."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
-			"imageSrc": "/images/projects/kitchen-clock-icon.png",
-			"imagePresentation": "logo"
-		},
-		{
-			"slug": "remove-multi-titles-yt",
-			"title": "remove-multi-titles-yt",
-			"tech": "JavaScript, WebExtensions",
-			"summary": "Chrome/Firefox extension that remembers the first title you saw for each video and keeps it when YouTube A/B-tests different titles for the same clip.",
-			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
-			"tier": "secondary"
-		},
-		{
-			"slug": "fish-echo-alias",
-			"title": "fish-echo-alias",
-			"tech": "Fish shell, Fisher",
-			"summary": "Fish function that echoes an alias definition as a string; installable with Fisher.",
-			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
-			"tier": "secondary"
-		}
-	],
-	"es": [
-		{
-			"slug": "homelab",
-			"title": "Administración remota y homelab",
-			"tech": "Debian, Tailscale, Pi-hole, SSH, Mosh",
-			"why": "Servidor casero sin monitor en Sevilla que uso a diario: acceso remoto fiable, filtrado DNS y bloqueo de anuncios en toda la red, sin abrir SSH a internet.",
-			"how": [
-				"Acceso desde un ThinkPad por Tailscale y Mosh; Pi-hole en la malla para filtrar a nivel de red.",
-				"Solo entro por Tailscale—no hay SSH expuesto al router."
-			],
-			"tier": "primary"
-		},
-		{
-			"slug": "soundsible",
-			"title": "Soundsible",
-			"tech": "JavaScript, Node, SQLite, Docker, Python",
-			"why": "Entorno musical autoalojado pensado como un servicio de streaming completo: buscar y gestionar tu biblioteca, escuchar desde cualquier dispositivo y mantener cola y ajustes sincronizados—tus archivos, tu servidor.",
-			"how": [
-				"Lanzador en Python e interfaz web “Station” en un Linux sin monitor; SQLite guarda catálogo y metadatos.",
-				"Lo uso como infraestructura diaria en casa; con Tailscale el acceso remoto fuera de la LAN es directo."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/soundsible",
-			"projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-			"imageSrc": "/images/projects/soundsible-icon.jpg",
-			"imagePresentation": "logo"
-		},
-		{
-			"slug": "synesthetic-visualizer",
-			"title": "Synesthetic-visualizer",
-			"tech": "Rust, Audio en tiempo real, Renderizado GPU",
-			"why": "Visualizador de escritorio que muestra armonía y forma musical en 3D: la consonancia y el movimiento se leen como geometría en una espiral tipo Tonnetz, no como una barra de volumen o un espectro genérico.",
-			"how": [
-				"Rust de punta a punta en captura y renderizado GPU para que la imagen vaya al ritmo del audio con poco retraso."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
-			"demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
-		},
-		{
-			"slug": "docker-reader",
-			"title": "Docker-reader",
-			"tech": "Docker, Docker Compose, JavaScript",
-			"why": "Biblioteca de PDFs en Docker: subes libros, lees en el navegador y retomas en cualquier dispositivo; varios usuarios, cada uno con su progreso.",
-			"how": [
-				"Docker Compose y un `config.json` pequeño definen usuarios, puerto y volúmenes—el mismo despliegue en cualquier máquina."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/docker-reader",
-			"imageSrc": "/images/projects/docker-reader-light.png",
-			"imagePresentation": "screenshot"
-		},
-		{
-			"slug": "logpilot",
-			"title": "Logpilot",
-			"tech": "Python, Postgres, pgvector, Ollama",
-			"why": "Búsqueda de logs autoalojada y preguntas en lenguaje natural sobre tus propios datos: Postgres para almacenamiento, pgvector para búsqueda por similitud y un modelo Ollama local para que las respuestas no salgan de tu máquina.",
-			"how": [
-				"Los logs se indexan en Postgres con embeddings vectoriales para recuperación semántica, no solo por palabras clave.",
-				"El LLM corre con Ollama en local para preguntar por líneas de log sin mandar prompts a APIs de terceros."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/logpilot"
-		},
-		{
-			"slug": "kitchen-clock",
-			"title": "Kitchen-clock",
-			"tech": "TypeScript, React Native, Expo",
-			"why": "App de temporizadores pensada para cocinas de restaurante: llevar varios platos a la vez con una cuenta atrás por preparación—salsas, carnes, guarniciones—sin perder el hilo en pleno servicio. Avisos claros y respuesta háptica para no perder ningún punto de cocción.",
-			"how": [
-				"Varios temporizadores en paralelo con notificaciones locales para que avisen aunque la app esté en segundo plano.",
-				"Expo y React Native: un solo código para Android, iOS y pruebas en web desde el mismo proyecto."
-			],
-			"tier": "primary",
-			"repoUrl": "https://github.com/Arzuparreta/kitchen-clock",
-			"imageSrc": "/images/projects/kitchen-clock-icon.png",
-			"imagePresentation": "logo"
-		},
-		{
-			"slug": "remove-multi-titles-yt",
-			"title": "Remove-multi-titles-yt",
-			"tech": "JavaScript, WebExtensions",
-			"summary": "Extensión para Chrome/Firefox que guarda el primer título que ves de cada vídeo y lo mantiene aunque YouTube pruebe variantes distintas en el mismo contenido.",
-			"repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
-			"tier": "secondary"
-		},
-		{
-			"slug": "fish-echo-alias",
-			"title": "Fish-echo-alias",
-			"tech": "Fish shell, Fisher",
-			"summary": "Función de Fish que imprime la definición de un alias como cadena; se instala con Fisher.",
-			"repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
-			"tier": "secondary"
-		}
-	]
+  "$comment": "Canonical project list for the site (en/es). Edit this file as the single source of truth. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point. When imageSrc is set, optional imagePresentation: \"logo\" (square app icon, compact media column) or \"screenshot\" (default; wide UI capture).",
+  "en": [
+    {
+      "slug": "agent-aquila",
+      "title": "agent-aquila",
+      "tech": "AI, Self-hosted, Automation",
+      "why": "Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.",
+      "how": [
+        "Designed for transparency and control over your AI interactions.",
+        "Optimized for token efficiency and works with local or affordable cloud models."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/agent-aquila"
+    },
+    {
+      "slug": "soundsible",
+      "title": "soundsible",
+      "tech": "JavaScript, Node, SQLite, Docker, Python",
+      "why": "Self-hosted music streaming ecosystem: SQLite + Python API with downloader (yt-dlp wrapper) + high end, full featured web player client, with specific mobile layout.",
+      "how": [
+        "Python launcher and browser-based Station on a headless Linux host; SQLite backs the catalog and metadata.",
+        "I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/soundsible",
+      "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+      "imageSrc": "/images/projects/soundsible-icon.jpg",
+      "imagePresentation": "logo"
+    },
+    {
+      "slug": "synesthetic-visualizer",
+      "title": "synesthetic-visualizer",
+      "tech": "Rust, real-time audio, GPU-oriented graphics",
+      "why": "The only audio visualizer that represents harmonic relationships and harmonic (dissonance-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on dual-core thinkpads.",
+      "how": [
+        "Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+      "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
+    },
+    {
+      "slug": "remove-multi-titles-yt",
+      "title": "remove-multi-titles-yt",
+      "tech": "JavaScript, WebExtensions",
+      "summary": "Firefox/Chrome extension that stops youtube from testing A/B titles. The browser pins the first title you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.",
+      "repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+      "tier": "secondary"
+    },
+    {
+      "slug": "docker-reader",
+      "title": "docker-reader",
+      "tech": "Docker, Docker Compose, JavaScript",
+      "why": "Self hosted book library manager + multi device layout web reader with notes and all that shit.",
+      "how": [
+        "Docker Compose plus a small config file set users, port, and volumes—the same deploy on every host."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/docker-reader",
+      "imageSrc": "/images/projects/docker-reader-light.png",
+      "imagePresentation": "screenshot"
+    },
+    {
+      "slug": "fish-echo-alias",
+      "title": "fish-echo-alias",
+      "tech": "Fish shell, Fisher",
+      "summary": "Plugin to echo cleanly the value of an alias as a string. For fish (ewwww).",
+      "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+      "tier": "secondary"
+    }
+  ],
+  "es": [
+    {
+      "slug": "agent-aquila",
+      "title": "agent-aquila",
+      "tech": "IA, Autoalojado, Automatización",
+      "why": "Asistente de IA personal y autoalojado que es increíblemente fácil de observar y controlar, eficiente en el uso de tokens y en las peticiones al modelo, manteniendo un comportamiento agente y autoaprendizaje incluso con modelos locales gratuitos o económicos en la nube.",
+      "how": [
+        "Diseñado para transparencia y control sobre tus interacciones con IA.",
+        "Optimizado para eficiencia de tokens y funciona con modelos locales o asequibles en la nube."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/agent-aquila"
+    },
+    {
+      "slug": "soundsible",
+      "title": "Soundsible",
+      "tech": "JavaScript, Node, SQLite, Docker, Python",
+      "why": "Ecosistema de streaming musical autoalojado: SQLite + API en Python con descargador (wrapper yt-dlp) + cliente web de alta gama y completo, con diseño móvil específico.",
+      "how": [
+        "Lanzador en Python e interfaz web Station en un Linux sin monitor; SQLite guarda catálogo y metadatos.",
+        "Lo uso como infraestructura diaria en casa; con Tailscale el acceso remoto fuera de la LAN es directo."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/soundsible",
+      "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+      "imageSrc": "/images/projects/soundsible-icon.jpg",
+      "imagePresentation": "logo"
+    },
+    {
+      "slug": "synesthetic-visualizer",
+      "title": "Synesthetic-visualizer",
+      "tech": "Rust, Audio en tiempo real, Renderizado GPU",
+      "why": "El único visualizador de audio que representa relaciones armónicas y movimiento armónico (disonancia-a-tartini) a través del tiempo. Extremadamente bello y escrito en Rust para que funcione impecablemente incluso en ThinkPads de doble núcleo.",
+      "how": [
+        "Rust de punta a punta en captura y renderizado GPU para que la imagen vaya al ritmo del audio con poco retraso."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+      "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
+    },
+    {
+      "slug": "remove-multi-titles-yt",
+      "title": "Remove-multi-titles-yt",
+      "tech": "JavaScript, WebExtensions",
+      "summary": "Extensión para Firefox/Chrome que evita que YouTube pruebe títulos A/B. El navegador fija el primer título que ves y siempre muestra el mismo. Implementación muy simple con consumo mínimo de memoria. Disponible en las tiendas oficiales de extensiones.",
+      "repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+      "tier": "secondary"
+    },
+    {
+      "slug": "docker-reader",
+      "title": "Docker-reader",
+      "tech": "Docker, Docker Compose, JavaScript",
+      "why": "Gestor de biblioteca de libros autoalojado + lector web con diseño multi-dispositivo con notas y todo eso.",
+      "how": [
+        "Docker Compose y un `config.json` pequeño definen usuarios, puerto y volúmenes—el mismo despliegue en cualquier máquina."
+      ],
+      "tier": "primary",
+      "repoUrl": "https://github.com/Arzuparreta/docker-reader",
+      "imageSrc": "/images/projects/docker-reader-light.png",
+      "imagePresentation": "screenshot"
+    },
+    {
+      "slug": "fish-echo-alias",
+      "title": "Fish-echo-alias",
+      "tech": "Fish shell, Fisher",
+      "summary": "Plugin para imprimir limpiamente el valor de un alias como cadena. Para fish (puaj).",
+      "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+      "tier": "secondary"
+    }
+  ]
 }
