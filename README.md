@@ -22,7 +22,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 
-### 📚 Currently focused on:
+### Currently focused on:
 - **Systems design**: Focused on Linux as a tool, systems architecture, and how everything translates into operability, security and reliability. Running and maintaining a multi server remote workspace focused on self hosting and systems integration over private networks. Recently experimenting with AI, automation, and CI/CD.
 
 ### ✍️ Actively developing:
