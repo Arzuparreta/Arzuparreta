@@ -32,3 +32,4 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 ### Maintaining / improving:
 - [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer): The only audio visualizer that represents harmonic relationships and harmonic (dissonace-to-tartini) movement through time.
+- [**remove-multi-titles**](https://github.com/Arzuparreta/remove-multi-titles-yt): Firefox/Chrome extension that stops youtube from testing A/B titles. The browser pins the first title you see and always shows the same. Very simple implementation with absulute minimal memory consupmtion. Available on the official extension stores.
