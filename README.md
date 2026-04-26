@@ -27,7 +27,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 ### Actively developing:
 - [**agent-aquila**](https://github.com/Arzuparreta/agent-aquila)🦅 : Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.
-- [**soundsible**](https://github.com/Arzuparreta/soundsible)♪ : Self-hosted music streaming ecosystem: (SQLite + Python API) with downloader (yt-dll wrapper) + high end, full featured web player client, with specific mobile layout.
+- [**soundsible**](https://github.com/Arzuparreta/soundsible)🎧 : Self-hosted music streaming ecosystem: (SQLite + Python API) with downloader (yt-dll wrapper) + high end, full featured web player client, with specific mobile layout.
 
 ### Maintaining / improving:
 - [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer): The only audio visualizer that represents harmonic relationships and harmonic (dissonace-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on my dual-core thinkpad.
