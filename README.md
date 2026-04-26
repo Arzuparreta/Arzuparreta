@@ -9,7 +9,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center"> 
-  Systems are my thing —  
+  Systems are my thing —
   I create and maintain focused infrastructure that saves money and gets real work done. 
 </p>
 
@@ -21,7 +21,6 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
   <a href="mailto:rubenpenarubio02@gmail.com">email</a>
 </p>
 
----
 
 ### Currently focused on:
 - **Systems design**: Focused on Linux as a tool, systems architecture, and how everything translates into operability, security and reliability. Running and maintaining a multi server remote workspace focused on self hosting and systems integration over private networks. Recently experimenting with AI, automation, and CI/CD.
