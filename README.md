@@ -1,7 +1,7 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
-  <sub>SYSTEMS ENGINEER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
+  <sub>SYSTEMS DESIGNER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
 </p>
 
 <p align="center">
