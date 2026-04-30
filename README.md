@@ -23,7 +23,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 
 ### Currently focused on:
-- **Systems design**: Focused on Linux as a tool, systems architecture, and how everything translates into operability, security and reliability. Running and maintaining a multi server remote workspace focused on self hosting and systems integration on development environments and private networks. Recently experimenting with AI, automation, and CI/CD.
+- **Systems design**: Focused on Linux as a tool, **systems architecture**, and how everything translates into operability, security and reliability. Deeply exploring self hosting and **systems integration** on **development environments** and private networks. Recently experimenting with AI, automation, and CI/CD.
 
 ### 🚧 Actively developing:
 - [**agent-aquila**](https://github.com/Arzuparreta/agent-aquila)🦅 : Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.
