@@ -33,6 +33,6 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 - [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer) 🎼: The only audio visualizer that represents harmonic relationships and harmonic (dissonace-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on my dual-core thinkpad.
 - [**remove-multi-titles**](https://github.com/Arzuparreta/remove-multi-titles-yt) ✋: Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first you see and always shows the same. Very simple implementation with absulute minimal memory consupmtion. Available on the official extension stores.
 
-#### 🗃️ Not that worth mentioning:
+#### 🗃️ Out of focus / unmaintained:
 - [docker-reader](https://github.com/Arzuparreta/docker-reader): Self hosted book library manager + multi device layout web reader with notes and all that shit.
 - [fish-echo-alias](https://github.com/Arzuparreta/fish-echo-alias): Plugin to ech cleanly the value of an alias as a string. For fish (ewwww).
