@@ -25,8 +25,8 @@ const localeBundleJson = JSON.stringify({
 	siteUrl: site.url,
 	messages: { en: getMessages('en'), es: getMessages('es') },
 	projects: {
-		en: { primary: [], secondary: [] },
-		es: { primary: [], secondary: [] },
+		en: { actively: [], maintaining: [], minor: [] },
+		es: { actively: [], maintaining: [], minor: [] },
 	},
 } satisfies LocaleBundle).replace(/</g, '\\u003c');
 

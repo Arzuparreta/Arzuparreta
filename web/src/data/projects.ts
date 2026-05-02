@@ -1,43 +1,33 @@
 /**
  * Technical projects metadata loaded from `portfolio.json` in the hub repo.
- * Standalone source code lives in dedicated project repositories.
+ * Site sections follow `projects.slugGroups` (same order as the GitHub profile README).
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Locale } from '../i18n/config';
 
-/**
- * Canonical file lives at repo root: `portfolio.json`.
- * Use cwd (always `web/` for `npm run dev` / `build` here), not `import.meta.url` — bundled prerender chunks would resolve the wrong directory.
- */
 function portfolioJsonPath(): string {
 	return join(process.cwd(), '..', 'portfolio.json');
 }
 
 export type ProjectTier = 'primary' | 'secondary';
 
+/** Keys match README / sync-readme.mjs section buckets. */
+export type ProjectSectionKey = 'actively' | 'maintaining' | 'minor';
+
+export const PROJECT_SECTION_KEYS: ProjectSectionKey[] = ['actively', 'maintaining', 'minor'];
+
 export type PrimaryProject = {
 	slug: string;
 	title: string;
-	/** Comma-separated core technologies (shown after title). */
 	tech: string;
-	/** What it is and what problem it solves. */
 	why: string;
-	/** One or two concrete technical or operational details. */
 	how: [string] | [string, string];
-	/** Public GitHub URL (repo icon; default title/card background target when projectSiteUrl is omitted). Omit when there is no public repo. */
 	repoUrl?: string;
-	/** Optional product/docs site (e.g. GitHub Pages). When set, title link and card background use this instead of repoUrl; the repo icon still uses repoUrl. */
 	projectSiteUrl?: string;
 	tier: 'primary';
-	/** Optional screenshot path under site root. */
 	imageSrc?: string;
-	/**
-	 * When `imageSrc` is set: how the image is framed in the case card.
-	 * `logo` — square app icon (narrow column, capped size). `screenshot` — wide UI capture (default).
-	 */
 	imagePresentation?: 'logo' | 'screenshot';
-	/** Optional external demo (e.g. video). */
 	demoUrl?: string;
 };
 
@@ -45,7 +35,6 @@ export type SecondaryProject = {
 	slug: string;
 	title: string;
 	tech: string;
-	/** Single sentence for compact listing. */
 	summary: string;
 	repoUrl: string;
 	tier: 'secondary';
@@ -148,7 +137,35 @@ function loadLocaleArray(raw: unknown, locale: Locale): Project[] {
 	return raw.map((item, i) => parseProject(item, locale, i));
 }
 
-function loadProjectsFile(): Record<Locale, Project[]> {
+function parseSlugGroups(raw: unknown): Record<ProjectSectionKey, string[]> {
+	if (raw === null || typeof raw !== 'object') throw new Error('portfolio.json: projects.slugGroups must be an object');
+	const o = raw as Record<string, unknown>;
+	const out = {} as Record<ProjectSectionKey, string[]>;
+	for (const key of PROJECT_SECTION_KEYS) {
+		const arr = o[key];
+		if (!Array.isArray(arr) || !arr.every((s) => typeof s === 'string')) {
+			throw new Error(`portfolio.json: projects.slugGroups.${key} must be an array of strings`);
+		}
+		out[key] = arr as string[];
+	}
+	return out;
+}
+
+function orderBySlugs(projects: Project[], slugs: string[], bucket: string): Project[] {
+	const map = new Map(projects.map((p) => [p.slug, p]));
+	return slugs.map((slug) => {
+		const p = map.get(slug);
+		if (!p) throw new Error(`portfolio.json: slugGroups.${bucket} references unknown slug "${slug}" for this locale`);
+		return p;
+	});
+}
+
+type LoadedPortfolio = {
+	byLocale: Record<Locale, Project[]>;
+	slugGroups: Record<ProjectSectionKey, string[]>;
+};
+
+function loadPortfolio(): LoadedPortfolio {
 	const path = portfolioJsonPath();
 	let parsed: unknown;
 	try {
@@ -162,22 +179,45 @@ function loadProjectsFile(): Record<Locale, Project[]> {
 	const projects = root.projects;
 	if (projects === null || typeof projects !== 'object') throw new Error('portfolio.json: missing "projects" object');
 	const p = projects as Record<string, unknown>;
+	const slugGroups = parseSlugGroups(p.slugGroups);
 	return {
-		en: loadLocaleArray(p.en, 'en'),
-		es: loadLocaleArray(p.es, 'es'),
+		byLocale: {
+			en: loadLocaleArray(p.en, 'en'),
+			es: loadLocaleArray(p.es, 'es'),
+		},
+		slugGroups,
 	};
 }
 
-const byLocale: Record<Locale, Project[]> = loadProjectsFile();
+const { byLocale, slugGroups } = loadPortfolio();
 
 export function getProjects(locale: Locale): Project[] {
 	return byLocale[locale];
 }
 
-export function getPrimaryProjects(locale: Locale): PrimaryProject[] {
-	return getProjects(locale).filter((p): p is PrimaryProject => p.tier === 'primary');
+/** Projects grouped like the GitHub README: actively → maintaining → minor. */
+export function getProjectSections(locale: Locale): Record<ProjectSectionKey, Project[]> {
+	const list = byLocale[locale];
+	return {
+		actively: orderBySlugs(list, slugGroups.actively, 'actively'),
+		maintaining: orderBySlugs(list, slugGroups.maintaining, 'maintaining'),
+		minor: orderBySlugs(list, slugGroups.minor, 'minor'),
+	};
 }
 
-export function getSecondaryProjects(locale: Locale): SecondaryProject[] {
-	return getProjects(locale).filter((p): p is SecondaryProject => p.tier === 'secondary');
+/** Compact line for the “minor” README bucket (`why` for primary, `summary` for secondary). */
+export function projectAsSmallTool(p: Project): SecondaryProject {
+	if (p.tier === 'secondary') return p;
+	const repoUrl = p.repoUrl;
+	if (!repoUrl) {
+		throw new Error(`portfolio.json: primary project "${p.slug}" needs repoUrl when listed under slugGroups.minor`);
+	}
+	return {
+		slug: p.slug,
+		title: p.title,
+		tech: p.tech,
+		summary: p.why,
+		repoUrl,
+		tier: 'secondary',
+	};
 }

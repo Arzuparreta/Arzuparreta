@@ -35,9 +35,12 @@ export type Messages = {
 		projects: {
 			title: string;
 			intro: string;
-			smallerTools: string;
+			/** Same buckets as GitHub profile README (`slugGroups`). */
+			activelyDeveloping: string;
+			maintaining: string;
+			outOfFocus: string;
 			githubCta: string;
-			/** CTA for compact secondary-project lines (often “repository” vs “config/source”). */
+			/** CTA for compact lines in the “out of focus” bucket. */
 			githubCtaSmall: string;
 			demoYoutubeCta: string;
 			/** Appended to project title in screenshot `alt` (localized). */

@@ -4,7 +4,7 @@ import GitHubIcon from './GitHubIcon.astro';
 import LinkedInIcon from './LinkedInIcon.astro';
 import ProjectCase from './ProjectCase.astro';
 import SmallTool from './SmallTool.astro';
-import { getPrimaryProjects, getSecondaryProjects } from '../data/projects';
+import { getProjectSections, projectAsSmallTool } from '../data/projects';
 import { site } from '../data/site';
 import type { Locale } from '../i18n/config';
 import { getMessages } from '../i18n';
@@ -20,8 +20,7 @@ const base = import.meta.env.BASE_URL;
 const hrefEn = base.endsWith('/') ? base : `${base}/`;
 const hrefEs = `${hrefEn}es/`;
 
-const primaryProjects = getPrimaryProjects(locale);
-const secondaryProjects = getSecondaryProjects(locale);
+const sections = getProjectSections(locale);
 
 const alternates = [
 	{ hreflang: 'en', href: new URL('/', site.url).href },
@@ -34,14 +33,8 @@ const localeBundleJson = JSON.stringify({
 	siteUrl: site.url,
 	messages: { en: getMessages('en'), es: getMessages('es') },
 	projects: {
-		en: {
-			primary: getPrimaryProjects('en'),
-			secondary: getSecondaryProjects('en'),
-		},
-		es: {
-			primary: getPrimaryProjects('es'),
-			secondary: getSecondaryProjects('es'),
-		},
+		en: getProjectSections('en'),
+		es: getProjectSections('es'),
 	},
 }).replace(/</g, '\\u003c');
 ---
@@ -95,7 +88,11 @@ const localeBundleJson = JSON.stringify({
 					<p class="section__intro" data-i18n="sections.projects.intro">
 						{t.sections.projects.intro}
 					</p>
-					{primaryProjects.map((project) => (
+
+					<h3 id="actively-heading" class="section__subheading" data-i18n="sections.projects.activelyDeveloping">
+						{t.sections.projects.activelyDeveloping}
+					</h3>
+					{sections.actively.map((project) => (
 						<ProjectCase
 							project={project}
 							githubCta={t.sections.projects.githubCta}
@@ -103,12 +100,25 @@ const localeBundleJson = JSON.stringify({
 							projectImageAltSuffix={t.sections.projects.projectImageAltSuffix}
 						/>
 					))}
-					<h3 id="smaller-tools-heading" class="section__subheading" data-i18n="sections.projects.smallerTools">
-						{t.sections.projects.smallerTools}
+
+					<h3 id="maintaining-heading" class="section__subheading" data-i18n="sections.projects.maintaining">
+						{t.sections.projects.maintaining}
+					</h3>
+					{sections.maintaining.map((project) => (
+						<ProjectCase
+							project={project}
+							githubCta={t.sections.projects.githubCta}
+							demoYoutubeCta={t.sections.projects.demoYoutubeCta}
+							projectImageAltSuffix={t.sections.projects.projectImageAltSuffix}
+						/>
+					))}
+
+					<h3 id="out-of-focus-heading" class="section__subheading" data-i18n="sections.projects.outOfFocus">
+						{t.sections.projects.outOfFocus}
 					</h3>
 					<div class="small-tools">
-						{secondaryProjects.map((tool) => (
-							<SmallTool tool={tool} githubCta={t.sections.projects.githubCtaSmall} />
+						{sections.minor.map((p) => (
+							<SmallTool tool={projectAsSmallTool(p)} githubCta={t.sections.projects.githubCtaSmall} />
 						))}
 					</div>
 				</section>

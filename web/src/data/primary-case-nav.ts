@@ -1,6 +1,9 @@
-import type { PrimaryProject } from './projects';
+import type { Project } from './projects';
 
-/** Title link and primary card background: official site when set, otherwise GitHub. */
-export function primaryCaseNavUrl(p: PrimaryProject): string | undefined {
-	return p.projectSiteUrl ?? p.repoUrl;
+
+/** Title link and case card background: product URL when set (primary only), otherwise GitHub. */
+export function caseNavUrl(p: Project): string | undefined {
+	if (p.tier === 'primary') return p.projectSiteUrl ?? p.repoUrl;
+	return p.repoUrl;
 }
+

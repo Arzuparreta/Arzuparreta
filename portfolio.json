@@ -1,5 +1,5 @@
 {
-  "$comment": "Single source of truth for portfolio: English/Spanish site copy (Astro), GitHub profile README, and project data. Edit only this file.",
+  "$comment": "Single source of truth for portfolio: English/Spanish site copy (Astro), GitHub profile README, and project data. Site + README project sections use projects.slugGroups (actively / maintaining / minor)—same order and membership. Field tier (primary vs secondary) only controls card shape (full case vs one-line in minor uses compact style).",
   "urls": {
     "site": "https://arzuparreta.github.io/",
     "github": "https://github.com/Arzuparreta",
@@ -60,7 +60,9 @@
         "projects": {
           "title": "Projects",
           "intro": "What I built, why it matters, and how it actually runs.",
-          "smallerTools": "Smaller Tools & Scripts",
+          "activelyDeveloping": "🚧 Actively developing",
+          "maintaining": "🛠️ Maintaining / improving",
+          "outOfFocus": "🗃️ Out of focus / unmaintained",
           "githubCta": "View configuration and source code on GitHub",
           "githubCtaSmall": "View repository on GitHub",
           "demoYoutubeCta": "Watch on YouTube",
@@ -125,7 +127,9 @@
         "projects": {
           "title": "Proyectos",
           "intro": "Implementaciones reales: arquitectura, despliegue y operación.",
-          "smallerTools": "Herramientas y scripts menores",
+          "activelyDeveloping": "🚧 En desarrollo activo",
+          "maintaining": "🛠️ Mantenimiento / mejoras",
+          "outOfFocus": "🗃️ Fuera de foco / sin mantenimiento",
           "githubCta": "Ver configuración y código fuente en GitHub",
           "githubCtaSmall": "Ver repositorio en GitHub",
           "demoYoutubeCta": "Ver en YouTube",

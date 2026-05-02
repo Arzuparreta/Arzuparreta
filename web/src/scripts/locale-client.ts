@@ -4,16 +4,34 @@
  */
 import type { Locale } from '../i18n/config';
 import type { Messages } from '../i18n/types';
-import { primaryCaseNavUrl } from '../data/primary-case-nav';
-import type { PrimaryProject, SecondaryProject } from '../data/projects';
+import { caseNavUrl } from '../data/primary-case-nav';
+import type { Project, ProjectSectionKey, SecondaryProject } from '../data/projects';
 import { refreshThemeButton } from './theme';
 
 export type LocaleBundle = {
 	baseUrl: string;
 	siteUrl: string;
 	messages: Record<Locale, Messages>;
-	projects: Record<Locale, { primary: PrimaryProject[]; secondary: SecondaryProject[] }>;
+	projects: Record<Locale, Record<ProjectSectionKey, Project[]>>;
 };
+
+const SECTION_KEYS: ProjectSectionKey[] = ['actively', 'maintaining', 'minor'];
+
+function projectAsSmallTool(p: Project): SecondaryProject {
+	if (p.tier === 'secondary') return p;
+	const repoUrl = p.repoUrl;
+	if (!repoUrl) {
+		throw new Error(`primary project "${p.slug}" needs repoUrl in minor section`);
+	}
+	return {
+		slug: p.slug,
+		title: p.title,
+		tech: p.tech,
+		summary: p.why,
+		repoUrl,
+		tier: 'secondary',
+	};
+}
 
 function getNested(obj: unknown, path: string): string | undefined {
 	const parts = path.split('.');
@@ -86,9 +104,9 @@ function applyTechnicalSkills(ul: Element, lines: string[]): void {
 	);
 }
 
-function applyPrimaryCase(
+function applyProjectCase(
 	article: HTMLElement,
-	project: PrimaryProject,
+	project: Project,
 	githubCta: string,
 	demoYoutubeCta: string,
 	projectImageAltSuffix: string,
@@ -102,29 +120,40 @@ function applyPrimaryCase(
 	const demoLink = article.querySelector<HTMLAnchorElement>('.case__cta-demo');
 	const img = article.querySelector<HTMLImageElement>('.case__img');
 
-	if (titleLink && project.repoUrl) {
+	const isPrimary = project.tier === 'primary';
+	const repoUrl = project.repoUrl;
+
+	if (titleLink && repoUrl) {
 		titleLink.textContent = project.title;
-		titleLink.href = primaryCaseNavUrl(project) ?? project.repoUrl;
+		titleLink.href = caseNavUrl(project) ?? repoUrl;
 	}
 	if (titleText) titleText.textContent = project.title;
 	if (tech) tech.textContent = project.tech;
-	if (why) why.textContent = project.why;
+	if (why) why.textContent = isPrimary ? project.why : project.summary;
+
 	if (how) {
-		how.replaceChildren(
-			...project.how.map((line) => {
-				const li = document.createElement('li');
-				li.textContent = line;
-				return li;
-			}),
-		);
+		if (isPrimary) {
+			how.hidden = false;
+			how.replaceChildren(
+				...project.how.map((line) => {
+					const li = document.createElement('li');
+					li.textContent = line;
+					return li;
+				}),
+			);
+		} else {
+			how.replaceChildren();
+			how.hidden = true;
+		}
 	}
-	if (githubLink && project.repoUrl) {
+
+	if (githubLink && repoUrl) {
 		githubLink.setAttribute('aria-label', githubCta);
-		githubLink.href = project.repoUrl;
+		githubLink.href = repoUrl;
 	}
 
 	if (demoLink) {
-		if (project.demoUrl) {
+		if (isPrimary && project.demoUrl) {
 			demoLink.hidden = false;
 			demoLink.href = project.demoUrl;
 			demoLink.textContent = demoYoutubeCta;
@@ -133,12 +162,17 @@ function applyPrimaryCase(
 		}
 	}
 
-	if (img && project.imageSrc) {
-		img.src = project.imageSrc;
-		img.alt = `${project.title}${projectImageAltSuffix}`;
+	if (img) {
+		if (isPrimary && project.imageSrc) {
+			img.hidden = false;
+			img.src = project.imageSrc;
+			img.alt = `${project.title}${projectImageAltSuffix}`;
+		} else {
+			img.hidden = true;
+		}
 	}
 
-	const navUrl = primaryCaseNavUrl(project);
+	const navUrl = caseNavUrl(project);
 	if (navUrl) {
 		article.dataset.caseNavUrl = navUrl;
 	} else {
@@ -166,7 +200,7 @@ function applySmallTool(article: HTMLElement, tool: SecondaryProject, githubCta:
 
 function applyLocale(bundle: LocaleBundle, locale: Locale): void {
 	const m = bundle.messages[locale];
-	const { primary, secondary } = bundle.projects[locale];
+	const sections = bundle.projects[locale];
 
 	updateHead(m, bundle.siteUrl, locale);
 
@@ -190,22 +224,29 @@ function applyLocale(bundle: LocaleBundle, locale: Locale): void {
 	const skillsUl = document.querySelector('ul.skills');
 	if (skillsUl) applyTechnicalSkills(skillsUl, m.technicalSkills);
 
-	for (const p of primary) {
-		const article = document.getElementById(p.slug);
-		if (article?.classList.contains('case')) {
-			applyPrimaryCase(
-				article,
-				p,
-				m.sections.projects.githubCta,
-				m.sections.projects.demoYoutubeCta,
-				m.sections.projects.projectImageAltSuffix,
-			);
+	for (const key of SECTION_KEYS) {
+		const list = sections[key];
+		if (key === 'minor') {
+			for (const p of list) {
+				const article = document.getElementById(p.slug);
+				if (article?.classList.contains('small-tool')) {
+					applySmallTool(article, projectAsSmallTool(p), m.sections.projects.githubCtaSmall);
+				}
+			}
+		} else {
+			for (const p of list) {
+				const article = document.getElementById(p.slug);
+				if (article?.classList.contains('case')) {
+					applyProjectCase(
+						article,
+						p,
+						m.sections.projects.githubCta,
+						m.sections.projects.demoYoutubeCta,
+						m.sections.projects.projectImageAltSuffix,
+					);
+				}
+			}
 		}
-	}
-
-	for (const t of secondary) {
-		const article = document.getElementById(t.slug);
-		if (article?.classList.contains('small-tool')) applySmallTool(article, t, m.sections.projects.githubCtaSmall);
 	}
 
 	document.querySelectorAll<HTMLAnchorElement>('.lang-switcher__link').forEach((a) => {
@@ -263,7 +304,7 @@ export function initLocaleClient(bundle: LocaleBundle): void {
 	});
 
 	window.addEventListener('popstate', () => {
-		const locale = getLocaleFromPath(window.location.pathname, baseUrl);
-		applyLocale(bundle, locale);
+		const loc = getLocaleFromPath(window.location.pathname, baseUrl);
+		applyLocale(bundle, loc);
 	});
 }

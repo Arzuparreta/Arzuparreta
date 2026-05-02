@@ -1,28 +1,34 @@
 ---
 import GitHubIcon from './GitHubIcon.astro';
-import { primaryCaseNavUrl } from '../data/primary-case-nav';
-import type { PrimaryProject } from '../data/projects';
+import { caseNavUrl } from '../data/primary-case-nav';
+import type { Project } from '../data/projects';
 
 interface Props {
-	project: PrimaryProject;
+	project: Project;
 	githubCta: string;
 	demoYoutubeCta: string;
 	projectImageAltSuffix: string;
 }
 
 const { project, githubCta, demoYoutubeCta, projectImageAltSuffix } = Astro.props;
+const isPrimary = project.tier === 'primary';
 const imgAlt = `${project.title}${projectImageAltSuffix}`;
 const repoUrl = project.repoUrl;
-const caseNavUrl = primaryCaseNavUrl(project);
-const titleHref = caseNavUrl;
-const caseNavAttrs = caseNavUrl ? { 'data-case-nav-url': caseNavUrl } : {};
-const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
+const navUrl = caseNavUrl(project);
+const titleHref = navUrl ?? repoUrl;
+const caseNavAttrs = navUrl ? { 'data-case-nav-url': navUrl } : {};
+const isLogoMedia = isPrimary && project.imageSrc && project.imagePresentation === 'logo';
+const caseWhy = isPrimary ? project.why : project.summary;
+const howLines = isPrimary ? project.how : [];
+const demoUrl = isPrimary ? project.demoUrl : undefined;
+const imageSrc = isPrimary ? project.imageSrc : undefined;
 ---
 
 <article
-	class:list={['case', project.imageSrc && 'case--with-media', isLogoMedia && 'case--media-logo']}
+	class:list={['case', imageSrc && 'case--with-media', isLogoMedia && 'case--media-logo']}
 	id={project.slug}
 	data-project-slug={project.slug}
+	data-project-tier={project.tier}
 	{...caseNavAttrs}
 >
 	<div class="case__main">
@@ -54,18 +60,22 @@ const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
 				<span class="case__tech">{project.tech}</span>
 			</h3>
 		</header>
-		<p class="case__why">{project.why}</p>
-		<ul class="case__how">
-			{project.how.map((line) => (
-				<li>{line}</li>
-			))}
-		</ul>
+		<p class="case__why">{caseWhy}</p>
 		{
-			project.demoUrl && (
+			howLines.length > 0 ? (
+				<ul class="case__how">
+					{howLines.map((line) => (
+						<li>{line}</li>
+					))}
+				</ul>
+			) : null
+		}
+		{
+			demoUrl && (
 				<p class="case__cta case__cta-row">
 					<a
 						class="btn btn--ghost case__cta-demo"
-						href={project.demoUrl}
+						href={demoUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -76,18 +86,18 @@ const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
 		}
 	</div>
 	{
-		project.imageSrc &&
-			(caseNavUrl ? (
+		imageSrc &&
+			(navUrl ? (
 				<a
 					class="case__media-link"
-					href={caseNavUrl}
+					href={navUrl}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<figure class="case__media">
 						<img
 							class="case__img"
-							src={project.imageSrc}
+							src={imageSrc}
 							alt={imgAlt}
 							loading="lazy"
 							decoding="async"
@@ -99,7 +109,7 @@ const isLogoMedia = project.imageSrc && project.imagePresentation === 'logo';
 				<figure class="case__media">
 					<img
 						class="case__img"
-						src={project.imageSrc}
+						src={imageSrc}
 						alt={imgAlt}
 						loading="lazy"
 						decoding="async"

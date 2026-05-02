@@ -85,9 +85,10 @@ npm run ensure-cv    # Copy CV from monorepo root to web public folder
 ## Important Conventions
 
 ### Portfolio metadata (`portfolio.json`)
-- **`locales.en` / `locales.es`**: Full UI message trees for each language (see `Messages` in `types.ts`)
+- **`locales.en` / `locales.es`**: Full UI message trees for each language (see `Messages` in `types.ts`). Project subsection titles (`activelyDeveloping`, `maintaining`, `outOfFocus`) match the GitHub README buckets.
 - **`projects.en` / `projects.es`**: Localized project entries (`slug`, `title`, `tech`, `why`/`how` or `summary`, `tier`, optional media URLs)
-- **`projects.slugGroups`**: Maps README sections (`actively`, `maintaining`, `minor`) to ordered slug lists (English `projects.en` is used for GitHub README blurbs)
+- **`projects.slugGroups`**: Ordered slug lists per section—**this** drives both the Astro page and the GitHub README project lists (not `tier`). Keys: `actively`, `maintaining`, `minor`.
+- **`tier`**: `primary` = full case card (with `why` + `how`); `secondary` = summary-only in a case card, or compact line when placed under `minor`.
 - **`readme`**: HTML-oriented strings for the GitHub profile README hero (English only)
 - Optional **`readmeEmoji`** on English project entries for profile README formatting
 
