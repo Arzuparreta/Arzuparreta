@@ -35,4 +35,4 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 #### 🗃️ Out of focus / unmaintained:
 - [docker-reader](https://github.com/Arzuparreta/docker-reader): Self hosted book library manager + multi device layout web reader with notes and all that shit.
-- [fish-echo-alias](https://github.com/Arzuparreta/fish-echo-alias): Plugin to ech cleanly the value of an alias as a string. For fish (ewwww).
+- [fish-echo-alias](https://github.com/Arzuparreta/fish-echo-alias): Plugin to echo the value of an alias as a string. For fish (ewwww).
