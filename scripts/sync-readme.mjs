@@ -1,15 +1,12 @@
 /**
- * Regenerates GitHub profile README from:
- * - profile/public.en.json (hero + “Currently focused”)
- * - projects/projects.json (project lists under markers)
+ * Regenerates GitHub profile README from `portfolio.json` (urls, readme hero, projects slug groups + en entries).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const profilePath = join(root, 'profile', 'public.en.json');
-const projectsPath = join(root, 'projects', 'projects.json');
+const portfolioPath = join(root, 'portfolio.json');
 const readmePath = join(root, 'README.md');
 
 const PROFILE_START = '<!-- readme-profile:start -->';
@@ -23,9 +20,11 @@ const SECTIONS = [
 	{ key: 'minor', heading: '#### 🗃️ Out of focus / unmaintained:\n', boldLink: false },
 ];
 
-function loadProfile() {
-	const data = JSON.parse(readFileSync(profilePath, 'utf8'));
-	if (!data.urls || !data.readme) throw new Error('public.en.json: expected "urls" and "readme"');
+function loadPortfolio() {
+	const data = JSON.parse(readFileSync(portfolioPath, 'utf8'));
+	if (!data.urls || !data.readme || !data.projects) {
+		throw new Error('portfolio.json: expected "urls", "readme", and "projects"');
+	}
 	return data;
 }
 
@@ -61,14 +60,14 @@ ${readme.currentlyFocusedMarkdown}
 `;
 }
 
-function loadProjectsPayload() {
-	const data = JSON.parse(readFileSync(projectsPath, 'utf8'));
-	const readme = data.readme;
+function loadProjectsPayload(portfolio) {
+	const { projects } = portfolio;
+	const readme = projects.slugGroups;
 	if (readme === null || typeof readme !== 'object') {
-		throw new Error('projects.json: missing "readme" object');
+		throw new Error('portfolio.json: projects.slugGroups missing');
 	}
-	const en = data.en;
-	if (!Array.isArray(en)) throw new Error('projects.json: "en" must be an array');
+	const en = projects.en;
+	if (!Array.isArray(en)) throw new Error('portfolio.json: projects.en must be an array');
 	const bySlug = new Map();
 	for (const entry of en) {
 		if (entry && typeof entry.slug === 'string') bySlug.set(entry.slug, entry);
@@ -79,17 +78,17 @@ function loadProjectsPayload() {
 function blurb(p) {
 	if (typeof p.why === 'string' && p.why.length > 0) return p.why;
 	if (typeof p.summary === 'string' && p.summary.length > 0) return p.summary;
-	throw new Error(`projects.json: entry "${p.slug}" needs "why" or "summary"`);
+	throw new Error(`portfolio.json: project "${p.slug}" needs "why" or "summary"`);
 }
 
 function lineFor(p, boldLink, sectionKey) {
 	const url = p.repoUrl;
 	if (typeof url !== 'string' || !url.length) {
-		throw new Error(`projects.json: entry "${p.slug}" needs repoUrl for README sync`);
+		throw new Error(`portfolio.json: project "${p.slug}" needs repoUrl for README sync`);
 	}
 	const title = p.title;
 	if (typeof title !== 'string' || !title.length) {
-		throw new Error(`projects.json: entry "${p.slug}" needs title`);
+		throw new Error(`portfolio.json: project "${p.slug}" needs title`);
 	}
 	const desc = blurb(p);
 	const emoji = typeof p.readmeEmoji === 'string' ? p.readmeEmoji : '';
@@ -109,12 +108,12 @@ function buildProjectsBlock({ readme, bySlug }) {
 		const { key, heading, boldLink } = SECTIONS[s];
 		const slugs = readme[key];
 		if (!Array.isArray(slugs)) {
-			throw new Error(`projects.json: readme.${key} must be an array of slugs`);
+			throw new Error(`portfolio.json: projects.slugGroups.${key} must be an array of slugs`);
 		}
 		out += heading;
 		for (const slug of slugs) {
 			const p = bySlug.get(slug);
-			if (!p) throw new Error(`projects.json: readme.${key} references unknown slug "${slug}"`);
+			if (!p) throw new Error(`portfolio.json: slugGroups.${key} references unknown slug "${slug}"`);
 			out += lineFor(p, boldLink, key);
 		}
 		if (s < SECTIONS.length - 1) out += '\n';
@@ -132,10 +131,11 @@ function replaceBetween(src, start, end, inner) {
 }
 
 function main() {
+	const portfolio = loadPortfolio();
 	let readme = readFileSync(readmePath, 'utf8');
-	const profileInner = buildReadmeProfile(loadProfile());
+	const profileInner = buildReadmeProfile(portfolio);
 	readme = replaceBetween(readme, PROFILE_START, PROFILE_END, profileInner);
-	const projectsInner = buildProjectsBlock(loadProjectsPayload());
+	const projectsInner = buildProjectsBlock(loadProjectsPayload(portfolio));
 	readme = replaceBetween(readme, PROJECTS_START, PROJECTS_END, `${projectsInner}`);
 	const original = readFileSync(readmePath, 'utf8');
 	if (readme !== original) writeFileSync(readmePath, readme, 'utf8');

@@ -7,8 +7,7 @@ on:
     paths:
       - 'web/**'
       - 'cv/**'
-      - 'projects/**'
-      - 'profile/**'
+      - 'portfolio.json'
       - '.github/workflows/deploy-github-pages.yml'
   workflow_dispatch:
 

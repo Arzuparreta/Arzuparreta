@@ -1,6 +1,6 @@
 /**
  * UI strings for the site. English is at `/`, Spanish at `/es/` via `HomePage` and `getMessages('es')`.
- * Project narratives are localized in `projects/projects.json` (loaded by `data/projects.ts`).
+ * Project narratives and locale bundles live in `portfolio.json` (loaded by `data/projects.ts` and re-exported here).
  */
 export type { Locale } from './config';
 export { defaultLocale, supportedLocales } from './config';

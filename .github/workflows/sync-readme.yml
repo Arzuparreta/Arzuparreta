@@ -1,12 +1,11 @@
-# Keep profile README project lists in sync with projects/projects.json (source of truth).
+# Regenerate GitHub profile README from portfolio.json (single source of truth).
 name: Sync README projects
 
 on:
   push:
     branches: [main]
     paths:
-      - 'profile/public.en.json'
-      - 'projects/projects.json'
+      - 'portfolio.json'
       - 'scripts/sync-readme.mjs'
       - '.github/workflows/sync-readme.yml'
   workflow_dispatch:
@@ -41,6 +40,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "README already up to date."
           else
-            git commit -m "docs: sync README projects from projects.json"
+            git commit -m "docs: sync profile README from portfolio.json"
             git push
           fi

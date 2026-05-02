@@ -821,7 +821,7 @@ a.case__media-link:focus-visible {
 	height: auto;
 }
 
-/* Square app icons only (see projects.json imagePresentation: logo) */
+/* Square app icons only (see portfolio.json → projects.* imagePresentation: logo) */
 .case--media-logo a.case__media-link {
 	width: 100%;
 	max-width: 11rem;

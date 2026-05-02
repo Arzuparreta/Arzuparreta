@@ -1,13 +1,13 @@
-import publicEn from '../../../profile/public.en.json';
+import portfolio from '../../../portfolio.json';
 
-/** Identity and URLs from `profile/public.en.json` — UI copy in `src/i18n/`. */
+/** URLs and display name from `portfolio.json` at repo root. */
 export const site = {
-	name: publicEn.siteLocale.name,
+	name: portfolio.siteIdentity.displayName,
 	handle: 'Arzuparreta',
-	url: publicEn.urls.site.replace(/\/$/, ''),
-	github: publicEn.urls.github,
-	cvRepo: publicEn.urls.cvRepo,
-	linkedin: publicEn.urls.linkedin,
-	email: publicEn.urls.email,
-	openToRelocation: publicEn.siteLocale.openToRelocation,
+	url: portfolio.urls.site.replace(/\/$/, ''),
+	github: portfolio.urls.github,
+	cvRepo: portfolio.urls.cvRepo,
+	linkedin: portfolio.urls.linkedin,
+	email: portfolio.urls.email,
+	openToRelocation: portfolio.siteIdentity.openToRelocation,
 } as const;

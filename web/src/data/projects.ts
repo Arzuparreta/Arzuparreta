@@ -1,5 +1,5 @@
 /**
- * Technical projects metadata loaded from `projects/projects.json` in the hub repo.
+ * Technical projects metadata loaded from `portfolio.json` in the hub repo.
  * Standalone source code lives in dedicated project repositories.
  */
 import { readFileSync } from 'node:fs';
@@ -7,11 +7,11 @@ import { join } from 'node:path';
 import type { Locale } from '../i18n/config';
 
 /**
- * Canonical metadata file lives next to `web/` at `projects/projects.json`.
+ * Canonical file lives at repo root: `portfolio.json`.
  * Use cwd (always `web/` for `npm run dev` / `build` here), not `import.meta.url` — bundled prerender chunks would resolve the wrong directory.
  */
-function projectsJsonPath(): string {
-	return join(process.cwd(), '..', 'projects', 'projects.json');
+function portfolioJsonPath(): string {
+	return join(process.cwd(), '..', 'portfolio.json');
 }
 
 export type ProjectTier = 'primary' | 'secondary';
@@ -134,7 +134,7 @@ function parseSecondary(o: Record<string, unknown>, ctx: string): SecondaryProje
 }
 
 function parseProject(raw: unknown, locale: Locale, index: number): Project {
-	const ctx = `projects.json [${locale}][${index}]`;
+	const ctx = `portfolio.json → projects.${locale}[${index}]`;
 	if (raw === null || typeof raw !== 'object') throw new Error(`${ctx}: entry must be an object`);
 	const o = raw as Record<string, unknown>;
 	const tier = o.tier;
@@ -144,24 +144,27 @@ function parseProject(raw: unknown, locale: Locale, index: number): Project {
 }
 
 function loadLocaleArray(raw: unknown, locale: Locale): Project[] {
-	if (!Array.isArray(raw)) throw new Error(`projects.json: "${locale}" must be an array`);
+	if (!Array.isArray(raw)) throw new Error(`portfolio.json: "projects.${locale}" must be an array`);
 	return raw.map((item, i) => parseProject(item, locale, i));
 }
 
 function loadProjectsFile(): Record<Locale, Project[]> {
-	const path = projectsJsonPath();
+	const path = portfolioJsonPath();
 	let parsed: unknown;
 	try {
 		parsed = JSON.parse(readFileSync(path, 'utf8'));
 	} catch (e) {
 		const msg = e instanceof Error ? e.message : String(e);
-		throw new Error(`projects.json: failed to read or parse ${path}: ${msg}`);
+		throw new Error(`portfolio.json: failed to read or parse ${path}: ${msg}`);
 	}
-	if (parsed === null || typeof parsed !== 'object') throw new Error('projects.json: root must be an object');
+	if (parsed === null || typeof parsed !== 'object') throw new Error('portfolio.json: root must be an object');
 	const root = parsed as Record<string, unknown>;
+	const projects = root.projects;
+	if (projects === null || typeof projects !== 'object') throw new Error('portfolio.json: missing "projects" object');
+	const p = projects as Record<string, unknown>;
 	return {
-		en: loadLocaleArray(root.en, 'en'),
-		es: loadLocaleArray(root.es, 'es'),
+		en: loadLocaleArray(p.en, 'en'),
+		es: loadLocaleArray(p.es, 'es'),
 	};
 }
 

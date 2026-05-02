@@ -1,0 +1,314 @@
+{
+  "$comment": "Single source of truth for portfolio: English/Spanish site copy (Astro), GitHub profile README, and project data. Edit only this file.",
+  "urls": {
+    "site": "https://arzuparreta.github.io/",
+    "github": "https://github.com/Arzuparreta",
+    "linkedin": "https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/",
+    "email": "rubenpenarubio02@gmail.com",
+    "cvRepo": "https://github.com/Arzuparreta/Arzuparreta/blob/main/cv/CV.md"
+  },
+  "siteIdentity": {
+    "displayName": "Rubén Peña Rubio",
+    "openToRelocation": true
+  },
+  "readme": {
+    "nameHeading": "RUBÉN PEÑA",
+    "subtitleHtml": "SYSTEMS DESIGNER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN",
+    "taglineWithBreak": "Formed as a classical musician but I prefer the mechanical keys.<br>",
+    "taglineEmphasisLine1": "Systems are my thing —",
+    "taglineEmphasisLine2": "I create and maintain focused infrastructure that saves money and gets real work done.",
+    "currentlyFocusedMarkdown": "### Currently focused on:\n- **Systems design**: Focused on Linux as a tool, **systems architecture**, and how everything translates into operability, security and reliability. Deeply exploring self hosting, which has lead me to the world of **services and systems integration** on **development environments** and private networks. Recently experimenting with AI/ML, automation, and CI/CD."
+  },
+  "locales": {
+    "en": {
+      "meta": {
+        "title": "Rubén Peña — Systems designer · Linux administrator · Musician",
+        "description": "Systems designer and Linux administrator: self-hosting, architecture, integration across private networks, automation, and CI/CD. Classical musician turned infrastructure builder."
+      },
+      "a11y": {
+        "skipToContent": "Skip to content",
+        "siteAside": "Site footer"
+      },
+      "nav": {
+        "ariaLabel": "Primary",
+        "intro": "Intro",
+        "skills": "Skills",
+        "projects": "Projects",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "footer": {
+        "cvLabel": "CV",
+        "mailLabel": "Mail",
+        "openCvAria": "Open CV — view online, download, or source on GitHub",
+        "emailAria": "Send email"
+      },
+      "theme": {
+        "switchToLight": "Switch to light theme",
+        "switchToDark": "Switch to dark theme"
+      },
+      "identity": {
+        "headline": "Systems designer | Linux administrator | Musician",
+        "location": "Seville, Spain",
+        "openToRelocation": "Open to relocation"
+      },
+      "sections": {
+        "skills": {
+          "title": "Skills",
+          "intro": "Operating systems, infrastructure, networking, and tooling I use regularly."
+        },
+        "projects": {
+          "title": "Projects",
+          "intro": "What I built, why it matters, and how it actually runs.",
+          "smallerTools": "Smaller Tools & Scripts",
+          "githubCta": "View configuration and source code on GitHub",
+          "githubCtaSmall": "View repository on GitHub",
+          "demoYoutubeCta": "Watch on YouTube",
+          "projectImageAltSuffix": " — interface preview"
+        },
+        "cv": {
+          "cvRepo": "Source on GitHub"
+        }
+      },
+      "profileLead": "Formed as a classical musician but I prefer the mechanical keys. Systems are my thing — I create and maintain focused infrastructure that saves money and gets real work done.",
+      "technicalSkills": [
+        "Operating systems: UNIX/Linux (Arch, Debian, Ubuntu)",
+        "Infrastructure: Docker, Docker Compose, Portainer",
+        "Networking: SSH/Mosh, Tailscale, Samba, VPN",
+        "Automation: Python (CLI and API development), Bash, Git"
+      ],
+      "language": {
+        "ariaLabel": "Language",
+        "english": "English",
+        "spanish": "Español",
+        "toggleToEnglish": "Switch to English",
+        "toggleToSpanish": "Switch to Spanish"
+      }
+    },
+    "es": {
+      "meta": {
+        "title": "Rubén Peña Rubio — Administrador de sistemas Linux junior · DevOps",
+        "description": "Perfil técnico autodidacta en Sevilla: homelab de alta fiabilidad, Docker, automatización con Python y operaciones Linux. Disciplina analítica aplicada desde la interpretación musical clásica."
+      },
+      "a11y": {
+        "skipToContent": "Saltar al contenido",
+        "siteAside": "Pie de página"
+      },
+      "nav": {
+        "ariaLabel": "Principal",
+        "intro": "Intro",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "footer": {
+        "cvLabel": "CV",
+        "mailLabel": "Mail",
+        "openCvAria": "Abrir currículum — ver en línea, descargar o código en GitHub",
+        "emailAria": "Enviar correo"
+      },
+      "theme": {
+        "switchToLight": "Cambiar a tema claro",
+        "switchToDark": "Cambiar a tema oscuro"
+      },
+      "identity": {
+        "headline": "Administrador de Sistemas Linux Junior | Entusiasta DevOps",
+        "location": "Sevilla, España",
+        "openToRelocation": "Disponibilidad para reubicación"
+      },
+      "sections": {
+        "skills": {
+          "title": "Habilidades",
+          "intro": "Sistemas operativos, infraestructura, redes y automatización."
+        },
+        "projects": {
+          "title": "Proyectos",
+          "intro": "Implementaciones reales: arquitectura, despliegue y operación.",
+          "smallerTools": "Herramientas y scripts menores",
+          "githubCta": "Ver configuración y código fuente en GitHub",
+          "githubCtaSmall": "Ver repositorio en GitHub",
+          "demoYoutubeCta": "Ver en YouTube",
+          "projectImageAltSuffix": " — vista de la interfaz"
+        },
+        "cv": {
+          "cvRepo": "Código en GitHub"
+        }
+      },
+      "profileLead": "Perfil técnico autodidacta con más de 10 años de experiencia a nivel hardware/SO y dos años de especialización en Linux, contenedores (Docker) y automatización con Python. Desarrollo software liviano, principalmente orientado al self-hosting, y administro y mantengo sistemas en red.",
+      "technicalSkills": [
+        "Sistemas Operativos: UNIX/Linux (Arch, Debian, Ubuntu)",
+        "Infraestructura: Docker, Docker Compose, Portainer",
+        "Redes: SSH/Mosh, Tailscale, Samba, VPN",
+        "Automatización: Python (desarrollo de CLI y API), Bash, Git"
+      ],
+      "language": {
+        "ariaLabel": "Idioma",
+        "english": "English",
+        "spanish": "Español",
+        "toggleToEnglish": "Cambiar a inglés",
+        "toggleToSpanish": "Cambiar a español"
+      }
+    }
+  },
+  "projects": {
+    "slugGroups": {
+      "actively": [
+        "agent-aquila",
+        "soundsible"
+      ],
+      "maintaining": [
+        "synesthetic-visualizer",
+        "remove-multi-titles-yt"
+      ],
+      "minor": [
+        "docker-reader",
+        "fish-echo-alias"
+      ]
+    },
+    "en": [
+      {
+        "slug": "agent-aquila",
+        "title": "agent-aquila",
+        "tech": "AI, Self-hosted, Automation",
+        "why": "Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.",
+        "how": [
+          "Designed for transparency and control over your AI interactions.",
+          "Optimized for token efficiency and works with local or affordable cloud models."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/agent-aquila",
+        "readmeEmoji": "🦅"
+      },
+      {
+        "slug": "soundsible",
+        "title": "soundsible",
+        "tech": "JavaScript, Node, SQLite, Docker, Python",
+        "why": "Self-hosted music streaming ecosystem: SQLite + Python API with downloader (yt-dlp wrapper) + high end, full featured web player client, with specific mobile layout.",
+        "how": [
+          "Python launcher and browser-based Station on a headless Linux host; SQLite backs the catalog and metadata.",
+          "I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/soundsible",
+        "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+        "imageSrc": "/images/projects/soundsible-icon.jpg",
+        "imagePresentation": "logo",
+        "readmeEmoji": "🎧"
+      },
+      {
+        "slug": "synesthetic-visualizer",
+        "title": "synesthetic-visualizer",
+        "tech": "Rust, real-time audio, GPU-oriented graphics",
+        "why": "The only audio visualizer that represents harmonic relationships and harmonic (dissonance-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on dual-core thinkpads.",
+        "how": [
+          "Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+        "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2",
+        "readmeEmoji": "🎼"
+      },
+      {
+        "slug": "remove-multi-titles-yt",
+        "title": "remove-multi-titles-yt",
+        "tech": "JavaScript, WebExtensions",
+        "summary": "Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first title and thumbnail you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.",
+        "readmeEmoji": "✋",
+        "repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+        "tier": "secondary"
+      },
+      {
+        "slug": "docker-reader",
+        "title": "docker-reader",
+        "tech": "Docker, Docker Compose, JavaScript",
+        "why": "Self hosted book library manager + multi device layout web reader with notes and all that shit.",
+        "how": [
+          "Docker Compose plus a small config file set users, port, and volumes—the same deploy on every host."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/docker-reader",
+        "imageSrc": "/images/projects/docker-reader-light.png",
+        "imagePresentation": "screenshot"
+      },
+      {
+        "slug": "fish-echo-alias",
+        "title": "fish-echo-alias",
+        "tech": "Fish shell, Fisher",
+        "summary": "Plugin to echo the value of an alias as a string. For fish (ewwww).",
+        "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+        "tier": "secondary"
+      }
+    ],
+    "es": [
+      {
+        "slug": "agent-aquila",
+        "title": "agent-aquila",
+        "tech": "IA, Autoalojado, Automatización",
+        "why": "Asistente de IA personal y autoalojado que es increíblemente fácil de observar y controlar, eficiente en el uso de tokens y en las peticiones al modelo, manteniendo un comportamiento agente y autoaprendizaje incluso con modelos locales gratuitos o económicos en la nube.",
+        "how": [
+          "Diseñado para transparencia y control sobre tus interacciones con IA.",
+          "Optimizado para eficiencia de tokens y funciona con modelos locales o asequibles en la nube."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/agent-aquila"
+      },
+      {
+        "slug": "soundsible",
+        "title": "Soundsible",
+        "tech": "JavaScript, Node, SQLite, Docker, Python",
+        "why": "Ecosistema de streaming musical autoalojado: SQLite + API en Python con descargador (wrapper yt-dlp) + cliente web de alta gama y completo, con diseño móvil específico.",
+        "how": [
+          "Lanzador en Python e interfaz web Station en un Linux sin monitor; SQLite guarda catálogo y metadatos.",
+          "Lo uso como infraestructura diaria en casa; con Tailscale el acceso remoto fuera de la LAN es directo."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/soundsible",
+        "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
+        "imageSrc": "/images/projects/soundsible-icon.jpg",
+        "imagePresentation": "logo"
+      },
+      {
+        "slug": "synesthetic-visualizer",
+        "title": "Synesthetic-visualizer",
+        "tech": "Rust, Audio en tiempo real, Renderizado GPU",
+        "why": "El único visualizador de audio que representa relaciones armónicas y movimiento armónico (disonancia-a-tartini) a través del tiempo. Extremadamente bello y escrito en Rust para que funcione impecablemente incluso en ThinkPads de doble núcleo.",
+        "how": [
+          "Rust de punta a punta en captura y renderizado GPU para que la imagen vaya al ritmo del audio con poco retraso."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
+        "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
+      },
+      {
+        "slug": "remove-multi-titles-yt",
+        "title": "Remove-multi-titles-yt",
+        "tech": "JavaScript, WebExtensions",
+        "summary": "Extensión para Firefox/Chrome que evita que YouTube pruebe títulos A/B. El navegador fija el primer título que ves y siempre muestra el mismo. Implementación muy simple con consumo mínimo de memoria. Disponible en las tiendas oficiales de extensiones.",
+        "repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
+        "tier": "secondary"
+      },
+      {
+        "slug": "docker-reader",
+        "title": "Docker-reader",
+        "tech": "Docker, Docker Compose, JavaScript",
+        "why": "Gestor de biblioteca de libros autoalojado + lector web con diseño multi-dispositivo con notas y todo eso.",
+        "how": [
+          "Docker Compose y un `config.json` pequeño definen usuarios, puerto y volúmenes—el mismo despliegue en cualquier máquina."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/docker-reader",
+        "imageSrc": "/images/projects/docker-reader-light.png",
+        "imagePresentation": "screenshot"
+      },
+      {
+        "slug": "fish-echo-alias",
+        "title": "Fish-echo-alias",
+        "tech": "Fish shell, Fisher",
+        "summary": "Plugin para imprimir limpiamente el valor de un alias como cadena. Para fish (puaj).",
+        "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
+        "tier": "secondary"
+      }
+    ]
+  }
+}
