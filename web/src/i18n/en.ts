@@ -1,11 +1,10 @@
 import type { Messages } from './types';
+import publicEn from '../../../profile/public.en.json';
+
+const { siteLocale } = publicEn;
 
 export const en: Messages = {
-	meta: {
-		title: 'Rubén Peña Rubio — Junior Linux Systems Administrator · DevOps',
-		description:
-			'Self-taught Linux and infrastructure in Seville: homelab, Docker, Python automation, Debian. Classical musician moving into junior sysadmin / ops work.',
-	},
+	meta: siteLocale.meta,
 	a11y: {
 		skipToContent: 'Skip to content',
 		siteAside: 'Site footer',
@@ -28,16 +27,9 @@ export const en: Messages = {
 		switchToLight: 'Switch to light theme',
 		switchToDark: 'Switch to dark theme',
 	},
-	identity: {
-		headline: 'Junior Linux Systems Administrator\u00a0|\u00a0DevOps Enthusiast',
-		location: 'Seville,\u00a0Spain',
-		openToRelocation: 'Open to relocation',
-	},
+	identity: siteLocale.identity,
 	sections: {
-		skills: {
-			title: 'Skills',
-			intro: 'Operating systems, infrastructure, networking, and tooling I use regularly.',
-		},
+		skills: siteLocale.sectionsSkills,
 		projects: {
 			title: 'Projects',
 			intro: 'What I built, why it matters, and how it actually runs.',
@@ -51,14 +43,8 @@ export const en: Messages = {
 			cvRepo: 'Source on GitHub',
 		},
 	},
-	profileLead:
-		'Self-taught systems enthusiast with a decade of hardware tinkering and two years of deep focus on Linux, Docker, and Python automation. I build and maintain reliable homelab infrastructure and containerized services.',
-	technicalSkills: [
-		'Operating systems: UNIX/Linux (Arch, Debian, Ubuntu)',
-		'Infrastructure: Docker, Docker Compose, Portainer',
-		'Networking: SSH/Mosh, Tailscale, Samba, VPN',
-		'Automation: Python (CLI and API development), Bash, Git',
-	],
+	profileLead: siteLocale.profileLead,
+	technicalSkills: siteLocale.technicalSkills,
 	language: {
 		ariaLabel: 'Language',
 		english: 'English',

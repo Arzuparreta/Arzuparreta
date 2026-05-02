@@ -1,11 +1,13 @@
-/** Identity and URLs only — UI copy lives in `src/i18n/`. */
+import publicEn from '../../../profile/public.en.json';
+
+/** Identity and URLs from `profile/public.en.json` — UI copy in `src/i18n/`. */
 export const site = {
-	name: 'Rubén Peña Rubio',
+	name: publicEn.siteLocale.name,
 	handle: 'Arzuparreta',
-	url: 'https://arzuparreta.github.io',
-	github: 'https://github.com/Arzuparreta',
-	cvRepo: 'https://github.com/Arzuparreta/Arzuparreta/blob/main/cv/CV.md',
-	linkedin: 'https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/',
-	email: 'rubenpenarubio02@gmail.com',
-	openToRelocation: true,
+	url: publicEn.urls.site.replace(/\/$/, ''),
+	github: publicEn.urls.github,
+	cvRepo: publicEn.urls.cvRepo,
+	linkedin: publicEn.urls.linkedin,
+	email: publicEn.urls.email,
+	openToRelocation: publicEn.siteLocale.openToRelocation,
 } as const;

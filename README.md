@@ -1,3 +1,4 @@
+<!-- readme-profile:start -->
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
@@ -9,8 +10,8 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center"> 
-  Systems are my thing —
-  I create and maintain focused infrastructure that saves money and gets real work done. 
+  Systems are my thing —<br>
+  I create and maintain focused infrastructure that saves money and gets real work done.
 </p>
 
 <p align="center">
@@ -25,6 +26,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 ### Currently focused on:
 - **Systems design**: Focused on Linux as a tool, **systems architecture**, and how everything translates into operability, security and reliability. Deeply exploring self hosting, which has lead me to the world of **services and systems integration** on **development environments** and private networks. Recently experimenting with AI/ML, automation, and CI/CD.
 
+<!-- readme-profile:end -->
 <!-- readme-projects:start -->
 ### 🚧 Actively developing:
 - [**agent-aquila**](https://github.com/Arzuparreta/agent-aquila) 🦅 : Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.

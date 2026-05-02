@@ -5,8 +5,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'profile/public.en.json'
       - 'projects/projects.json'
-      - 'scripts/sync-readme-projects.mjs'
+      - 'scripts/sync-readme.mjs'
       - '.github/workflows/sync-readme.yml'
   workflow_dispatch:
 
@@ -29,8 +30,8 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Regenerate README project block
-        run: node scripts/sync-readme-projects.mjs
+      - name: Regenerate README from profile + projects
+        run: node scripts/sync-readme.mjs
 
       - name: Commit if changed
         run: |
