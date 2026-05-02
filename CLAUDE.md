@@ -1,0 +1,114 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Repository Structure
+
+This is a monorepo for a personal portfolio website with the following structure:
+
+- `web/` - Astro static site generator (main application)
+- `cv/` - CV content in Markdown format
+- `projects/` - Project metadata in JSON
+- `.github/workflows/` - CI/CD configuration
+- `README.md` - GitHub profile README (shown on github.com/Arzuparreta)
+
+**Important**: This repository (`Arzuparreta`) contains the source code and GitHub profile README. The built website is deployed to a separate repository called `Arzuparreta.github.io` via GitHub Actions.
+
+## Development Commands
+
+All commands should be run from the `web/` directory:
+
+```bash
+cd web
+npm run dev          # Start development server (includes CV copy)
+npm run build        # Build for production (includes CV copy)
+npm run preview      # Preview production build
+npm run ensure-cv    # Copy CV from monorepo root to web public folder
+```
+
+## Architecture Overview
+
+### Static Site Generation
+- **Framework**: Astro 6.x with static output
+- **Deployment**: Cross-repo deployment via GitHub Actions
+  - Source repo: `Arzuparreta` (this repository)
+  - Target repo: `Arzuparreta.github.io` (separate GitHub Pages repository)
+  - Deployment pushes `web/dist/` to `gh-pages` branch of target repo
+- **Live site**: https://arzuparreta.github.io
+- **Node version**: >=22.12.0
+
+### Internationalization (i18n)
+- **Languages**: English (default) and Spanish
+- **Implementation**: Client-side locale switching without page reload
+- **URL structure**: `/` for English, `/es/` for Spanish
+- **Messages**: Located in `src/i18n/en.ts` and `src/i18n/es.ts`
+- **Types**: `src/i18n/types.ts` defines the `Messages` interface
+
+### Content Management
+- **Projects**: Single source of truth in `projects/projects.json`
+- **CV**: Markdown source in `cv/CV.md`, copied to `web/public/resume/CV.md` during build
+- **Site metadata**: `src/data/site.ts` for URLs and identity
+
+### Key Components
+- `BaseLayout.astro` - Main layout with HTML structure, meta tags, and client scripts
+- `HomePage.astro` - Landing page with intro, skills, and projects
+- `ProjectCase.astro` - Primary project cards with media support
+- `SmallTool.astro` - Secondary project listings
+
+### Client-Side Scripts
+- `locale-client.ts` - Handles locale switching, DOM updates, and History API
+- `theme.ts` - Theme switching (light/dark) with localStorage persistence
+- `project-case-nav.ts` - Click navigation for project cards
+- `page-init.ts` - Entry point for home page client scripts
+
+### Data Loading Patterns
+- Projects loaded from `projects/projects.json` via `src/data/projects.ts`
+- Uses `process.cwd()` for path resolution (not `import.meta.url`)
+- Validates project structure with TypeScript types
+- Supports primary (detailed cards) and secondary (compact listings) project tiers
+
+### Styling
+- **CSS approach**: Scoped CSS in Astro components
+- **Global styles**: `src/styles/global.css` with CSS custom properties
+- **Theme**: Light/dark mode with CSS variables and data attributes
+- **Font**: Outfit Variable font via `@fontsource-variable/outfit`
+
+## Build Process
+
+1. **CV Copy**: `ensure-cv` script copies `cv/CV.md` to `web/public/resume/CV.md`
+2. **Astro Build**: Generates static HTML in `web/dist/`
+3. **Cross-Repo Deployment**: GitHub Actions deploys `web/dist/` to `gh-pages` branch of `Arzuparreta.github.io` repository
+   - Requires `GH_PAGES_DEPLOY_TOKEN` secret in source repo
+   - Triggered on push to `main` branch affecting `web/`, `cv/`, `projects/`, or workflow files
+
+## Important Conventions
+
+### Project Metadata
+- Edit `projects/projects.json` as the single source of truth
+- Each project has `slug`, `title`, `tech`, `why`, `how`, and `tier`
+- Primary projects support `imageSrc`, `imagePresentation`, `demoUrl`, `projectSiteUrl`
+- Secondary projects only need `summary` and `repoUrl`
+
+### Content Updates
+- CV changes: Edit `cv/CV.md` (build script handles copying)
+- Project changes: Edit `projects/projects.json` (auto-loaded)
+- UI text: Edit `src/i18n/en.ts` and `src/i18n/es.ts`
+
+### Client Script Bundling
+- Client scripts must be imported in layout files to be bundled
+- Use `set:html` for JSON bundles to avoid escaping issues
+- Locale bundle serialized as JSON in `<script type="application/json">`
+
+### Path Resolution
+- Use `process.cwd()` for file system paths (not `import.meta.url`)
+- Astro/Vite bundling can resolve `import.meta.url` incorrectly in chunks
+- Example: `projects.json` path uses `join(process.cwd(), '..', 'projects', 'projects.json')`
+
+## Testing
+
+No automated test suite is currently configured. Manual testing should focus on:
+- Locale switching functionality
+- Theme switching persistence
+- Responsive design on mobile/desktop
+- Project card navigation
+- CV page rendering

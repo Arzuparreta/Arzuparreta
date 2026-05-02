@@ -1,5 +1,10 @@
 {
-  "$comment": "Canonical project list for the site (en/es). Edit this file as the single source of truth. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point. When imageSrc is set, optional imagePresentation: \"logo\" (square app icon, compact media column) or \"screenshot\" (default; wide UI capture).",
+  "$comment": "Canonical project list for the site (en/es). Edit this file as the single source of truth. Link fields: repoUrl is the public GitHub repository (repo icon always uses this). It is also the default for the project title link and for clicking empty space on a primary case card. projectSiteUrl is optional—use it for a dedicated product or docs site (e.g. GitHub Pages); when present, the title link and card background open projectSiteUrl instead of repoUrl. Omit projectSiteUrl when the repository is the main public entry point. When imageSrc is set, optional imagePresentation: \"logo\" (square app icon, compact media column) or \"screenshot\" (default; wide UI capture). GitHub profile README project lists are generated from the \"en\" entries; \"readme\" controls which slugs appear under each heading (order preserved). Optional readmeEmoji on an \"en\" entry is appended after the link in the profile README.",
+  "readme": {
+    "actively": ["agent-aquila", "soundsible"],
+    "maintaining": ["synesthetic-visualizer", "remove-multi-titles-yt"],
+    "minor": ["docker-reader", "fish-echo-alias"]
+  },
   "en": [
     {
       "slug": "agent-aquila",
@@ -11,7 +16,8 @@
         "Optimized for token efficiency and works with local or affordable cloud models."
       ],
       "tier": "primary",
-      "repoUrl": "https://github.com/Arzuparreta/agent-aquila"
+      "repoUrl": "https://github.com/Arzuparreta/agent-aquila",
+      "readmeEmoji": "🦅"
     },
     {
       "slug": "soundsible",
@@ -26,7 +32,8 @@
       "repoUrl": "https://github.com/Arzuparreta/soundsible",
       "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
       "imageSrc": "/images/projects/soundsible-icon.jpg",
-      "imagePresentation": "logo"
+      "imagePresentation": "logo",
+      "readmeEmoji": "🎧"
     },
     {
       "slug": "synesthetic-visualizer",
@@ -38,13 +45,15 @@
       ],
       "tier": "primary",
       "repoUrl": "https://github.com/Arzuparreta/synesthetic-visualizer",
-      "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2"
+      "demoUrl": "https://www.youtube.com/watch?v=umtcc_3KsfI&list=PL4wUTace1gknGv08vVZ4xtOPwTX8arWlG&index=2",
+      "readmeEmoji": "🎼"
     },
     {
       "slug": "remove-multi-titles-yt",
       "title": "remove-multi-titles-yt",
       "tech": "JavaScript, WebExtensions",
-      "summary": "Firefox/Chrome extension that stops youtube from testing A/B titles. The browser pins the first title you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.",
+      "summary": "Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first title and thumbnail you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.",
+      "readmeEmoji": "✋",
       "repoUrl": "https://github.com/Arzuparreta/remove-multi-titles-yt",
       "tier": "secondary"
     },
@@ -65,7 +74,7 @@
       "slug": "fish-echo-alias",
       "title": "fish-echo-alias",
       "tech": "Fish shell, Fisher",
-      "summary": "Plugin to echo cleanly the value of an alias as a string. For fish (ewwww).",
+      "summary": "Plugin to echo the value of an alias as a string. For fish (ewwww).",
       "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
       "tier": "secondary"
     }
