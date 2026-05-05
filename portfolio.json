@@ -263,7 +263,11 @@
         "slug": "morphix",
         "title": "morphix",
         "tech": "JavaScript, Web",
-        "summary": "A project under active development.",
+        "why": "A project under active development with modern web technologies.",
+        "how": [
+          "Built with JavaScript for web-based functionality.",
+          "Currently in active development phase."
+        ],
         "repoUrl": "https://github.com/Arzuparreta/morphix",
         "tier": "primary",
         "readmeEmoji": "🌀"
