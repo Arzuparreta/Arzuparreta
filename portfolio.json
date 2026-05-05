@@ -158,12 +158,15 @@
   "projects": {
     "slugGroups": {
       "actively": [
-        "agent-aquila",
-        "soundsible"
+        "easy-ai",
+        "morphix"
       ],
       "maintaining": [
+        "agent-aquila",
+        "soundsible",
         "synesthetic-visualizer",
-        "remove-multi-titles-yt"
+        "remove-multi-titles-yt",
+        "agentic-fight"
       ],
       "minor": [
         "docker-reader",
@@ -242,6 +245,41 @@
         "summary": "Plugin to echo the value of an alias as a string. For fish (ewwww).",
         "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
         "tier": "secondary"
+      },
+      {
+        "slug": "easy-ai",
+        "title": "easy-ai",
+        "tech": "Rust, Ollama, Local LLMs",
+        "why": "Democratize local LLMs so anyone (like my father on Windows) can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.",
+        "how": [
+          "End-to-end setup: installs ollama, downloads models, configures API, and connects to apps automatically.",
+          "User-friendly interface that hides all technical complexity behind simple click operations."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/easy-ai",
+        "readmeEmoji": "🤖"
+      },
+      {
+        "slug": "morphix",
+        "title": "morphix",
+        "tech": "JavaScript, Web",
+        "summary": "A project under active development.",
+        "repoUrl": "https://github.com/Arzuparreta/morphix",
+        "tier": "primary",
+        "readmeEmoji": "🌀"
+      },
+      {
+        "slug": "agentic-fight",
+        "title": "agentic-fight",
+        "tech": "TypeScript, Game, AI",
+        "why": "Two players coach their AI agents to fight in a 2D arena. Hack and slash with economy per round system, best of five.",
+        "how": [
+          "TypeScript-powered game logic with AI agent coaching system.",
+          "Economy and round-based system for strategic depth."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/agentic-fight",
+        "readmeEmoji": "⚔️"
       }
     ],
     "es": [
@@ -312,6 +350,40 @@
         "summary": "Plugin para imprimir limpiamente el valor de un alias como cadena. Para fish (puaj).",
         "repoUrl": "https://github.com/Arzuparreta/fish-echo-alias",
         "tier": "secondary"
+      },
+      {
+        "slug": "easy-ai",
+        "title": "easy-ai",
+        "tech": "Rust, Ollama, LLMs locales",
+        "why": "Democratizar los LLMs locales para que cualquiera (como mi padre en Windows) pueda usar ollama con clicks — sin conocimientos técnicos, desde la instalación hasta la descarga de modelos y la integración con aplicaciones.",
+        "how": [
+          "Configuración de un extremo a otro: instala ollama, descarga modelos, configura la API y se conecta a las aplicaciones automáticamente.",
+          "Interfaz amigable que oculta toda la complejidad técnica tras operaciones de click simples."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/easy-ai"
+      },
+      {
+        "slug": "morphix",
+        "title": "morphix",
+        "tech": "JavaScript, Web",
+        "summary": "Un proyecto en desarrollo activo.",
+        "repoUrl": "https://github.com/Arzuparreta/morphix",
+        "tier": "primary",
+        "readmeEmoji": "🌀"
+      },
+      {
+        "slug": "agentic-fight",
+        "title": "agentic-fight",
+        "tech": "TypeScript, Juego, IA",
+        "why": "Dos jugadores entrenan sus agentes de IA para luchar en una arena 2D. Hack and slash con sistema de economía por ronda, mejor de cinco.",
+        "how": [
+          "Lógica de juego impulsada por TypeScript con sistema de entrenamiento de agentes de IA.",
+          "Sistema de economía y rondas para profundidad estratégica."
+        ],
+        "tier": "primary",
+        "repoUrl": "https://github.com/Arzuparreta/agentic-fight",
+        "readmeEmoji": "⚔️"
       }
     ]
   }
