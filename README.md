@@ -29,7 +29,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 <!-- readme-projects:start -->
 ### 🚧 Actively developing:
 - [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone on Windows can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
-- [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : A project under active development with modern web technologies.
+- [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
 
 ### 🛠️ Maintaining / improving:
 - [**agent-aquila**](https://github.com/Arzuparreta/agent-aquila) 🦅: Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.
