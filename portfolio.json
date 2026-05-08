@@ -161,7 +161,6 @@
         "morphix"
       ],
       "maintaining": [
-        "agent-aquila",
         "soundsible",
         "synesthetic-visualizer",
         "remove-multi-titles-yt",
@@ -173,19 +172,6 @@
       ]
     },
     "en": [
-      {
-        "slug": "agent-aquila",
-        "title": "agent-aquila",
-        "tech": "AI, Self-hosted, Automation",
-        "why": "Personal, self-hosted AI assistant that is incredibly easy to observe and control, easy on tokens and efficient on the model requests side, maintaining a self-learning, agentic behaviour even with free/local or cheap cloud models.",
-        "how": [
-          "Designed for transparency and control over your AI interactions.",
-          "Optimized for token efficiency and works with local or affordable cloud models."
-        ],
-        "tier": "primary",
-        "repoUrl": "https://github.com/Arzuparreta/agent-aquila",
-        "readmeEmoji": "🦅"
-      },
       {
         "slug": "soundsible",
         "title": "soundsible",
@@ -286,18 +272,6 @@
       }
     ],
     "es": [
-      {
-        "slug": "agent-aquila",
-        "title": "agent-aquila",
-        "tech": "IA, Autoalojado, Automatización",
-        "why": "Asistente de IA personal y autoalojado que es increíblemente fácil de observar y controlar, eficiente en el uso de tokens y en las peticiones al modelo, manteniendo un comportamiento agente y autoaprendizaje incluso con modelos locales gratuitos o económicos en la nube.",
-        "how": [
-          "Diseñado para transparencia y control sobre tus interacciones con IA.",
-          "Optimizado para eficiencia de tokens y funciona con modelos locales o asequibles en la nube."
-        ],
-        "tier": "primary",
-        "repoUrl": "https://github.com/Arzuparreta/agent-aquila"
-      },
       {
         "slug": "soundsible",
         "title": "Soundsible",
