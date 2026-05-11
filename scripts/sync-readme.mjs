@@ -42,8 +42,7 @@ ${readme.taglineWithBreak}
 </p>
 
 <p align="center"> 
-  ${readme.taglineEmphasisLine1}<br>
-  ${readme.taglineEmphasisLine2}
+  ${readme.taglineEmphasisLine1}${readme.taglineEmphasisLine2 ? `<br>\n  ${readme.taglineEmphasisLine2}` : ''}
 </p>
 
 <p align="center">
