@@ -332,7 +332,7 @@
         "slug": "easy-ai",
         "title": "easy-ai",
         "tech": "Rust, Ollama, LLMs locales",
-        "why": "Democratizar los LLMs locales para que cualquiera (como mi padre en Windows) pueda usar ollama con clicks — sin conocimientos técnicos, desde la instalación hasta la descarga de modelos y la integración con aplicaciones.",
+        "why": "Democratizar los LLMs locales para que cualquiera pueda usar ollama con clicks — sin conocimientos técnicos, desde la instalación hasta la descarga de modelos y la integración con aplicaciones.",
         "how": [
           "Configuración de un extremo a otro: instala ollama, descarga modelos, configura la API y se conecta a las aplicaciones automáticamente.",
           "Interfaz amigable que oculta toda la complejidad técnica tras operaciones de click simples."
@@ -344,9 +344,9 @@
         "slug": "morphix",
         "title": "morphix",
         "tech": "JavaScript, Web",
-        "why": "Un proyecto en desarrollo activo con tecnologías web modernas.",
+        "why": "Reestiliza cualquier sitio web con un prompt. Guarda estilos, modifícalos, itera sobre ellos. Estiliza tu propio internet.",
         "how": [
-          "Construido con JavaScript para funcionalidad web.",
+          "Extensión manifest v3 para chrome y firefox, contruida con JavaScript.",
           "Actualmente en fase de desarrollo activo."
         ],
         "repoUrl": "https://github.com/Arzuparreta/morphix",
