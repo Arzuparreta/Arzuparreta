@@ -28,7 +28,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 <!-- readme-profile:end -->
 <!-- readme-projects:start -->
 ### 🚧 Actively developing:
-- [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone (like my father on Windows) can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
+- [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
 - [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
 
 ### 🛠️ Maintaining / improving:
