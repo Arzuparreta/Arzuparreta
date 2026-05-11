@@ -10,7 +10,7 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center"> 
-  Systems are my thing — I design, build and maintain integrated systems that save money and get the work done.<br>
+  Systems are my thing — I **design, build and maintain infrastructure** that save money and get work done.<br>
   undefined
 </p>
 
