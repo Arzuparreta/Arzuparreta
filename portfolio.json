@@ -235,7 +235,7 @@
         "slug": "easy-ai",
         "title": "easy-ai",
         "tech": "Rust, Ollama, Local LLMs",
-        "why": "Democratize local LLMs so anyone (like my father on Windows) can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.",
+        "why": "Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.",
         "how": [
           "End-to-end setup: installs ollama, downloads models, configures API, and connects to apps automatically.",
           "User-friendly interface that hides all technical complexity behind simple click operations."
@@ -250,7 +250,7 @@
         "tech": "JavaScript, Web",
         "why": "Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.",
         "how": [
-          "Built with JavaScript for web-based functionality.",
+          "Built as a JavaScript based manifest v3 extension for chrome and firefox browsers.",
           "Currently in active development phase."
         ],
         "repoUrl": "https://github.com/Arzuparreta/morphix",
