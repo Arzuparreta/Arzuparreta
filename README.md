@@ -27,7 +27,8 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 <!-- readme-profile:end -->
 <!-- readme-projects:start -->
-### 🚧 Actively developing:
+### 🚧 Work in progress:
+- [**Acción Humana**](https://github.com/Arzuparreta/accion-humana) 🏛️ : Radical transparency machine for Spanish politics. Tracks 350 deputies, 4,200+ individual votes, chain of command, revolving doors, and electoral distortion — translating public data into citizen language without ideological filters.
 - [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
 - [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
 
