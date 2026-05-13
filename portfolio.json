@@ -180,8 +180,7 @@
         "why": "Radical transparency machine for Spanish politics. Tracks 350 deputies, 4,200+ individual votes, chain of command, revolving doors, and electoral distortion — translating public data into citizen language without ideological filters.",
         "how": [
           "Next.js 14 frontend with shadcn/ui deployed on Vercel; Supabase PostgreSQL for data storage.",
-          "Python ETL scrapers pull from Congreso Open Data, INE API, and datos.gob.es.",
-          "Automatic divergence detection flags votes against party lines; community annotation system adds context."
+          "Python ETL scrapers pull from Congreso Open Data, INE API, and datos.gob.es. Automatic divergence detection flags votes against party lines; community annotation system adds context."
         ],
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/accion-humana",
@@ -295,8 +294,7 @@
         "why": "Máquina de transparencia radical sobre la política española. Rastrea 350 diputados, más de 4.200 votos individuales, cadena de mando, puertas giratorias y distorsión electoral — traduciendo datos públicos al lenguaje del ciudadano sin filtros ideológicos.",
         "how": [
           "Frontend Next.js 14 con shadcn/ui desplegado en Vercel; Supabase PostgreSQL para almacenamiento de datos.",
-          "ETL en Python extrae datos del Congreso Open Data, API del INE y datos.gob.es.",
-          "Detección automática de divergencias de voto respecto al grupo parlamentario; sistema de anotaciones comunitarias."
+          "ETL en Python extrae datos del Congreso Open Data, API del INE y datos.gob.es. Detección automática de divergencias de voto respecto al grupo parlamentario; sistema de anotaciones comunitarias."
         ],
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/accion-humana",
