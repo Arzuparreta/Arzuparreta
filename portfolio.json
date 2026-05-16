@@ -59,8 +59,8 @@
         "projects": {
           "title": "Projects",
           "intro": "What I built, why it matters, and how it actually runs.",
-          "activelyDeveloping": "🚧 Work in progress",
-          "maintaining": "🛠️ Maintaining / improving",
+          "activelyDeveloping": "🛠️ Maintaining / improving",
+          "maintaining": "🚧 Work in progress",
           "outOfFocus": "🗃️ Out of focus / unmaintained",
           "githubCta": "View configuration and source code on GitHub",
           "githubCtaSmall": "View repository on GitHub",
@@ -126,8 +126,8 @@
         "projects": {
           "title": "Proyectos",
           "intro": "Implementaciones reales: arquitectura, despliegue y operación.",
-          "activelyDeveloping": "🚧 Work in progress",
-          "maintaining": "🛠️ Mantenimiento / mejoras",
+          "activelyDeveloping": "🛠️ Mantenimiento / mejoras",
+          "maintaining": "🚧 Work in progress",
           "outOfFocus": "🗃️ Fuera de foco / sin mantenimiento",
           "githubCta": "Ver configuración y código fuente en GitHub",
           "githubCtaSmall": "Ver repositorio en GitHub",
