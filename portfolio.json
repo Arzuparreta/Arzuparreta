@@ -177,7 +177,7 @@
         "slug": "espana-transparente",
         "title": "España Transparente",
         "tech": "Next.js, Supabase, Python, Vercel",
-        "why": "Radical transparency machine for Spanish politics. Tracks 350 deputies, 4,200+ individual votes, chain of command, revolving doors, and electoral distortion — translating public data into citizen language without ideological filters.",
+        "why": "Radical transparency machine for Spanish politics. Tracks all the public data available from the government of Spain in real time. Linked to sources and focused on poeple and actions — translating public data into citizen language without ideological filters.",
         "how": [
           "Next.js 14 frontend with shadcn/ui deployed on Vercel; Supabase PostgreSQL for data storage.",
           "Python ETL scrapers pull from Congreso Open Data, INE API, and datos.gob.es. Automatic divergence detection flags votes against party lines; community annotation system adds context."
