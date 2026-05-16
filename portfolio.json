@@ -157,11 +157,11 @@
   "projects": {
     "slugGroups": {
       "actively": [
-        "espana-transparente",
         "easy-ai",
         "morphix"
       ],
       "maintaining": [
+        "espana-transparente",
         "soundsible",
         "synesthetic-visualizer",
         "remove-multi-titles-yt",
