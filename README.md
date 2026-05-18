@@ -27,16 +27,16 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 
 <!-- readme-profile:end -->
 <!-- readme-projects:start -->
-### 🚧 Work in progress:
-- [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
-- [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
-
 ### 🛠️ Maintaining / improving:
 - [**España Transparente**](https://github.com/Arzuparreta/espana-transparente) 🏛️: Radical transparency machine for Spanish politics. Tracks all the public data available from the government of Spain in real time. Linked to sources and focused on poeple and actions — translating public data into citizen language without ideological filters.
 - [**soundsible**](https://github.com/Arzuparreta/soundsible) 🎧: Self-hosted music streaming ecosystem: SQLite + Python API with downloader (yt-dlp wrapper) + high end, full featured web player client, with specific mobile layout.
 - [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer) 🎼: The only audio visualizer that represents harmonic relationships and harmonic (dissonance-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on dual-core thinkpads.
 - [**remove-multi-titles-yt**](https://github.com/Arzuparreta/remove-multi-titles-yt) ✋: Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first title and thumbnail you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.
 - [**agentic-fight**](https://github.com/Arzuparreta/agentic-fight) ⚔️: Two players coach their AI agents to fight in a 2D arena. Hack and slash with economy per round system, best of five.
+
+### 🚧 Work in progress:
+- [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
+- [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
 
 #### 🗃️ Out of focus / unmaintained:
 - [docker-reader](https://github.com/Arzuparreta/docker-reader): Self hosted book library manager + multi device layout web reader with notes and all that shit.

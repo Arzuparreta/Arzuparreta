@@ -15,8 +15,8 @@ const PROJECTS_START = '<!-- readme-projects:start -->';
 const PROJECTS_END = '<!-- readme-projects:end -->';
 
 const SECTIONS = [
-	{ key: 'actively', heading: '### 🚧 Work in progress:\n', boldLink: true },
 	{ key: 'maintaining', heading: '### 🛠️ Maintaining / improving:\n', boldLink: true },
+	{ key: 'actively', heading: '### 🚧 Work in progress:\n', boldLink: true },
 	{ key: 'minor', heading: '#### 🗃️ Out of focus / unmaintained:\n', boldLink: false },
 ];
 
