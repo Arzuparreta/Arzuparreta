@@ -40,7 +40,9 @@
         "cvLabel": "CV",
         "mailLabel": "Mail",
         "openCvAria": "Open CV — view online, download, or source on GitHub",
-        "emailAria": "Send email"
+        "emailAria": "Send email",
+        "contactCta": "Start a conversation",
+        "contactCtaSubject": "Let's work together"
       },
       "theme": {
         "switchToLight": "Switch to light theme",
@@ -61,7 +63,7 @@
           "intro": "What I built, why it matters, and how it actually runs.",
           "activelyDeveloping": "🛠️ Maintaining / improving",
           "maintaining": "🚧 Work in progress",
-          "outOfFocus": "🗃️ Out of focus / unmaintained",
+          "outOfFocus": "🗃️ Smaller tools",
           "githubCta": "View configuration and source code on GitHub",
           "githubCtaSmall": "View repository on GitHub",
           "demoYoutubeCta": "Watch on YouTube",
@@ -72,6 +74,47 @@
         }
       },
       "profileLead": "Formed as a classical musician but I prefer the mechanical keys. Systems are my thing — I create and maintain focused infrastructure that saves money and gets real work done.",
+      "availability": {
+        "status": "Available for collaboration · Q2 2026",
+        "note": "Contract · consulting · OSS pairing"
+      },
+      "about": {
+        "heading": "About",
+        "p1": "I started in classical music — twelve years studying trombone at the conservatory. That training rewired how I think: score analysis, ensemble debugging, the patience to isolate one voice in a wall of sound. When I picked up a computer it clicked immediately.",
+        "p2": "Ten years hardware and OS, two years deep on containerized systems, secure networks, and automation. I build infrastructure that stays out of the way — small, observable, and cheap to run. Self-hosted everything: streaming, data pipelines, dev environments.",
+        "p3": "I work best on focused, unsexy problems: the deploy that keeps failing, the homelab that needs a real network, the script that should be a proper CLI. Builder-first, no ceremony."
+      },
+      "services": {
+        "heading": "Work with me",
+        "intro": "Short engagements, specific outcomes. I don't do retainers — I do focused work.",
+        "infra": {
+          "title": "$ linux-infra",
+          "desc": "Docker stacks, secure networking, and automation for indie hackers and small SaaS teams.",
+          "bullet1": "Self-hosted service design & Docker Compose stacks",
+          "bullet2": "Tailscale + SSH secure network architecture",
+          "bullet3": "Automation scripts and CI/CD pipeline setup",
+          "cta": "Talk infrastructure",
+          "ctaSubject": "Infrastructure work"
+        },
+        "audit": {
+          "title": "$ audit",
+          "desc": "One-shot review of your infrastructure, code, or deploy pipeline. Output: actionable document.",
+          "bullet1": "Infrastructure & Docker security audit",
+          "bullet2": "Deploy pipeline review (GitHub Actions, CI/CD)",
+          "bullet3": "Code review with written recommendations",
+          "cta": "Request a review",
+          "ctaSubject": "Audit / code review"
+        },
+        "oss": {
+          "title": "$ oss-collab",
+          "desc": "Pair-build on open source or indie projects. Rust, Python, TypeScript, infra.",
+          "bullet1": "New feature implementation",
+          "bullet2": "Infrastructure or tooling additions",
+          "bullet3": "Architecture consultation for side projects",
+          "cta": "Propose a project",
+          "ctaSubject": "OSS collaboration"
+        }
+      },
       "technicalSkills": [
         "Operating systems: UNIX/Linux (Arch, Debian, Ubuntu)",
         "Infrastructure: Docker, Docker Compose, Portainer",
@@ -88,8 +131,8 @@
     },
     "es": {
       "meta": {
-        "title": "Rubén Peña Rubio — Administrador de sistemas Linux junior · DevOps",
-        "description": "Perfil técnico autodidacta en Sevilla: homelab de alta fiabilidad, Docker, automatización con Python y operaciones Linux. Disciplina analítica aplicada desde la interpretación musical clásica."
+        "title": "Rubén Peña — Diseñador de sistemas · Administrador Linux · Músico",
+        "description": "Diseñador de sistemas e ingeniero de infraestructura autodidacta en Sevilla: self-hosting, arquitectura, redes privadas seguras, automatización y CI/CD. Músico clásico convertido en builder de infraestructura."
       },
       "a11y": {
         "skipToContent": "Saltar al contenido",
@@ -107,16 +150,18 @@
         "cvLabel": "CV",
         "mailLabel": "Mail",
         "openCvAria": "Abrir currículum — ver en línea, descargar o código en GitHub",
-        "emailAria": "Enviar correo"
+        "emailAria": "Enviar correo",
+        "contactCta": "Empecemos a hablar",
+        "contactCtaSubject": "Let's work together"
       },
       "theme": {
         "switchToLight": "Cambiar a tema claro",
         "switchToDark": "Cambiar a tema oscuro"
       },
       "identity": {
-        "headline": "Administrador de Sistemas Linux Junior | Entusiasta DevOps",
+        "headline": "Diseñador de sistemas | Administrador Linux | Músico",
         "location": "Sevilla, España",
-        "openToRelocation": "Disponibilidad para reubicación"
+        "openToRelocation": "Disponible para reubicación"
       },
       "sections": {
         "skills": {
@@ -127,8 +172,8 @@
           "title": "Proyectos",
           "intro": "Implementaciones reales: arquitectura, despliegue y operación.",
           "activelyDeveloping": "🛠️ Mantenimiento / mejoras",
-          "maintaining": "🚧 Work in progress",
-          "outOfFocus": "🗃️ Fuera de foco / sin mantenimiento",
+          "maintaining": "🚧 En desarrollo",
+          "outOfFocus": "🗃️ Herramientas menores",
           "githubCta": "Ver configuración y código fuente en GitHub",
           "githubCtaSmall": "Ver repositorio en GitHub",
           "demoYoutubeCta": "Ver en YouTube",
@@ -138,7 +183,7 @@
           "cvRepo": "Código en GitHub"
         }
       },
-      "profileLead": "Perfil técnico autodidacta con más de 10 años de experiencia a nivel hardware/SO y dos años de especialización en Linux, contenedores (Docker) y automatización con Python. Desarrollo software liviano, principalmente orientado al self-hosting, y administro y mantengo sistemas en red.",
+      "profileLead": "Músico clásico reconvertido en builder de infraestructura — sistemas Linux, contenedores y automatización que funcionan sin estorbar.",
       "technicalSkills": [
         "Sistemas Operativos: UNIX/Linux (Arch, Debian, Ubuntu)",
         "Infraestructura: Docker, Docker Compose, Portainer",
@@ -151,6 +196,47 @@
         "spanish": "Español",
         "toggleToEnglish": "Cambiar a inglés",
         "toggleToSpanish": "Cambiar a español"
+      },
+      "availability": {
+        "status": "Disponible para colaborar · Q2 2026",
+        "note": "Contrato · consultoría · colaboración OSS"
+      },
+      "about": {
+        "heading": "Sobre mí",
+        "p1": "Empecé en la música clásica — doce años estudiando trombón en el conservatorio. Ese entrenamiento cambió cómo pienso: análisis de partituras, depurar conjuntos, la paciencia para aislar una voz en un muro de sonido. Cuando llegué a la informática encajó de inmediato.",
+        "p2": "Diez años con hardware y sistemas operativos, dos años enfocado en sistemas contenerizados, redes seguras y automatización. Construyo infraestructura que no estorba — pequeña, observable y barata de mantener. Self-hosted de todo: streaming, pipelines de datos, entornos de desarrollo.",
+        "p3": "Trabajo mejor en problemas concretos y sin glamour: el despliegue que sigue fallando, el homelab que necesita una red de verdad, el script que debería ser una CLI de verdad. Primero builder, sin ceremonias."
+      },
+      "services": {
+        "heading": "Trabaja conmigo",
+        "intro": "Compromisos cortos, resultados concretos. Sin retainers — trabajo enfocado.",
+        "infra": {
+          "title": "$ linux-infra",
+          "desc": "Stacks Docker, redes seguras y automatización para indie hackers y equipos SaaS pequeños.",
+          "bullet1": "Diseño de servicios self-hosted y stacks Docker Compose",
+          "bullet2": "Arquitectura de red segura con Tailscale y SSH",
+          "bullet3": "Scripts de automatización y configuración de CI/CD",
+          "cta": "Hablemos de infraestructura",
+          "ctaSubject": "Infrastructure work"
+        },
+        "audit": {
+          "title": "$ audit",
+          "desc": "Revisión puntual de tu infraestructura, código o pipeline de despliegue. Resultado: documento accionable.",
+          "bullet1": "Auditoría de infraestructura y seguridad Docker",
+          "bullet2": "Revisión de pipeline de despliegue (GitHub Actions, CI/CD)",
+          "bullet3": "Code review con recomendaciones escritas",
+          "cta": "Solicitar una revisión",
+          "ctaSubject": "Audit / code review"
+        },
+        "oss": {
+          "title": "$ oss-collab",
+          "desc": "Pair-build en proyectos open source o indie. Rust, Python, TypeScript, infra.",
+          "bullet1": "Implementación de nuevas funcionalidades",
+          "bullet2": "Adiciones de infraestructura o tooling",
+          "bullet3": "Consultoría de arquitectura para side projects",
+          "cta": "Proponer un proyecto",
+          "ctaSubject": "OSS collaboration"
+        }
       }
     }
   },

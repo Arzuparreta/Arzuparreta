@@ -4,6 +4,8 @@ import GitHubIcon from './GitHubIcon.astro';
 import LinkedInIcon from './LinkedInIcon.astro';
 import ProjectCase from './ProjectCase.astro';
 import SmallTool from './SmallTool.astro';
+import About from './About.astro';
+import Services from './Services.astro';
 import { getProjectSections, projectAsSmallTool } from '../data/projects';
 import { site } from '../data/site';
 import type { Locale } from '../i18n/config';
@@ -68,6 +70,10 @@ const localeBundleJson = JSON.stringify({
 						</span>
 					</p>
 					<p class="intro__lead" data-i18n="profileLead">{t.profileLead}</p>
+					<div class="availability-badge" aria-label={t.availability.status}>
+						<span class="availability-badge__dot" aria-hidden="true"></span>
+						<span data-i18n="availability.status">{t.availability.status}</span>
+					</div>
 				</section>
 
 				<section id="skills" class="section" aria-labelledby="skills-heading">
@@ -79,8 +85,10 @@ const localeBundleJson = JSON.stringify({
 						))}
 					</ul>
 				</section>
+				<About about={t.about} />
 			</div>
 			<div class="site-main__inner site-main__inner--projects">
+				<Services services={t.services} email={site.email} />
 				<section id="projects" class="section" aria-labelledby="projects-heading">
 					<h2 id="projects-heading" data-i18n="sections.projects.title">
 						{t.sections.projects.title}
@@ -122,6 +130,15 @@ const localeBundleJson = JSON.stringify({
 						))}
 					</div>
 				</section>
+			</div>
+			<div class="footer-cta">
+				<a
+					class="btn footer-cta__btn"
+					href={`mailto:${site.email}?subject=${encodeURIComponent(t.footer.contactCtaSubject)}`}
+					data-i18n="footer.contactCta"
+				>
+					{t.footer.contactCta}
+				</a>
 			</div>
 		</main>
 

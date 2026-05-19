@@ -20,6 +20,8 @@ export type Messages = {
 		mailLabel: string;
 		openCvAria: string;
 		emailAria: string;
+		contactCta: string;
+		contactCtaSubject: string;
 	};
 	theme: {
 		switchToLight: string;
@@ -49,6 +51,23 @@ export type Messages = {
 		cv: { cvRepo: string };
 	};
 	profileLead: string;
+	availability: {
+		status: string;
+		note: string;
+	};
+	about: {
+		heading: string;
+		p1: string;
+		p2: string;
+		p3: string;
+	};
+	services: {
+		heading: string;
+		intro: string;
+		infra: { title: string; desc: string; bullet1: string; bullet2: string; bullet3: string; cta: string; ctaSubject: string };
+		audit: { title: string; desc: string; bullet1: string; bullet2: string; bullet3: string; cta: string; ctaSubject: string };
+		oss: { title: string; desc: string; bullet1: string; bullet2: string; bullet3: string; cta: string; ctaSubject: string };
+	};
 	technicalSkills: string[];
 	/** Language switcher in the bottom bar. */
 	language: {
