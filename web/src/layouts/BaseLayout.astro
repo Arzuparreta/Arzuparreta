@@ -40,7 +40,7 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_GB';
 		<meta name="description" content={description} />
 		<meta name="author" content={site.name} />
 		<meta name="color-scheme" content="light dark" />
-		<meta id="theme-color-meta" name="theme-color" content="#eceef4" />
+		<meta id="theme-color-meta" name="theme-color" content="#f5f5f7" />
 		<script is:inline>
 			(function () {
 				try {
@@ -51,7 +51,7 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_GB';
 						var dark =
 							t === 'dark' ||
 							(!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-						m.setAttribute('content', dark ? '#0a0a0f' : '#eceef4');
+						m.setAttribute('content', dark ? '#000000' : '#eceef4');
 					}
 				} catch (e) {}
 			})();

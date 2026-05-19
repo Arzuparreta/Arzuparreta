@@ -61,8 +61,8 @@
         "projects": {
           "title": "Projects",
           "intro": "What I built, why it matters, and how it actually runs.",
-          "activelyDeveloping": "🛠️ Maintaining / improving",
-          "maintaining": "🚧 Work in progress",
+          "activelyDeveloping": "🚧 Work in progress",
+          "maintaining": "🛠️ Maintaining / improving",
           "outOfFocus": "🗃️ Smaller tools",
           "githubCta": "View configuration and source code on GitHub",
           "githubCtaSmall": "View repository on GitHub",
@@ -171,8 +171,8 @@
         "projects": {
           "title": "Proyectos",
           "intro": "Implementaciones reales: arquitectura, despliegue y operación.",
-          "activelyDeveloping": "🛠️ Mantenimiento / mejoras",
-          "maintaining": "🚧 En desarrollo",
+          "activelyDeveloping": "🚧 En desarrollo",
+          "maintaining": "🛠️ Mantenimiento / mejoras",
           "outOfFocus": "🗃️ Herramientas menores",
           "githubCta": "Ver configuración y código fuente en GitHub",
           "githubCtaSmall": "Ver repositorio en GitHub",
@@ -271,7 +271,9 @@
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/espana-transparente",
         "projectSiteUrl": "https://web-pi-two-62.vercel.app",
-        "readmeEmoji": "🏛️"
+        "readmeEmoji": "🏛️",
+        "imageSrc": "/images/projects/espana-transparente-banner.png",
+        "imagePresentation": "screenshot"
       },
       {
         "slug": "soundsible",
@@ -285,8 +287,8 @@
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/soundsible",
         "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-        "imageSrc": "/images/projects/soundsible-icon.jpg",
-        "imagePresentation": "logo",
+        "imageSrc": "/images/projects/soundsible-desktop.png",
+        "imagePresentation": "screenshot",
         "readmeEmoji": "🎧"
       },
       {
@@ -384,7 +386,9 @@
         ],
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/espana-transparente",
-        "projectSiteUrl": "https://web-pi-two-62.vercel.app"
+        "projectSiteUrl": "https://web-pi-two-62.vercel.app",
+        "imageSrc": "/images/projects/espana-transparente-banner.png",
+        "imagePresentation": "screenshot"
       },
       {
         "slug": "soundsible",
@@ -398,8 +402,8 @@
         "tier": "primary",
         "repoUrl": "https://github.com/Arzuparreta/soundsible",
         "projectSiteUrl": "https://arzuparreta.github.io/soundsible.github.io/",
-        "imageSrc": "/images/projects/soundsible-icon.jpg",
-        "imagePresentation": "logo"
+        "imageSrc": "/images/projects/soundsible-desktop.png",
+        "imagePresentation": "screenshot"
       },
       {
         "slug": "synesthetic-visualizer",

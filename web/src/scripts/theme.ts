@@ -39,7 +39,7 @@ export function getEffectiveTheme(): 'light' | 'dark' {
 function setThemeColorMeta(effective: 'light' | 'dark'): void {
 	const el = document.getElementById('theme-color-meta');
 	if (!el) return;
-	el.setAttribute('content', effective === 'dark' ? '#0a0a0f' : '#eceef4');
+	el.setAttribute('content', effective === 'dark' ? '#000000' : '#f5f5f7');
 }
 
 export function refreshThemeButton(bundle: LocaleBundle): void {
