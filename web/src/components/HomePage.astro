@@ -97,10 +97,10 @@ const localeBundleJson = JSON.stringify({
 						{t.sections.projects.intro}
 					</p>
 
-					<h3 id="actively-heading" class="section__subheading" data-i18n="sections.projects.activelyDeveloping">
-						{t.sections.projects.activelyDeveloping}
+					<h3 id="maintaining-heading" class="section__subheading" data-i18n="sections.projects.maintaining">
+						{t.sections.projects.maintaining}
 					</h3>
-					{sections.actively.map((project) => (
+					{sections.maintaining.map((project) => (
 						<ProjectCase
 							project={project}
 							githubCta={t.sections.projects.githubCta}
@@ -109,10 +109,10 @@ const localeBundleJson = JSON.stringify({
 						/>
 					))}
 
-					<h3 id="maintaining-heading" class="section__subheading" data-i18n="sections.projects.maintaining">
-						{t.sections.projects.maintaining}
+					<h3 id="actively-heading" class="section__subheading" data-i18n="sections.projects.activelyDeveloping">
+						{t.sections.projects.activelyDeveloping}
 					</h3>
-					{sections.maintaining.map((project) => (
+					{sections.actively.map((project) => (
 						<ProjectCase
 							project={project}
 							githubCta={t.sections.projects.githubCta}
