@@ -13,10 +13,56 @@
   },
   "readme": {
     "nameHeading": "RUBÉN PEÑA",
-    "subtitleHtml": "SYSTEMS DESIGNER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN",
+    "subtitleHtml": "SYSTEMS DESIGNER&nbsp;/&nbsp;LINUX ADMINISTRATOR&nbsp;/&nbsp;MUSICIAN",
     "taglineWithBreak": "Formed as a classical musician but I prefer the mechanical keys.<br>",
-    "taglineEmphasisLine1": "Systems are my thing — I design, build and maintain infrastructure that save money and get work done.",
-    "currentlyFocusedMarkdown": "### Currently focused on:\n- **Systems design**: Focused on Linux as a tool, **systems architecture**, and how everything translates into operability, security and reliability. Deeply exploring self hosting, which has lead me to the world of **services and systems integration** on **development environments** and private networks. Recently experimenting with AI/ML, automation, and CI/CD."
+    "taglineEmphasisLine1": "I design, build, and maintain infrastructure that saves money and gets real work done.",
+    "contextLine": "SEVILLE, SPAIN&nbsp;&nbsp;/&nbsp;&nbsp;SELF-HOSTED INFRASTRUCTURE&nbsp;&nbsp;/&nbsp;&nbsp;PRIVATE NETWORKS&nbsp;&nbsp;/&nbsp;&nbsp;AUTOMATION",
+    "toolBadges": [
+      {
+        "label": "Linux",
+        "message": "systems",
+        "color": "111111"
+      },
+      {
+        "label": "Docker",
+        "message": "infra",
+        "color": "111111"
+      },
+      {
+        "label": "Python",
+        "message": "automation",
+        "color": "111111"
+      },
+      {
+        "label": "Rust",
+        "message": "audio",
+        "color": "111111"
+      },
+      {
+        "label": "TypeScript",
+        "message": "web",
+        "color": "111111"
+      }
+    ],
+    "statusRows": [
+      {
+        "label": "NOW",
+        "value": "Systems design, self-hosted infrastructure, AI/ML automation"
+      },
+      {
+        "label": "SYSTEMS",
+        "value": "Linux hosts, Docker stacks, private networks, CI/CD"
+      },
+      {
+        "label": "STACK",
+        "value": "Python, Rust, TypeScript, SQLite, Supabase, Vercel"
+      },
+      {
+        "label": "OPEN TO",
+        "value": "Infrastructure work, OSS collaboration, focused technical audits"
+      }
+    ],
+    "currentlyFocusedMarkdown": ""
   },
   "locales": {
     "en": {
@@ -263,7 +309,7 @@
         "slug": "espana-transparente",
         "title": "España Transparente",
         "tech": "Next.js, Supabase, Python, Vercel",
-        "why": "Radical transparency machine for Spanish politics. Tracks all the public data available from the government of Spain in real time. Linked to sources and focused on poeple and actions — translating public data into citizen language without ideological filters.",
+        "why": "Radical transparency machine for Spanish politics. Tracks public data from the government of Spain in real time, links every claim to sources, and translates institutions into citizen language without ideological filters.",
         "how": [
           "Next.js 14 frontend with shadcn/ui deployed on Vercel; Supabase PostgreSQL for data storage.",
           "Python ETL scrapers pull from Congreso Open Data, INE API, and datos.gob.es. Automatic divergence detection flags votes against party lines; community annotation system adds context."
@@ -279,7 +325,7 @@
         "slug": "soundsible",
         "title": "soundsible",
         "tech": "JavaScript, Node, SQLite, Docker, Python",
-        "why": "Self-hosted music streaming ecosystem: SQLite + Python API with downloader (yt-dlp wrapper) + high end, full featured web player client, with specific mobile layout.",
+        "why": "Self-hosted music streaming ecosystem: SQLite + Python API, yt-dlp downloader, and a high-end web player with a dedicated mobile layout.",
         "how": [
           "Python launcher and browser-based Station on a headless Linux host; SQLite backs the catalog and metadata.",
           "I run it as everyday home infrastructure; remote access works cleanly over Tailscale when I need it off-LAN."
@@ -295,7 +341,7 @@
         "slug": "synesthetic-visualizer",
         "title": "synesthetic-visualizer",
         "tech": "Rust, real-time audio, GPU-oriented graphics",
-        "why": "The only audio visualizer that represents harmonic relationships and harmonic (dissonance-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on dual-core thinkpads.",
+        "why": "Audio visualizer for harmonic relationships and dissonance-to-Tartini movement through time, written in Rust so it runs cleanly even on dual-core ThinkPads.",
         "how": [
           "Rust handles capture and GPU rendering end to end so the image stays tight to the audio with minimal delay."
         ],
@@ -338,7 +384,7 @@
         "slug": "easy-ai",
         "title": "easy-ai",
         "tech": "Rust, Ollama, Local LLMs",
-        "why": "Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.",
+        "why": "Democratize local LLMs so anyone can run Ollama models with just clicks, from installation to model download to app integration.",
         "how": [
           "End-to-end setup: installs ollama, downloads models, configures API, and connects to apps automatically.",
           "User-friendly interface that hides all technical complexity behind simple click operations."
@@ -351,7 +397,7 @@
         "slug": "morphix",
         "title": "morphix",
         "tech": "JavaScript, Web",
-        "why": "Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.",
+        "why": "Restyle any website with a prompt. Save styles, modify them, and iterate on your own internet.",
         "how": [
           "Built as a JavaScript based manifest v3 extension for chrome and firefox browsers.",
           "Currently in active development phase."

@@ -2,7 +2,7 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
-  <sub>SYSTEMS DESIGNER&nbsp·&nbsp;LINUX ADMINISTRATOR&nbsp·&nbsp;MUSICIAN</sub>
+  <strong>SYSTEMS DESIGNER&nbsp;/&nbsp;LINUX ADMINISTRATOR&nbsp;/&nbsp;MUSICIAN</strong>
 </p>
 
 <p align="center">
@@ -10,35 +10,64 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center"> 
-  Systems are my thing — I design, build and maintain infrastructure that save money and get work done.
+  I design, build, and maintain infrastructure that saves money and gets real work done.
 </p>
 
 <p align="center">
-  <a href="https://arzuparreta.github.io/">portfolio👤</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">linkedin🔗‍️</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:rubenpenarubio02@gmail.com">email✉️</a>
+  <sub>SEVILLE, SPAIN&nbsp;&nbsp;/&nbsp;&nbsp;SELF-HOSTED INFRASTRUCTURE&nbsp;&nbsp;/&nbsp;&nbsp;PRIVATE NETWORKS&nbsp;&nbsp;/&nbsp;&nbsp;AUTOMATION</sub>
 </p>
 
+<p align="center">
+  <a href="https://arzuparreta.github.io/">PORTFOLIO</a>
+  &nbsp;/&nbsp;
+  <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">LINKEDIN</a>
+  &nbsp;/&nbsp;
+  <a href="mailto:rubenpenarubio02@gmail.com">EMAIL</a>
+</p>
 
-### Currently focused on:
-- **Systems design**: Focused on Linux as a tool, **systems architecture**, and how everything translates into operability, security and reliability. Deeply exploring self hosting, which has lead me to the world of **services and systems integration** on **development environments** and private networks. Recently experimenting with AI/ML, automation, and CI/CD.
+<p align="center">
+  <img src="https://img.shields.io/badge/Linux-systems-111111?style=flat-square" alt="Linux / systems">
+  <img src="https://img.shields.io/badge/Docker-infra-111111?style=flat-square" alt="Docker / infra">
+  <img src="https://img.shields.io/badge/Python-automation-111111?style=flat-square" alt="Python / automation">
+  <img src="https://img.shields.io/badge/Rust-audio-111111?style=flat-square" alt="Rust / audio">
+  <img src="https://img.shields.io/badge/TypeScript-web-111111?style=flat-square" alt="TypeScript / web">
+</p>
+
+<table align="center">
+  <tr>
+    <td><strong>NOW</strong></td>
+    <td>Systems design, self-hosted infrastructure, AI/ML automation</td>
+  </tr>
+  <tr>
+    <td><strong>SYSTEMS</strong></td>
+    <td>Linux hosts, Docker stacks, private networks, CI/CD</td>
+  </tr>
+  <tr>
+    <td><strong>STACK</strong></td>
+    <td>Python, Rust, TypeScript, SQLite, Supabase, Vercel</td>
+  </tr>
+  <tr>
+    <td><strong>OPEN TO</strong></td>
+    <td>Infrastructure work, OSS collaboration, focused technical audits</td>
+  </tr>
+</table>
 
 <!-- readme-profile:end -->
 <!-- readme-projects:start -->
-### 🛠️ Maintaining / improving:
-- [**España Transparente**](https://github.com/Arzuparreta/espana-transparente) 🏛️: Radical transparency machine for Spanish politics. Tracks all the public data available from the government of Spain in real time. Linked to sources and focused on poeple and actions — translating public data into citizen language without ideological filters.
-- [**soundsible**](https://github.com/Arzuparreta/soundsible) 🎧: Self-hosted music streaming ecosystem: SQLite + Python API with downloader (yt-dlp wrapper) + high end, full featured web player client, with specific mobile layout.
-- [**synesthetic-visualizer**](https://github.com/Arzuparreta/synesthetic-visualizer) 🎼: The only audio visualizer that represents harmonic relationships and harmonic (dissonance-to-tartini) movement through time. Extremely beautiful and written in rust so it runs faultessly even on dual-core thinkpads.
-- [**remove-multi-titles-yt**](https://github.com/Arzuparreta/remove-multi-titles-yt) ✋: Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first title and thumbnail you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.
-- [**agentic-fight**](https://github.com/Arzuparreta/agentic-fight) ⚔️: Two players coach their AI agents to fight in a 2D arena. Hack and slash with economy per round system, best of five.
+---
 
-### 🚧 Work in progress:
-- [**easy-ai**](https://github.com/Arzuparreta/easy-ai) 🤖 : Democratize local LLMs so anyone can run ollama models with just clicks — no technical knowledge needed, from installation to model download to app integration.
-- [**morphix**](https://github.com/Arzuparreta/morphix) 🌀 : Reestyle any website with a prompt. Save styles, modify, iterate on them. Style your own internet.
+### MAINTAINING / IMPROVING
+- **[España Transparente](https://github.com/Arzuparreta/espana-transparente)** <sub>MAINTAINING / NEXT.JS, SUPABASE, PYTHON, VERCEL</sub><br>Radical transparency machine for Spanish politics. Tracks public data from the government of Spain in real time, links every claim to sources, and translates institutions into citizen language without ideological filters.
+- **[soundsible](https://github.com/Arzuparreta/soundsible)** <sub>MAINTAINING / JAVASCRIPT, NODE, SQLITE, DOCKER, PYTHON</sub><br>Self-hosted music streaming ecosystem: SQLite + Python API, yt-dlp downloader, and a high-end web player with a dedicated mobile layout.
+- **[synesthetic-visualizer](https://github.com/Arzuparreta/synesthetic-visualizer)** <sub>MAINTAINING / RUST, REAL-TIME AUDIO, GPU-ORIENTED GRAPHICS</sub><br>Audio visualizer for harmonic relationships and dissonance-to-Tartini movement through time, written in Rust so it runs cleanly even on dual-core ThinkPads.
+- **[remove-multi-titles-yt](https://github.com/Arzuparreta/remove-multi-titles-yt)** <sub>MAINTAINING / JAVASCRIPT, WEBEXTENSIONS</sub><br>Firefox/Chrome extension that stops YouTube from testing A/B titles and thumbnails. The browser pins the first title and thumbnail you see and always shows the same. Very simple implementation with absolute minimal memory consumption. Available on the official extension stores.
+- **[agentic-fight](https://github.com/Arzuparreta/agentic-fight)** <sub>MAINTAINING / TYPESCRIPT, GAME, AI</sub><br>Two players coach their AI agents to fight in a 2D arena. Hack and slash with economy per round system, best of five.
 
-#### 🗃️ Out of focus / unmaintained:
-- [docker-reader](https://github.com/Arzuparreta/docker-reader): Self hosted book library manager + multi device layout web reader with notes and all that shit.
-- [fish-echo-alias](https://github.com/Arzuparreta/fish-echo-alias): Plugin to echo the value of an alias as a string. For fish (ewwww).
+### WORK IN PROGRESS
+- **[easy-ai](https://github.com/Arzuparreta/easy-ai)** <sub>BUILDING / RUST, OLLAMA, LOCAL LLMS</sub><br>Democratize local LLMs so anyone can run Ollama models with just clicks, from installation to model download to app integration.
+- **[morphix](https://github.com/Arzuparreta/morphix)** <sub>BUILDING / JAVASCRIPT, WEB</sub><br>Restyle any website with a prompt. Save styles, modify them, and iterate on your own internet.
+
+#### OUT OF FOCUS / UNMAINTAINED
+- **[docker-reader](https://github.com/Arzuparreta/docker-reader)** <sub>ARCHIVED / DOCKER, DOCKER COMPOSE, JAVASCRIPT</sub><br>Self hosted book library manager + multi device layout web reader with notes and all that shit.
+- **[fish-echo-alias](https://github.com/Arzuparreta/fish-echo-alias)** <sub>ARCHIVED / FISH SHELL, FISHER</sub><br>Plugin to echo the value of an alias as a string. For fish (ewwww).
 <!-- readme-projects:end -->
