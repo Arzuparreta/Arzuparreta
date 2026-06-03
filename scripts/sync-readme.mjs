@@ -153,8 +153,8 @@ function main() {
 	let readme = readFileSync(readmePath, 'utf8');
 	const profileInner = buildReadmeProfile(portfolio);
 	readme = replaceBetween(readme, PROFILE_START, PROFILE_END, profileInner);
-	const projectsInner = buildProjectsBlock(loadProjectsPayload(portfolio));
-	readme = replaceBetween(readme, PROJECTS_START, PROJECTS_END, `${projectsInner}`);
+	// Projects section removed from README — header only
+	readme = replaceBetween(readme, PROJECTS_START, PROJECTS_END, '');
 	const original = readFileSync(readmePath, 'utf8');
 	if (readme !== original) writeFileSync(readmePath, readme, 'utf8');
 }
