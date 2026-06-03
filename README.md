@@ -14,10 +14,6 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
 </p>
 
 <p align="center">
-  <sub>SEVILLE, SPAIN&nbsp;&nbsp;/&nbsp;&nbsp;SELF-HOSTED INFRASTRUCTURE&nbsp;&nbsp;/&nbsp;&nbsp;PRIVATE NETWORKS&nbsp;&nbsp;/&nbsp;&nbsp;AUTOMATION</sub>
-</p>
-
-<p align="center">
   <a href="https://arzuparreta.github.io/">PORTFOLIO</a>
   &nbsp;/&nbsp;
   <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">LINKEDIN</a>
