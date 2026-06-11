@@ -1,4 +1,3 @@
-<!-- readme-profile:start -->
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
@@ -47,7 +46,3 @@ Formed as a classical musician but I prefer the mechanical keys.<br>
     <td>Infrastructure work, OSS collaboration, focused technical audits</td>
   </tr>
 </table>
-
-<!-- readme-profile:end -->
-<!-- readme-projects:start -->
-<!-- readme-projects:end -->
