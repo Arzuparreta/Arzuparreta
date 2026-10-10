@@ -1,7 +1,7 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
-  <strong>Systems engineer and musician.</strong>
+  <strong>Systems engineer</strong>
 </p>
 
 <p align="center">
