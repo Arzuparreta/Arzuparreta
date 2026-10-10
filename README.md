@@ -1,7 +1,7 @@
 <h1 align="center">RUBÉN PEÑA</h1>
 
 <p align="center">
-  <strong>Systems engineer</strong>
+  <strong>I think through problems</strong>
 </p>
 
 <p align="center">
