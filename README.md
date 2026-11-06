@@ -18,4 +18,4 @@
     <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="28">
   </a>
 </p>
-![banner](/banner.png)
+![banner](/banner.jgp)
