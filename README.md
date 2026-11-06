@@ -1,3 +1,9 @@
+</p>
+
+<p align="center">
+  <img src="./banner.jpg" alt="Banner" width="100%">
+</p>
+
 <p align="center">
   <a href="https://arzuparreta.github.io/">
     <img src="https://img.shields.io/badge/Hub-111111?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDEuNWExMC41IDEwLjUgMCAxIDAgMCAyMSAxMC41IDEwLjUgMCAwIDAgMC0yMVptNy4xIDYuM2gtM2ExNS45IDE1LjkgMCAwIDAtMS45LTQuMyA4LjYgOC42IDAgMCAxIDQuOSA0LjNaTTEyIDMuNmExNCAxNCAwIDAgMSAyLjEgNC4ySDkuOUExNCAxNCAwIDAgMSAxMiAzLjZaTTMuOSAxMy45YTguMyA4LjMgMCAwIDEgMC0zLjhoMy40YTE4IDE4IDAgMCAwIDAgMy44Wm0uOCAyLjNoM2ExNS45IDE1LjkgMCAwIDAgMS45IDQuMyA4LjYgOC42IDAgMCAxLTQuOS00LjNabTMtOC40aC0zYTguNiA4LjYgMCAwIDEgNC45LTQuMyAxNS45IDE1LjkgMCAwIDAtMS45IDQuM1ptNC4zIDEyLjZhMTQgMTQgMCAwIDEtMi4xLTQuMmg0LjJhMTQgMTQgMCAwIDEtMi4xIDQuMlptMi41LTYuNUg5LjVhMTYgMTYgMCAwIDEgMC0zLjhoNWExNiAxNiAwIDAgMSAwIDMuOFptLjMgNi4yYTE1LjkgMTUuOSAwIDAgMCAxLjktNC4zaDNhOC42IDguNiAwIDAgMS00LjkgNC4zWm0yLjMtNi4yYTE4IDE4IDAgMCAwIDAtMy44aDMuNGE4LjMgOC4zIDAgMCAxIDAgMy44WiIvPjwvc3ZnPgo%3D&logoColor=white" alt="Hub" height="28">
@@ -13,8 +19,3 @@
   </a>
 </p>
   </a>
-</p>
-
-<p align="center">
-  <img src="./banner.jpg" alt="Banner" width="100%">
-</p>
