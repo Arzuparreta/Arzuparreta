@@ -14,8 +14,8 @@
   <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">
     <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPGcgZmlsbD0iI2ZmZiI%2BPGNpcmNsZSBjeD0iNC4yIiBjeT0iNC40IiByPSIyLjciLz48cmVjdCB4PSIxLjciIHk9IjkiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiByeD0iMC40Ii8%2BPHBhdGggZD0iTTkuMiA5aDQuN3YxLjlhNS40IDUuNCAwIDAgMSA5LjEgMy44VjIyaC01di02LjZhMi40IDIuNCAwIDAgMC00LjggMFYyMmgtNHoiLz48L2c%2BPC9zdmc%2BCg%3D%3D&logoColor=white" alt="LinkedIn" height="28">
   </a>
-  <a href="mailto:rubenpenarubio02@gmail.com">
+  <a href="mailto:rubenpenarubio02@gmNo lo consigo,ail.com">
     <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="28">
   </a>
 </p>
-![banner](/banner.jgp)
+![banner](banner.jgp)
