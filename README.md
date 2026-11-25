@@ -9,5 +9,5 @@
     <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPGcgZmlsbD0iI2ZmZiI%2BPGNpcmNsZSBjeD0iNC4yIiBjeT0iNC40IiByPSIyLjciLz48cmVjdCB4PSIxLjciIHk9IjkiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiByeD0iMC40Ii8%2BPHBhdGggZD0iTTkuMiA5aDQuN3YxLjlhNS40IDUuNCAwIDAgMSA5LjEgMy44VjIyaC01di02LjZhMi40IDIuNCAwIDAgMC00LjggMFYyMmgtNHoiLz48L2c%2BPC9zdmc%2BCg%3D%3D&logoColor=white" alt="LinkedIn" height="28">
 
 <p align="center">
-Hi, I'm Rubén Peña, and I'm a self-taught systems engineer and a graduated classical trombonist based on Spain.
+Hi, I'm Rubén Peña, a self-taught systems engineer and graduated classical trombonist based on Spain.
  </p>
