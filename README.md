@@ -12,5 +12,5 @@
 Hi, I'm Rubén Peña, a self-taught systems engineer and trombonist graduated in music.
  </p>
  <p align="center">
-   I like pizza and agent swarms.
+   I like cats and agent swarms.
  </p>
