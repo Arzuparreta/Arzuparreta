@@ -13,9 +13,15 @@
   <a href='https://ko-fi.com/arzuparreta' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </p>
 
-<p align="justify">
-  Hi, I'm Rubén Peña, a self-taught systems engineer and trombonist graduated in music, building for the internet on my free time.
+<p align="left">
+  Hi, I'm Rubén 
 </p>
 <p align="center">
+  A systems engineer and classical trombonist
+</p>  
+<p align="center">
+  I build for the internet on my free time
+</p>
+<p align="right">
   I like cats and agent swarms.
 </p>
