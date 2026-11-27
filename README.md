@@ -8,9 +8,9 @@
   <a href="https://www.linkedin.com/in/rub%C3%A9n-pe%C3%B1a-432953378/">
     <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPGcgZmlsbD0iI2ZmZiI%2BPGNpcmNsZSBjeD0iNC4yIiBjeT0iNC40IiByPSIyLjciLz48cmVjdCB4PSIxLjciIHk9IjkiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiByeD0iMC40Ii8%2BPHBhdGggZD0iTTkuMiA5aDQuN3YxLjlhNS40IDUuNCAwIDAgMSA5LjEgMy44VjIyaC01di02LjZhMi40IDIuNCAwIDAgMC00LjggMFYyMmgtNHoiLz48L2c%2BPC9zdmc%2BCg%3D%3D&logoColor=white" alt="LinkedIn" height="28">
   </a>
-  <a href="https://ko-fi.com/arzuparreta">
-    <img src="https://img.shields.io/badge/Ko--fi-111111?style=for-the-badge&logo=kofi&logoColor=white" alt="Ko-fi" height="28">
-  </a>
+</p>  
+<p align="center">
+  <a href='https://ko-fi.com/Y5M82BDQBE' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </p>
 
 <p align="center">
