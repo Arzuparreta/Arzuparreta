@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  Hi, I'm Rubén Peña, a self-taught systems engineer and trombonist graduated in music.
+  Hi, I'm Rubén Peña, a self-taught systems engineer and trombonist graduated in music, building for the internet on my free time.
 </p>
 <p align="center">
   I like cats and agent swarms.
